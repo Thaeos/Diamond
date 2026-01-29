@@ -4,11 +4,18 @@
  * "Light Codes" - Every time a Diamond/Gem contract is used on Ethereum,
  * it records the usage and triggers payment/royalty distribution.
  * 
+ * Key Concept:
+ * - Every contract use = Light Code activation
+ * - Ethereum records it (block position, transaction hash)
+ * - Payments come automatically (royalties distributed)
+ * - Block position influences the NFT (visual, formula, value)
+ * 
  * The NFTs aren't just static artifacts - they're living contracts that:
  * - Track every usage/interaction
- * - Record on Ethereum blockchain
+ * - Record on Ethereum blockchain (block position)
  * - Automatically distribute payments/royalties
  * - Generate revenue when used
+ * - Each use updates the NFT (new block position = new visual state)
  */
 
 import * as fs from 'fs';
@@ -144,21 +151,29 @@ function recordLightCodeActivation(
   // Save event
   saveLightCodeEvent(event);
   
-  // Update activation tracking
+  // Update activation tracking (includes block position)
   updateActivationTracking(event);
   
+  // Update NFT metadata with new block position
+  updateNFTWithBlockPosition(event);
+  
   console.log(`\n✨ Light Code Activated! ✨\n`);
+  console.log(`   💡 Contract Used → Ethereum Records → Payment Comes\n`);
   console.log(`   Contract: ${contractAddress}`);
   console.log(`   Function: ${functionCalled}`);
   console.log(`   Caller: ${caller}`);
-  console.log(`   Block: #${blockNumber}`);
+  console.log(`   Block: #${blockNumber} ← Ethereum recorded this`);
   console.log(`   Value: ${totalValue.toFixed(6)} ETH`);
-  console.log(`   Royalties Generated: ${royaltiesGenerated.toFixed(6)} ETH\n`);
+  console.log(`   Royalties Generated: ${royaltiesGenerated.toFixed(6)} ETH`);
+  console.log(`   💰 Payment Distributed Automatically\n`);
   console.log(`   Royalty Distribution:\n`);
   distributions.forEach((dist, i) => {
     console.log(`   ${i + 1}. ${dist.recipient} (${dist.role}): ${dist.amount.toFixed(6)} ETH`);
   });
-  console.log(``);
+  console.log(`\n   📊 Block Position Influence:`);
+  console.log(`      - NFT visual updated (rotation: ${blockNumber % 360}°)`);
+  console.log(`      - Formula value recalculated`);
+  console.log(`      - New activation recorded\n`);
   
   return event;
 }
@@ -176,6 +191,53 @@ function saveLightCodeEvent(event: LightCodeEvent): void {
   // Also append to master log
   const logFile = path.join(eventsDir, 'master_log.jsonl');
   fs.appendFileSync(logFile, JSON.stringify(event) + '\n');
+}
+
+// Update NFT with new block position (visual/formula updates)
+function updateNFTWithBlockPosition(event: LightCodeEvent): void {
+  if (!event.diamondId && !event.gemId) return;
+  
+  const nftId = event.diamondId || event.gemId || 'unknown';
+  const nftType = event.diamondId ? 'diamond' : 'gem';
+  
+  // Update NFT metadata with new block position
+  const nftMetadataPath = path.join(process.cwd(), 'nfts', `${nftType}_${nftId}_metadata.json`);
+  
+  if (fs.existsSync(nftMetadataPath)) {
+    const metadata = JSON.parse(fs.readFileSync(nftMetadataPath, 'utf-8'));
+    
+    // Add new block position to activation history
+    if (!metadata.activation_history) {
+      metadata.activation_history = [];
+    }
+    
+    metadata.activation_history.push({
+      blockNumber: event.blockNumber,
+      timestamp: event.timestamp,
+      royaltiesGenerated: event.royaltiesGenerated,
+      txHash: event.txHash
+    });
+    
+    // Update latest block position
+    metadata.latest_block_position = event.blockNumber;
+    metadata.total_activations = (metadata.total_activations || 0) + 1;
+    metadata.total_royalties_generated = (metadata.total_royalties_generated || 0) + event.royaltiesGenerated;
+    
+    // Recalculate accumulated formula with new block position
+    if (metadata.data_package && metadata.data_package.accumulated_formula) {
+      const oldBlock = metadata.data_package.block_number || 0;
+      const newBlock = event.blockNumber;
+      
+      // Update formula value with new block position
+      const blockDifference = newBlock - oldBlock;
+      const formulaUpdate = blockDifference * 0.001; // Small influence per block
+      
+      metadata.data_package.accumulated_formula.value += formulaUpdate;
+      metadata.data_package.block_number = newBlock;
+    }
+    
+    fs.writeFileSync(nftMetadataPath, JSON.stringify(metadata, null, 2));
+  }
 }
 
 // Update activation tracking
