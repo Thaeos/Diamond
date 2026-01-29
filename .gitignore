@@ -1,3 +1,5 @@
+env.txt
+/mnt/Vault/env.txt
 .venv/
 __pycache__/
 *.log

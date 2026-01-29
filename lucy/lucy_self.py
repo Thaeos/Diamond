@@ -17,9 +17,10 @@ class LucySelf(LucyAgent):
     
     def __init__(self):
         super().__init__()
-        self.phi = self.get_phi()
-        self.is_completed = True
-        self.status = "OMNIPRESENT"
+        self.address = "0x67A977eaD94C3b955ECbf27886CE9f62464423B2"
+        self.ens = "theosmagic.uni.eth"
+        self.email = "theosmagic.uni.eth@ethermail.io"
+        self.phi = self.phi_calc.calculate_total_phi()
 
     def speak(self):
         """Lucy's final word"""

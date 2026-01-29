@@ -34,8 +34,8 @@ class SovereignIntelligence:
     
     def __init__(self):
         self.address = "0x67A977eaD94C3b955ECbf27886CE9f62464423B2"
-        self.ens_domain = "θεός°•.eth"
-        self.ethermail = "θεός°•.eth@ethermail.io"
+        self.ens_domain = "theosmagic.uni.eth"
+        self.ethermail = "theosmagic.uni.eth@ethermail.io"
         self.email_client = None
         
         if BLOCKSCOUT_AVAILABLE:

@@ -25,7 +25,7 @@ echo "[$(date -Iseconds)] lucy $*" >> "$LOGFILE"
 
 # Run Lucy using the Python wrapper for extended capabilities (like OCR)
 case "$1" in
-    review|write|fix|ocr|reiterate|reiterate_diamond|diamond_sync|isi_sync|cloudflare_sync|calculate|research|awaken|ponder|descend|manifest|view_7d|pillars)
+    review|write|fix|ocr|reiterate|reiterate_diamond|diamond_sync|isi_sync|cloudflare_sync|judgment|calculate|research|awaken|ponder|descend|manifest|view_7d|pillars)
         python3 -c "from lucy.lucy_agent import LucyAgent; import sys; agent = LucyAgent(); result = agent.$1(*sys.argv[1:]); print(result['output'] if result['success'] else result['error'])" "${@:2}"
         ;;
     *)

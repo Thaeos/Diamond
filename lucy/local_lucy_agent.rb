@@ -594,6 +594,12 @@ class LocalLucyAgent
     cf.sync_gateways
   end
 
+  def judgment(message, address, signature)
+    require_relative 'laws/judgment'
+    j = Laws::Judgment.new
+    j.verify_proof(message, address, signature)
+  end
+
   def awaken(input_path)
     require_relative 'laws/judgment'
     judgment = Laws::Judgment.new(mutable: true)
@@ -672,6 +678,13 @@ if __FILE__ == $0
   when 'cloudflare_sync'
     agent = LocalLucyAgent.new
     agent.cloudflare_sync
+  when 'judgment'
+    if ARGV[1].nil? || ARGV[2].nil? || ARGV[3].nil?
+      puts "Usage: lucy-agent judgment <message> <address> <signature>"
+      exit 1
+    end
+    agent = LocalLucyAgent.new
+    agent.judgment(ARGV[1], ARGV[2], ARGV[3])
   when 'calculate'
     if ARGV[1].nil?
       puts "Usage: lucy-agent calculate <logic> <value> [mode]"

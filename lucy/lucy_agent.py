@@ -228,6 +228,26 @@ class LucyAgent:
             'error': result.stderr if result.returncode != 0 else None
         }
 
+    def judgment(self, message: str, address: str, signature: str) -> Dict:
+        """
+        Execute Law of Judgment (Signature Verification).
+
+        Args:
+            message: The signed message
+            address: The expected address
+            signature: The signature hex
+
+        Returns:
+            dict: Verification status
+        """
+        result = self._run_lucy('judgment', message, address, signature)
+
+        return {
+            'success': result.returncode == 0,
+            'output': result.stdout,
+            'error': result.stderr if result.returncode != 0 else None
+        }
+
     def calculate(self, logic: str, value: str, mode: str = 'lock') -> Dict:
         """
         Execute 4D Rossetta Calculation.
