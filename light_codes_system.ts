@@ -121,10 +121,13 @@ const GLOBAL_COOLDOWN_CONFIG_FILE = path.join(CONFIG_DIR, 'global_cooldown.json'
 const PROC_RATE_CONFIG_FILE = path.join(CONFIG_DIR, 'proc_rates.json');
 const ROYALTY_CONFIG_FILE = path.join(CONFIG_DIR, 'royalties.json');
 
+// Global cooldown: Hardcoded 2.0s until collective decision is made
+const GLOBAL_COOLDOWN_SECONDS = 2.0; // Hardcoded - will be configurable after collective decision
+
 // Default configurations (developers can modify when live)
 const DEFAULT_GLOBAL_COOLDOWN: GlobalCooldownConfig = {
   enabled: true,
-  cooldownSeconds: 2.0, // Default 2.0s - developers can change
+  cooldownSeconds: GLOBAL_COOLDOWN_SECONDS, // Hardcoded 2.0s until collective decision
   lastProcAttempt: 0,
   nextProcAvailable: 0
 };
@@ -200,7 +203,7 @@ function loadRoyaltyConfig(): RoyaltyConfig {
   return DEFAULT_ROYALTIES;
 }
 
-// Check global cooldown (not per-caller)
+// Check global cooldown (hardcoded 2.0s until collective decision)
 function checkGlobalCooldown(): {
   onCooldown: boolean;
   timeRemaining: number;
@@ -208,11 +211,14 @@ function checkGlobalCooldown(): {
 } {
   const config = loadGlobalCooldownConfig();
   
+  // Use hardcoded cooldown (2.0s) until collective decision
+  const cooldownSeconds = GLOBAL_COOLDOWN_SECONDS;
+  
   if (!config.enabled) {
     return {
       onCooldown: false,
       timeRemaining: 0,
-      config
+      config: { ...config, cooldownSeconds }
     };
   }
   
@@ -221,39 +227,42 @@ function checkGlobalCooldown(): {
   if (config.lastProcAttempt === 0) {
     // First proc ever - no cooldown
     config.lastProcAttempt = now;
-    config.nextProcAvailable = now + (config.cooldownSeconds * 1000);
+    config.nextProcAvailable = now + (cooldownSeconds * 1000);
+    config.cooldownSeconds = cooldownSeconds;
     fs.writeFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, JSON.stringify(config, null, 2));
     
     return {
       onCooldown: false,
       timeRemaining: 0,
-      config
+      config: { ...config, cooldownSeconds }
     };
   }
   
   const timeSinceLastAttempt = (now - config.lastProcAttempt) / 1000; // Convert to seconds
   
-  if (timeSinceLastAttempt < config.cooldownSeconds) {
-    // Still on global cooldown
-    config.nextProcAvailable = config.lastProcAttempt + (config.cooldownSeconds * 1000);
+  if (timeSinceLastAttempt < cooldownSeconds) {
+    // Still on global cooldown (hardcoded 2.0s)
+    config.nextProcAvailable = config.lastProcAttempt + (cooldownSeconds * 1000);
+    config.cooldownSeconds = cooldownSeconds;
     fs.writeFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, JSON.stringify(config, null, 2));
     
     return {
       onCooldown: true,
-      timeRemaining: config.cooldownSeconds - timeSinceLastAttempt,
-      config
+      timeRemaining: cooldownSeconds - timeSinceLastAttempt,
+      config: { ...config, cooldownSeconds }
     };
   }
   
   // Cooldown expired - update and allow proc
   config.lastProcAttempt = now;
-  config.nextProcAvailable = now + (config.cooldownSeconds * 1000);
+  config.nextProcAvailable = now + (cooldownSeconds * 1000);
+  config.cooldownSeconds = cooldownSeconds;
   fs.writeFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, JSON.stringify(config, null, 2));
   
   return {
     onCooldown: false,
     timeRemaining: 0,
-    config
+    config: { ...config, cooldownSeconds }
   };
 }
 
@@ -375,10 +384,10 @@ function recordLightCodeActivation(
     console.log(`   Caller: ${caller}`);
     console.log(`   Block: #${blockNumber}`);
     console.log(`   ⏱️  Global Cooldown: ${cooldownCheck.timeRemaining.toFixed(2)}s remaining`);
-    console.log(`   Cooldown Duration: ${cooldownCheck.config.cooldownSeconds}s`);
+    console.log(`   Cooldown Duration: ${cooldownCheck.config.cooldownSeconds}s (hardcoded until collective decision)`);
     console.log(`   Next Proc Available: ${new Date(cooldownCheck.config.nextProcAvailable).toISOString()}`);
     console.log(`   Status: ❌ On Global Cooldown - No Proc Roll\n`);
-    console.log(`   💡 Note: Global cooldown prevents spam/abuse (configurable by developers)\n`);
+    console.log(`   💡 Note: 2.0s global cooldown hardcoded until collective decision is made\n`);
     
     // Still record the attempt (but no proc roll)
     saveLightCodeEvent(event);
@@ -497,7 +506,7 @@ function recordLightCodeActivation(
   console.log(`   Function: ${functionCalled}`);
   console.log(`   Caller: ${caller}`);
   console.log(`   Block: #${blockNumber} ← Ethereum recorded this`);
-  console.log(`   ⏱️  Global Cooldown: ${cooldownConfig.cooldownSeconds}s (passed)\n`);
+  console.log(`   ⏱️  Global Cooldown: ${cooldownConfig.cooldownSeconds}s (passed, hardcoded until collective decision)\n`);
   console.log(`   🎲 Proc Rate: ${procConfig.finalRate.toFixed(2)}%`);
   console.log(`      Base Rate: ${procConfig.baseRate.toFixed(2)}% (${rarity})`);
   console.log(`      💡 Note: Proc rates configurable by developers`);
@@ -509,7 +518,7 @@ function recordLightCodeActivation(
   }
   console.log(`   🎯 Roll: ${procRoll.roll.toFixed(2)}% (needed < ${procConfig.finalRate.toFixed(2)}%)`);
   console.log(`   ✅ Proc Success!`);
-  console.log(`   ⏱️  Global Cooldown Started: ${cooldownConfig.cooldownSeconds}s until next proc\n`);
+  console.log(`   ⏱️  Global Cooldown Started: ${cooldownConfig.cooldownSeconds}s until next proc (hardcoded)\n`);
   console.log(`   Value: ${totalValue.toFixed(6)} ETH`);
   console.log(`   Royalties Generated: ${royaltiesGenerated.toFixed(6)} ETH`);
   console.log(`   💰 Payment Distributed Automatically\n`);
@@ -848,10 +857,10 @@ it checks global cooldown, rolls proc rate - if successful, records usage and tr
 
 ⏱️  Global Cooldown System:
    - Global cooldown for entire source code (not per-caller)
-   - Default 2.0 seconds (configurable by developers)
+   - Hardcoded 2.0 seconds until collective decision is made
    - Prevents spam/abuse ("1 button smash spin to win")
    - Cooldown must pass before proc roll
-   - Config file: light_codes/config/global_cooldown.json
+   - Will be configurable after collective decision
 
 🎲 Proc Rate System:
    - Each contract use rolls against proc rate %
@@ -868,11 +877,10 @@ it checks global cooldown, rolls proc rate - if successful, records usage and tr
    - Config file: light_codes/config/royalties.json
 
 💡 Configuration:
-   All values are configurable - developers decide when live:
-   - Cooldown duration
-   - Proc rates by rarity
-   - Royalty percentages
-   - Distribution addresses
+   - Cooldown: Hardcoded 2.0s until collective decision
+   - Proc rates: Configurable (developers decide when live)
+   - Royalty percentages: Configurable (developers decide when live)
+   - Distribution addresses: To be set by developers when live
 
 Usage:
   npm run light-codes monitor <contract-address> [rpc-url] [from-block]
@@ -885,9 +893,10 @@ Examples:
   npm run light-codes report
 
 Configuration Files:
-  light_codes/config/global_cooldown.json - Global cooldown settings
-  light_codes/config/proc_rates.json - Proc rate percentages
-  light_codes/config/royalties.json - Royalty distribution
+  light_codes/config/proc_rates.json - Proc rate percentages (configurable)
+  light_codes/config/royalties.json - Royalty distribution (configurable)
+  
+Note: Global cooldown is hardcoded at 2.0s until collective decision is made.
 
 Features:
   - Global cooldown system (prevents spam)
