@@ -16,7 +16,8 @@
     "ipfs-status": "tsx ipfs_fuse_system.ts status",
     "ipfs-complete": "tsx ipfs_fuse_system.ts",
     "compute": "tsx script_computation_system.ts",
-    "nft": "tsx svg_nft_generator.ts"
+    "nft": "tsx svg_nft_generator.ts",
+    "opensea": "tsx opensea_marketplace.ts"
   },
   "dependencies": {
     "@metamask/sdk": "^0.34.0"
