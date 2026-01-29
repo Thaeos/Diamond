@@ -1,0 +1,5008 @@
+{
+  "system": "PoE/Diablo 2 Gem System for Diamond Standard",
+  "concept": "Diamonds as neurons in a nervous system",
+  "communication": "rsync-like cross-contract calls",
+  "gems": [
+    {
+      "id": 1,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 9,
+      "totalValue": 9,
+      "socketLevel": 1
+    },
+    {
+      "id": 2,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 18,
+      "totalValue": 18,
+      "socketLevel": 1
+    },
+    {
+      "id": 3,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 27,
+      "totalValue": 27,
+      "socketLevel": 1
+    },
+    {
+      "id": 4,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 36,
+      "totalValue": 36,
+      "socketLevel": 1
+    },
+    {
+      "id": 5,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 45,
+      "totalValue": 45,
+      "socketLevel": 1
+    },
+    {
+      "id": 6,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 54,
+      "totalValue": 54,
+      "socketLevel": 1
+    },
+    {
+      "id": 7,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 63,
+      "totalValue": 63,
+      "socketLevel": 1
+    },
+    {
+      "id": 8,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 72,
+      "totalValue": 72,
+      "socketLevel": 1
+    },
+    {
+      "id": 9,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 81,
+      "totalValue": 81,
+      "socketLevel": 1
+    },
+    {
+      "id": 10,
+      "name": "Fire Gem",
+      "school": "Fire",
+      "rarity": "Normal",
+      "baseValue": 90,
+      "totalValue": 90,
+      "socketLevel": 2
+    },
+    {
+      "id": 11,
+      "name": "Infernal Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 99,
+      "totalValue": 124,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 12,
+      "name": "Burning Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 108,
+      "totalValue": 118,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 13,
+      "name": "Burning Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 117,
+      "totalValue": 127,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 14,
+      "name": "Burning Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 126,
+      "totalValue": 136,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 15,
+      "name": "Burning Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 135,
+      "totalValue": 145,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 16,
+      "name": "Blazing Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 144,
+      "totalValue": 172,
+      "prefix": {
+        "name": "Blazing",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 17,
+      "name": "Infernal Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 153,
+      "totalValue": 178,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 18,
+      "name": "Infernal Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 162,
+      "totalValue": 187,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 19,
+      "name": "Scorching Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 171,
+      "totalValue": 256,
+      "prefix": {
+        "name": "Scorching",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 2
+    },
+    {
+      "id": 20,
+      "name": "Scorching Fire Gem",
+      "school": "Fire",
+      "rarity": "Magic",
+      "baseValue": 180,
+      "totalValue": 270,
+      "prefix": {
+        "name": "Scorching",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 21,
+      "name": "Infernal Fire Gem of Intensity",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 189,
+      "totalValue": 235,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Intensity",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 22,
+      "name": "Infernal Fire Gem of Conflagration",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 198,
+      "totalValue": 235,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Conflagration",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 23,
+      "name": "Infernal Fire Gem of Flame",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 207,
+      "totalValue": 237,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Flame",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 24,
+      "name": "Flaming Fire Gem of Flame",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 216,
+      "totalValue": 236,
+      "prefix": {
+        "name": "Flaming",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Flame",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 25,
+      "name": "Blazing Fire Gem of Intensity",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 225,
+      "totalValue": 297,
+      "prefix": {
+        "name": "Blazing",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Intensity",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 26,
+      "name": "Burning Fire Gem of Embers",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 234,
+      "totalValue": 252,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Embers",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 27,
+      "name": "Scorching Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 243,
+      "totalValue": 473,
+      "prefix": {
+        "name": "Scorching",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 28,
+      "name": "Infernal Fire Gem of Flame",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 252,
+      "totalValue": 282,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Flame",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 29,
+      "name": "Scorching Fire Gem of Conflagration",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 261,
+      "totalValue": 403,
+      "prefix": {
+        "name": "Scorching",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Conflagration",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 3
+    },
+    {
+      "id": 30,
+      "name": "Flaming Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Rare",
+      "baseValue": 270,
+      "totalValue": 370,
+      "prefix": {
+        "name": "Flaming",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 31,
+      "name": "Infernal Fire Gem of Intensity",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 279,
+      "totalValue": 334,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Intensity",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 32,
+      "name": "Infernal Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 288,
+      "totalValue": 406,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 33,
+      "name": "Burning Fire Gem of Flame",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 297,
+      "totalValue": 312,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Flame",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 34,
+      "name": "Burning Fire Gem of Embers",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 306,
+      "totalValue": 324,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Embers",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 35,
+      "name": "Infernal Fire Gem of Intensity",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 315,
+      "totalValue": 374,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Intensity",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 36,
+      "name": "Flaming Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 324,
+      "totalValue": 440,
+      "prefix": {
+        "name": "Flaming",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 37,
+      "name": "Burning Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 333,
+      "totalValue": 445,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 38,
+      "name": "Infernal Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 342,
+      "totalValue": 477,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 39,
+      "name": "Flaming Fire Gem of Intensity",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 351,
+      "totalValue": 402,
+      "prefix": {
+        "name": "Flaming",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Intensity",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 4
+    },
+    {
+      "id": 40,
+      "name": "Burning Fire Gem of Conflagration",
+      "school": "Fire",
+      "rarity": "Epic",
+      "baseValue": 360,
+      "totalValue": 382,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Conflagration",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 41,
+      "name": "Burning Fire Gem of Intensity",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 369,
+      "totalValue": 416,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Intensity",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 42,
+      "name": "Infernal Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 378,
+      "totalValue": 523,
+      "prefix": {
+        "name": "Infernal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 43,
+      "name": "Blazing Fire Gem of Intensity",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 387,
+      "totalValue": 510,
+      "prefix": {
+        "name": "Blazing",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Intensity",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 44,
+      "name": "Burning Fire Gem of Conflagration",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 396,
+      "totalValue": 418,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Conflagration",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 45,
+      "name": "Blazing Fire Gem of Conflagration",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 405,
+      "totalValue": 498,
+      "prefix": {
+        "name": "Blazing",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Conflagration",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 46,
+      "name": "Flaming Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 414,
+      "totalValue": 557,
+      "prefix": {
+        "name": "Flaming",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 47,
+      "name": "Blazing Fire Gem of Embers",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 423,
+      "totalValue": 515,
+      "prefix": {
+        "name": "Blazing",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Embers",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 48,
+      "name": "Flaming Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 432,
+      "totalValue": 581,
+      "prefix": {
+        "name": "Flaming",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 49,
+      "name": "Flaming Fire Gem of Annihilation",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 441,
+      "totalValue": 592,
+      "prefix": {
+        "name": "Flaming",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Annihilation",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 5
+    },
+    {
+      "id": 50,
+      "name": "Burning Fire Gem of Embers",
+      "school": "Fire",
+      "rarity": "Legendary",
+      "baseValue": 450,
+      "totalValue": 468,
+      "prefix": {
+        "name": "Burning",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Embers",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 6
+    },
+    {
+      "id": 51,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 459,
+      "totalValue": 459,
+      "socketLevel": 6
+    },
+    {
+      "id": 52,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 468,
+      "totalValue": 468,
+      "socketLevel": 6
+    },
+    {
+      "id": 53,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 477,
+      "totalValue": 477,
+      "socketLevel": 6
+    },
+    {
+      "id": 54,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 486,
+      "totalValue": 486,
+      "socketLevel": 6
+    },
+    {
+      "id": 55,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 495,
+      "totalValue": 495,
+      "socketLevel": 6
+    },
+    {
+      "id": 56,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 504,
+      "totalValue": 504,
+      "socketLevel": 6
+    },
+    {
+      "id": 57,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 513,
+      "totalValue": 513,
+      "socketLevel": 6
+    },
+    {
+      "id": 58,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 522,
+      "totalValue": 522,
+      "socketLevel": 6
+    },
+    {
+      "id": 59,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 531,
+      "totalValue": 531,
+      "socketLevel": 6
+    },
+    {
+      "id": 60,
+      "name": "Cold Gem",
+      "school": "Cold",
+      "rarity": "Normal",
+      "baseValue": 540,
+      "totalValue": 540,
+      "socketLevel": 7
+    },
+    {
+      "id": 61,
+      "name": "Frost Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 549,
+      "totalValue": 658,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 62,
+      "name": "Glacial Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 558,
+      "totalValue": 583,
+      "prefix": {
+        "name": "Glacial",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 63,
+      "name": "Chilling Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 567,
+      "totalValue": 577,
+      "prefix": {
+        "name": "Chilling",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 64,
+      "name": "Frost Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 576,
+      "totalValue": 691,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 65,
+      "name": "Freezing Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 585,
+      "totalValue": 600,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 66,
+      "name": "Freezing Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 594,
+      "totalValue": 609,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 67,
+      "name": "Freezing Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 603,
+      "totalValue": 618,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 68,
+      "name": "Frost Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 612,
+      "totalValue": 734,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 69,
+      "name": "Arctic Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 621,
+      "totalValue": 931,
+      "prefix": {
+        "name": "Arctic",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 7
+    },
+    {
+      "id": 70,
+      "name": "Arctic Cold Gem",
+      "school": "Cold",
+      "rarity": "Magic",
+      "baseValue": 630,
+      "totalValue": 945,
+      "prefix": {
+        "name": "Arctic",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 71,
+      "name": "Frost Cold Gem of Ice",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 639,
+      "totalValue": 771,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Ice",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 72,
+      "name": "Freezing Cold Gem of Absolute Zero",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 648,
+      "totalValue": 861,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Absolute Zero",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 73,
+      "name": "Freezing Cold Gem of Ice",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 657,
+      "totalValue": 677,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Ice",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 74,
+      "name": "Chilling Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 666,
+      "totalValue": 688,
+      "prefix": {
+        "name": "Chilling",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 75,
+      "name": "Freezing Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 675,
+      "totalValue": 698,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 76,
+      "name": "Glacial Cold Gem of Rigor",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 684,
+      "totalValue": 779,
+      "prefix": {
+        "name": "Glacial",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Rigor",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 77,
+      "name": "Frost Cold Gem of Rigor",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 693,
+      "totalValue": 914,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Rigor",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 78,
+      "name": "Frost Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 702,
+      "totalValue": 850,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 79,
+      "name": "Arctic Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 711,
+      "totalValue": 1074,
+      "prefix": {
+        "name": "Arctic",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 8
+    },
+    {
+      "id": 80,
+      "name": "Arctic Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Rare",
+      "baseValue": 720,
+      "totalValue": 1092,
+      "prefix": {
+        "name": "Arctic",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 81,
+      "name": "Frost Cold Gem of Absolute Zero",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 729,
+      "totalValue": 1136,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Absolute Zero",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 82,
+      "name": "Glacial Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 738,
+      "totalValue": 771,
+      "prefix": {
+        "name": "Glacial",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 83,
+      "name": "Chilling Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 747,
+      "totalValue": 765,
+      "prefix": {
+        "name": "Chilling",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 84,
+      "name": "Freezing Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 756,
+      "totalValue": 783,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 85,
+      "name": "Frost Cold Gem of Rigor",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 765,
+      "totalValue": 1009,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Rigor",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 86,
+      "name": "Frost Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 774,
+      "totalValue": 936,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 87,
+      "name": "Chilling Cold Gem of Rigor",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 783,
+      "totalValue": 872,
+      "prefix": {
+        "name": "Chilling",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Rigor",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 88,
+      "name": "Freezing Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 792,
+      "totalValue": 819,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 89,
+      "name": "Arctic Cold Gem of Ice",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 801,
+      "totalValue": 1206,
+      "prefix": {
+        "name": "Arctic",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Ice",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 9
+    },
+    {
+      "id": 90,
+      "name": "Freezing Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Epic",
+      "baseValue": 810,
+      "totalValue": 833,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 91,
+      "name": "Glacial Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 819,
+      "totalValue": 856,
+      "prefix": {
+        "name": "Glacial",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 92,
+      "name": "Chilling Cold Gem of Frost",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 828,
+      "totalValue": 846,
+      "prefix": {
+        "name": "Chilling",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Frost",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 93,
+      "name": "Chilling Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 837,
+      "totalValue": 859,
+      "prefix": {
+        "name": "Chilling",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 94,
+      "name": "Frost Cold Gem of Rigor",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 846,
+      "totalValue": 1116,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Rigor",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 95,
+      "name": "Freezing Cold Gem of Ice",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 855,
+      "totalValue": 875,
+      "prefix": {
+        "name": "Freezing",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Ice",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 96,
+      "name": "Arctic Cold Gem of Ice",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 864,
+      "totalValue": 1301,
+      "prefix": {
+        "name": "Arctic",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Ice",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 97,
+      "name": "Chilling Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 873,
+      "totalValue": 895,
+      "prefix": {
+        "name": "Chilling",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 98,
+      "name": "Frost Cold Gem of Ice",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 882,
+      "totalValue": 1063,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Ice",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 99,
+      "name": "Frost Cold Gem of Ice",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 891,
+      "totalValue": 1074,
+      "prefix": {
+        "name": "Frost",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Ice",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 10
+    },
+    {
+      "id": 100,
+      "name": "Glacial Cold Gem of Winter",
+      "school": "Cold",
+      "rarity": "Legendary",
+      "baseValue": 900,
+      "totalValue": 937,
+      "prefix": {
+        "name": "Glacial",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Winter",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 11
+    },
+    {
+      "id": 101,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 909,
+      "totalValue": 909,
+      "socketLevel": 11
+    },
+    {
+      "id": 102,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 918,
+      "totalValue": 918,
+      "socketLevel": 11
+    },
+    {
+      "id": 103,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 927,
+      "totalValue": 927,
+      "socketLevel": 11
+    },
+    {
+      "id": 104,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 936,
+      "totalValue": 936,
+      "socketLevel": 11
+    },
+    {
+      "id": 105,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 945,
+      "totalValue": 945,
+      "socketLevel": 11
+    },
+    {
+      "id": 106,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 954,
+      "totalValue": 954,
+      "socketLevel": 11
+    },
+    {
+      "id": 107,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 963,
+      "totalValue": 963,
+      "socketLevel": 11
+    },
+    {
+      "id": 108,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 972,
+      "totalValue": 972,
+      "socketLevel": 11
+    },
+    {
+      "id": 109,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 981,
+      "totalValue": 981,
+      "socketLevel": 11
+    },
+    {
+      "id": 110,
+      "name": "Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Normal",
+      "baseValue": 990,
+      "totalValue": 990,
+      "socketLevel": 12
+    },
+    {
+      "id": 111,
+      "name": "Thunderous Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 999,
+      "totalValue": 1024,
+      "prefix": {
+        "name": "Thunderous",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 112,
+      "name": "Shocking Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1008,
+      "totalValue": 1018,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 113,
+      "name": "Electrifying Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1017,
+      "totalValue": 1032,
+      "prefix": {
+        "name": "Electrifying",
+        "value": 15,
+        "type": "Additive"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 114,
+      "name": "Thunderous Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1026,
+      "totalValue": 1051,
+      "prefix": {
+        "name": "Thunderous",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 115,
+      "name": "Storm Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1035,
+      "totalValue": 1552,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 116,
+      "name": "Voltaic Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1044,
+      "totalValue": 1252,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 117,
+      "name": "Storm Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1053,
+      "totalValue": 1579,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 118,
+      "name": "Thunderous Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1062,
+      "totalValue": 1087,
+      "prefix": {
+        "name": "Thunderous",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 119,
+      "name": "Thunderous Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1071,
+      "totalValue": 1096,
+      "prefix": {
+        "name": "Thunderous",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 12
+    },
+    {
+      "id": 120,
+      "name": "Thunderous Lightning Gem",
+      "school": "Lightning",
+      "rarity": "Magic",
+      "baseValue": 1080,
+      "totalValue": 1105,
+      "prefix": {
+        "name": "Thunderous",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 121,
+      "name": "Storm Lightning Gem of Tempest",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1089,
+      "totalValue": 1645,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Tempest",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 122,
+      "name": "Voltaic Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1098,
+      "totalValue": 1712,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 123,
+      "name": "Shocking Lightning Gem of Sparks",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1107,
+      "totalValue": 1122,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Sparks",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 124,
+      "name": "Voltaic Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1116,
+      "totalValue": 1740,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 125,
+      "name": "Storm Lightning Gem of Sparks",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1125,
+      "totalValue": 1692,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Sparks",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 126,
+      "name": "Storm Lightning Gem of Sparks",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1134,
+      "totalValue": 1706,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Sparks",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 127,
+      "name": "Storm Lightning Gem of Voltage",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1143,
+      "totalValue": 1885,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Voltage",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 128,
+      "name": "Voltaic Lightning Gem of Sparks",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1152,
+      "totalValue": 1387,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Sparks",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 129,
+      "name": "Storm Lightning Gem of Voltage",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1161,
+      "totalValue": 1915,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Voltage",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 13
+    },
+    {
+      "id": 130,
+      "name": "Shocking Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Rare",
+      "baseValue": 1170,
+      "totalValue": 1534,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 131,
+      "name": "Storm Lightning Gem of Voltage",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1179,
+      "totalValue": 1944,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Voltage",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 132,
+      "name": "Shocking Lightning Gem of Voltage",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1188,
+      "totalValue": 1317,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Voltage",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 133,
+      "name": "Electrifying Lightning Gem of Tempest",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1197,
+      "totalValue": 1224,
+      "prefix": {
+        "name": "Electrifying",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Tempest",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 134,
+      "name": "Voltaic Lightning Gem of Bolts",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1206,
+      "totalValue": 1455,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Bolts",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 135,
+      "name": "Voltaic Lightning Gem of Bolts",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1215,
+      "totalValue": 1466,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Bolts",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 136,
+      "name": "Shocking Lightning Gem of Bolts",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1224,
+      "totalValue": 1242,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Bolts",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 137,
+      "name": "Electrifying Lightning Gem of Voltage",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1233,
+      "totalValue": 1372,
+      "prefix": {
+        "name": "Electrifying",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Voltage",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 138,
+      "name": "Electrifying Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1242,
+      "totalValue": 1634,
+      "prefix": {
+        "name": "Electrifying",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 139,
+      "name": "Electrifying Lightning Gem of Bolts",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1251,
+      "totalValue": 1274,
+      "prefix": {
+        "name": "Electrifying",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Bolts",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 14
+    },
+    {
+      "id": 140,
+      "name": "Shocking Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Epic",
+      "baseValue": 1260,
+      "totalValue": 1651,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 141,
+      "name": "Voltaic Lightning Gem of Tempest",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1269,
+      "totalValue": 1534,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Tempest",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 142,
+      "name": "Shocking Lightning Gem of Tempest",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1278,
+      "totalValue": 1300,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Tempest",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 143,
+      "name": "Electrifying Lightning Gem of Sparks",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1287,
+      "totalValue": 1307,
+      "prefix": {
+        "name": "Electrifying",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Sparks",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 144,
+      "name": "Shocking Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1296,
+      "totalValue": 1697,
+      "prefix": {
+        "name": "Shocking",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 145,
+      "name": "Storm Lightning Gem of Bolts",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1305,
+      "totalValue": 1965,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Bolts",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 146,
+      "name": "Voltaic Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1314,
+      "totalValue": 2048,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 147,
+      "name": "Electrifying Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1323,
+      "totalValue": 1739,
+      "prefix": {
+        "name": "Electrifying",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 148,
+      "name": "Voltaic Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1332,
+      "totalValue": 2077,
+      "prefix": {
+        "name": "Voltaic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 149,
+      "name": "Storm Lightning Gem of Thunder",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1341,
+      "totalValue": 2614,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Thunder",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 15
+    },
+    {
+      "id": 150,
+      "name": "Storm Lightning Gem of Sparks",
+      "school": "Lightning",
+      "rarity": "Legendary",
+      "baseValue": 1350,
+      "totalValue": 2030,
+      "prefix": {
+        "name": "Storm",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Sparks",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 16
+    },
+    {
+      "id": 151,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1359,
+      "totalValue": 1359,
+      "socketLevel": 16
+    },
+    {
+      "id": 152,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1368,
+      "totalValue": 1368,
+      "socketLevel": 16
+    },
+    {
+      "id": 153,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1377,
+      "totalValue": 1377,
+      "socketLevel": 16
+    },
+    {
+      "id": 154,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1386,
+      "totalValue": 1386,
+      "socketLevel": 16
+    },
+    {
+      "id": 155,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1395,
+      "totalValue": 1395,
+      "socketLevel": 16
+    },
+    {
+      "id": 156,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1404,
+      "totalValue": 1404,
+      "socketLevel": 16
+    },
+    {
+      "id": 157,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1413,
+      "totalValue": 1413,
+      "socketLevel": 16
+    },
+    {
+      "id": 158,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1422,
+      "totalValue": 1422,
+      "socketLevel": 16
+    },
+    {
+      "id": 159,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1431,
+      "totalValue": 1431,
+      "socketLevel": 16
+    },
+    {
+      "id": 160,
+      "name": "Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Normal",
+      "baseValue": 1440,
+      "totalValue": 1440,
+      "socketLevel": 17
+    },
+    {
+      "id": 161,
+      "name": "Void Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1449,
+      "totalValue": 1464,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 162,
+      "name": "Void Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1458,
+      "totalValue": 1473,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 163,
+      "name": "Void Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1467,
+      "totalValue": 1482,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 164,
+      "name": "Oblivion Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1476,
+      "totalValue": 2214,
+      "prefix": {
+        "name": "Oblivion",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 165,
+      "name": "Entropic Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1485,
+      "totalValue": 1782,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 166,
+      "name": "Chaotic Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1494,
+      "totalValue": 1504,
+      "prefix": {
+        "name": "Chaotic",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 167,
+      "name": "Oblivion Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1503,
+      "totalValue": 2254,
+      "prefix": {
+        "name": "Oblivion",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 168,
+      "name": "Entropic Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1512,
+      "totalValue": 1814,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 169,
+      "name": "Chaotic Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1521,
+      "totalValue": 1531,
+      "prefix": {
+        "name": "Chaotic",
+        "value": 10,
+        "type": "Additive"
+      },
+      "socketLevel": 17
+    },
+    {
+      "id": 170,
+      "name": "Abyssal Chaos Gem",
+      "school": "Chaos",
+      "rarity": "Magic",
+      "baseValue": 1530,
+      "totalValue": 1555,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 171,
+      "name": "Chaotic Chaos Gem of Entropy",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1539,
+      "totalValue": 1561,
+      "prefix": {
+        "name": "Chaotic",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Entropy",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 172,
+      "name": "Entropic Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1548,
+      "totalValue": 1865,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 173,
+      "name": "Entropic Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1557,
+      "totalValue": 1876,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 174,
+      "name": "Oblivion Chaos Gem of Disorder",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1566,
+      "totalValue": 2583,
+      "prefix": {
+        "name": "Oblivion",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Disorder",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 175,
+      "name": "Entropic Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1575,
+      "totalValue": 1898,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 176,
+      "name": "Chaotic Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1584,
+      "totalValue": 2072,
+      "prefix": {
+        "name": "Chaotic",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 177,
+      "name": "Chaotic Chaos Gem of Entropy",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1593,
+      "totalValue": 1615,
+      "prefix": {
+        "name": "Chaotic",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Entropy",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 178,
+      "name": "Abyssal Chaos Gem of Disorder",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1602,
+      "totalValue": 1789,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Disorder",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 179,
+      "name": "Abyssal Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1611,
+      "totalValue": 2126,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 18
+    },
+    {
+      "id": 180,
+      "name": "Oblivion Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Rare",
+      "baseValue": 1620,
+      "totalValue": 2438,
+      "prefix": {
+        "name": "Oblivion",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 181,
+      "name": "Abyssal Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1629,
+      "totalValue": 2150,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 182,
+      "name": "Oblivion Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1638,
+      "totalValue": 2465,
+      "prefix": {
+        "name": "Oblivion",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 183,
+      "name": "Entropic Chaos Gem of Entropy",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1647,
+      "totalValue": 1988,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Entropy",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 184,
+      "name": "Entropic Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1656,
+      "totalValue": 2583,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 185,
+      "name": "Void Chaos Gem of Disorder",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1665,
+      "totalValue": 1848,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Disorder",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 186,
+      "name": "Oblivion Chaos Gem of Disorder",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1674,
+      "totalValue": 2762,
+      "prefix": {
+        "name": "Oblivion",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Disorder",
+        "value": 1.1,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 187,
+      "name": "Oblivion Chaos Gem of Entropy",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1683,
+      "totalValue": 2536,
+      "prefix": {
+        "name": "Oblivion",
+        "value": 1.5,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Entropy",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 188,
+      "name": "Void Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1692,
+      "totalValue": 1715,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 189,
+      "name": "Void Chaos Gem of Entropy",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1701,
+      "totalValue": 1728,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Entropy",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 19
+    },
+    {
+      "id": 190,
+      "name": "Chaotic Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Epic",
+      "baseValue": 1710,
+      "totalValue": 2236,
+      "prefix": {
+        "name": "Chaotic",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 191,
+      "name": "Entropic Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1719,
+      "totalValue": 2680,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 192,
+      "name": "Void Chaos Gem of Chaos",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1728,
+      "totalValue": 1748,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Chaos",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 193,
+      "name": "Abyssal Chaos Gem of Entropy",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1737,
+      "totalValue": 1774,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Entropy",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 194,
+      "name": "Abyssal Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1746,
+      "totalValue": 2302,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 195,
+      "name": "Void Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1755,
+      "totalValue": 1778,
+      "prefix": {
+        "name": "Void",
+        "value": 15,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 196,
+      "name": "Abyssal Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1764,
+      "totalValue": 1797,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 197,
+      "name": "Chaotic Chaos Gem of Oblivion",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1773,
+      "totalValue": 2317,
+      "prefix": {
+        "name": "Chaotic",
+        "value": 10,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Oblivion",
+        "value": 1.3,
+        "type": "Multiplicative"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 198,
+      "name": "Abyssal Chaos Gem of Void",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1782,
+      "totalValue": 1815,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Void",
+        "value": 8,
+        "type": "Additive"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 199,
+      "name": "Abyssal Chaos Gem of Chaos",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1791,
+      "totalValue": 1821,
+      "prefix": {
+        "name": "Abyssal",
+        "value": 25,
+        "type": "Additive"
+      },
+      "suffix": {
+        "name": "of Chaos",
+        "value": 5,
+        "type": "Additive"
+      },
+      "socketLevel": 20
+    },
+    {
+      "id": 200,
+      "name": "Entropic Chaos Gem of Entropy",
+      "school": "Chaos",
+      "rarity": "Legendary",
+      "baseValue": 1800,
+      "totalValue": 2172,
+      "prefix": {
+        "name": "Entropic",
+        "value": 1.2,
+        "type": "Multiplicative"
+      },
+      "suffix": {
+        "name": "of Entropy",
+        "value": 12,
+        "type": "Additive"
+      },
+      "socketLevel": 21
+    },
+    {
+      "id": 201,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1809,
+      "totalValue": 1809,
+      "socketLevel": 21
+    },
+    {
+      "id": 202,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1818,
+      "totalValue": 1818,
+      "socketLevel": 21
+    },
+    {
+      "id": 203,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1827,
+      "totalValue": 1827,
+      "socketLevel": 21
+    },
+    {
+      "id": 204,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1836,
+      "totalValue": 1836,
+      "socketLevel": 21
+    },
+    {
+      "id": 205,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1845,
+      "totalValue": 1845,
+      "socketLevel": 21
+    },
+    {
+      "id": 206,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1854,
+      "totalValue": 1854,
+      "socketLevel": 21
+    },
+    {
+      "id": 207,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1863,
+      "totalValue": 1863,
+      "socketLevel": 21
+    },
+    {
+      "id": 208,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1872,
+      "totalValue": 1872,
+      "socketLevel": 21
+    },
+    {
+      "id": 209,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1881,
+      "totalValue": 1881,
+      "socketLevel": 21
+    },
+    {
+      "id": 210,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Normal",
+      "baseValue": 1890,
+      "totalValue": 1890,
+      "socketLevel": 22
+    },
+    {
+      "id": 211,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1899,
+      "totalValue": 1899,
+      "socketLevel": 22
+    },
+    {
+      "id": 212,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1908,
+      "totalValue": 1908,
+      "socketLevel": 22
+    },
+    {
+      "id": 213,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1917,
+      "totalValue": 1917,
+      "socketLevel": 22
+    },
+    {
+      "id": 214,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1926,
+      "totalValue": 1926,
+      "socketLevel": 22
+    },
+    {
+      "id": 215,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1935,
+      "totalValue": 1935,
+      "socketLevel": 22
+    },
+    {
+      "id": 216,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1944,
+      "totalValue": 1944,
+      "socketLevel": 22
+    },
+    {
+      "id": 217,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1953,
+      "totalValue": 1953,
+      "socketLevel": 22
+    },
+    {
+      "id": 218,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1962,
+      "totalValue": 1962,
+      "socketLevel": 22
+    },
+    {
+      "id": 219,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1971,
+      "totalValue": 1971,
+      "socketLevel": 22
+    },
+    {
+      "id": 220,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Magic",
+      "baseValue": 1980,
+      "totalValue": 1980,
+      "socketLevel": 23
+    },
+    {
+      "id": 221,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 1989,
+      "totalValue": 1989,
+      "socketLevel": 23
+    },
+    {
+      "id": 222,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 1998,
+      "totalValue": 1998,
+      "socketLevel": 23
+    },
+    {
+      "id": 223,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2007,
+      "totalValue": 2007,
+      "socketLevel": 23
+    },
+    {
+      "id": 224,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2016,
+      "totalValue": 2016,
+      "socketLevel": 23
+    },
+    {
+      "id": 225,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2025,
+      "totalValue": 2025,
+      "socketLevel": 23
+    },
+    {
+      "id": 226,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2034,
+      "totalValue": 2034,
+      "socketLevel": 23
+    },
+    {
+      "id": 227,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2043,
+      "totalValue": 2043,
+      "socketLevel": 23
+    },
+    {
+      "id": 228,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2052,
+      "totalValue": 2052,
+      "socketLevel": 23
+    },
+    {
+      "id": 229,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2061,
+      "totalValue": 2061,
+      "socketLevel": 23
+    },
+    {
+      "id": 230,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Rare",
+      "baseValue": 2070,
+      "totalValue": 2070,
+      "socketLevel": 24
+    },
+    {
+      "id": 231,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2079,
+      "totalValue": 2079,
+      "socketLevel": 24
+    },
+    {
+      "id": 232,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2088,
+      "totalValue": 2088,
+      "socketLevel": 24
+    },
+    {
+      "id": 233,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2097,
+      "totalValue": 2097,
+      "socketLevel": 24
+    },
+    {
+      "id": 234,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2106,
+      "totalValue": 2106,
+      "socketLevel": 24
+    },
+    {
+      "id": 235,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2115,
+      "totalValue": 2115,
+      "socketLevel": 24
+    },
+    {
+      "id": 236,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2124,
+      "totalValue": 2124,
+      "socketLevel": 24
+    },
+    {
+      "id": 237,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2133,
+      "totalValue": 2133,
+      "socketLevel": 24
+    },
+    {
+      "id": 238,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2142,
+      "totalValue": 2142,
+      "socketLevel": 24
+    },
+    {
+      "id": 239,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2151,
+      "totalValue": 2151,
+      "socketLevel": 24
+    },
+    {
+      "id": 240,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Epic",
+      "baseValue": 2160,
+      "totalValue": 2160,
+      "socketLevel": 25
+    },
+    {
+      "id": 241,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2169,
+      "totalValue": 2169,
+      "socketLevel": 25
+    },
+    {
+      "id": 242,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2178,
+      "totalValue": 2178,
+      "socketLevel": 25
+    },
+    {
+      "id": 243,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2187,
+      "totalValue": 2187,
+      "socketLevel": 25
+    },
+    {
+      "id": 244,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2196,
+      "totalValue": 2196,
+      "socketLevel": 25
+    },
+    {
+      "id": 245,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2205,
+      "totalValue": 2205,
+      "socketLevel": 25
+    },
+    {
+      "id": 246,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2214,
+      "totalValue": 2214,
+      "socketLevel": 25
+    },
+    {
+      "id": 247,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2223,
+      "totalValue": 2223,
+      "socketLevel": 25
+    },
+    {
+      "id": 248,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2232,
+      "totalValue": 2232,
+      "socketLevel": 25
+    },
+    {
+      "id": 249,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2241,
+      "totalValue": 2241,
+      "socketLevel": 25
+    },
+    {
+      "id": 250,
+      "name": "Physical Gem",
+      "school": "Physical",
+      "rarity": "Legendary",
+      "baseValue": 2250,
+      "totalValue": 2250,
+      "socketLevel": 26
+    },
+    {
+      "id": 251,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2259,
+      "totalValue": 2259,
+      "socketLevel": 26
+    },
+    {
+      "id": 252,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2268,
+      "totalValue": 2268,
+      "socketLevel": 26
+    },
+    {
+      "id": 253,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2277,
+      "totalValue": 2277,
+      "socketLevel": 26
+    },
+    {
+      "id": 254,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2286,
+      "totalValue": 2286,
+      "socketLevel": 26
+    },
+    {
+      "id": 255,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2295,
+      "totalValue": 2295,
+      "socketLevel": 26
+    },
+    {
+      "id": 256,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2304,
+      "totalValue": 2304,
+      "socketLevel": 26
+    },
+    {
+      "id": 257,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2313,
+      "totalValue": 2313,
+      "socketLevel": 26
+    },
+    {
+      "id": 258,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2322,
+      "totalValue": 2322,
+      "socketLevel": 26
+    },
+    {
+      "id": 259,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2331,
+      "totalValue": 2331,
+      "socketLevel": 26
+    },
+    {
+      "id": 260,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Normal",
+      "baseValue": 2340,
+      "totalValue": 2340,
+      "socketLevel": 27
+    },
+    {
+      "id": 261,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2349,
+      "totalValue": 2349,
+      "socketLevel": 27
+    },
+    {
+      "id": 262,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2358,
+      "totalValue": 2358,
+      "socketLevel": 27
+    },
+    {
+      "id": 263,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2367,
+      "totalValue": 2367,
+      "socketLevel": 27
+    },
+    {
+      "id": 264,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2376,
+      "totalValue": 2376,
+      "socketLevel": 27
+    },
+    {
+      "id": 265,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2385,
+      "totalValue": 2385,
+      "socketLevel": 27
+    },
+    {
+      "id": 266,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2394,
+      "totalValue": 2394,
+      "socketLevel": 27
+    },
+    {
+      "id": 267,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2403,
+      "totalValue": 2403,
+      "socketLevel": 27
+    },
+    {
+      "id": 268,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2412,
+      "totalValue": 2412,
+      "socketLevel": 27
+    },
+    {
+      "id": 269,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2421,
+      "totalValue": 2421,
+      "socketLevel": 27
+    },
+    {
+      "id": 270,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Magic",
+      "baseValue": 2430,
+      "totalValue": 2430,
+      "socketLevel": 28
+    },
+    {
+      "id": 271,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2439,
+      "totalValue": 2439,
+      "socketLevel": 28
+    },
+    {
+      "id": 272,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2448,
+      "totalValue": 2448,
+      "socketLevel": 28
+    },
+    {
+      "id": 273,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2457,
+      "totalValue": 2457,
+      "socketLevel": 28
+    },
+    {
+      "id": 274,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2466,
+      "totalValue": 2466,
+      "socketLevel": 28
+    },
+    {
+      "id": 275,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2475,
+      "totalValue": 2475,
+      "socketLevel": 28
+    },
+    {
+      "id": 276,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2484,
+      "totalValue": 2484,
+      "socketLevel": 28
+    },
+    {
+      "id": 277,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2493,
+      "totalValue": 2493,
+      "socketLevel": 28
+    },
+    {
+      "id": 278,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2502,
+      "totalValue": 2502,
+      "socketLevel": 28
+    },
+    {
+      "id": 279,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2511,
+      "totalValue": 2511,
+      "socketLevel": 28
+    },
+    {
+      "id": 280,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Rare",
+      "baseValue": 2520,
+      "totalValue": 2520,
+      "socketLevel": 29
+    },
+    {
+      "id": 281,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2529,
+      "totalValue": 2529,
+      "socketLevel": 29
+    },
+    {
+      "id": 282,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2538,
+      "totalValue": 2538,
+      "socketLevel": 29
+    },
+    {
+      "id": 283,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2547,
+      "totalValue": 2547,
+      "socketLevel": 29
+    },
+    {
+      "id": 284,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2556,
+      "totalValue": 2556,
+      "socketLevel": 29
+    },
+    {
+      "id": 285,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2565,
+      "totalValue": 2565,
+      "socketLevel": 29
+    },
+    {
+      "id": 286,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2574,
+      "totalValue": 2574,
+      "socketLevel": 29
+    },
+    {
+      "id": 287,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2583,
+      "totalValue": 2583,
+      "socketLevel": 29
+    },
+    {
+      "id": 288,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2592,
+      "totalValue": 2592,
+      "socketLevel": 29
+    },
+    {
+      "id": 289,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2601,
+      "totalValue": 2601,
+      "socketLevel": 29
+    },
+    {
+      "id": 290,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Epic",
+      "baseValue": 2610,
+      "totalValue": 2610,
+      "socketLevel": 30
+    },
+    {
+      "id": 291,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2619,
+      "totalValue": 2619,
+      "socketLevel": 30
+    },
+    {
+      "id": 292,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2628,
+      "totalValue": 2628,
+      "socketLevel": 30
+    },
+    {
+      "id": 293,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2637,
+      "totalValue": 2637,
+      "socketLevel": 30
+    },
+    {
+      "id": 294,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2646,
+      "totalValue": 2646,
+      "socketLevel": 30
+    },
+    {
+      "id": 295,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2655,
+      "totalValue": 2655,
+      "socketLevel": 30
+    },
+    {
+      "id": 296,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2664,
+      "totalValue": 2664,
+      "socketLevel": 30
+    },
+    {
+      "id": 297,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2673,
+      "totalValue": 2673,
+      "socketLevel": 30
+    },
+    {
+      "id": 298,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2682,
+      "totalValue": 2682,
+      "socketLevel": 30
+    },
+    {
+      "id": 299,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2691,
+      "totalValue": 2691,
+      "socketLevel": 30
+    },
+    {
+      "id": 300,
+      "name": "Poison Gem",
+      "school": "Poison",
+      "rarity": "Legendary",
+      "baseValue": 2700,
+      "totalValue": 2700,
+      "socketLevel": 31
+    },
+    {
+      "id": 301,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2709,
+      "totalValue": 2709,
+      "socketLevel": 31
+    },
+    {
+      "id": 302,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2718,
+      "totalValue": 2718,
+      "socketLevel": 31
+    },
+    {
+      "id": 303,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2727,
+      "totalValue": 2727,
+      "socketLevel": 31
+    },
+    {
+      "id": 304,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2736,
+      "totalValue": 2736,
+      "socketLevel": 31
+    },
+    {
+      "id": 305,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2745,
+      "totalValue": 2745,
+      "socketLevel": 31
+    },
+    {
+      "id": 306,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2754,
+      "totalValue": 2754,
+      "socketLevel": 31
+    },
+    {
+      "id": 307,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2763,
+      "totalValue": 2763,
+      "socketLevel": 31
+    },
+    {
+      "id": 308,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2772,
+      "totalValue": 2772,
+      "socketLevel": 31
+    },
+    {
+      "id": 309,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2781,
+      "totalValue": 2781,
+      "socketLevel": 31
+    },
+    {
+      "id": 310,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Normal",
+      "baseValue": 2790,
+      "totalValue": 2790,
+      "socketLevel": 32
+    },
+    {
+      "id": 311,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2799,
+      "totalValue": 2799,
+      "socketLevel": 32
+    },
+    {
+      "id": 312,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2808,
+      "totalValue": 2808,
+      "socketLevel": 32
+    },
+    {
+      "id": 313,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2817,
+      "totalValue": 2817,
+      "socketLevel": 32
+    },
+    {
+      "id": 314,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2826,
+      "totalValue": 2826,
+      "socketLevel": 32
+    },
+    {
+      "id": 315,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2835,
+      "totalValue": 2835,
+      "socketLevel": 32
+    },
+    {
+      "id": 316,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2844,
+      "totalValue": 2844,
+      "socketLevel": 32
+    },
+    {
+      "id": 317,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2853,
+      "totalValue": 2853,
+      "socketLevel": 32
+    },
+    {
+      "id": 318,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2862,
+      "totalValue": 2862,
+      "socketLevel": 32
+    },
+    {
+      "id": 319,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2871,
+      "totalValue": 2871,
+      "socketLevel": 32
+    },
+    {
+      "id": 320,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Magic",
+      "baseValue": 2880,
+      "totalValue": 2880,
+      "socketLevel": 33
+    },
+    {
+      "id": 321,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2889,
+      "totalValue": 2889,
+      "socketLevel": 33
+    },
+    {
+      "id": 322,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2898,
+      "totalValue": 2898,
+      "socketLevel": 33
+    },
+    {
+      "id": 323,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2907,
+      "totalValue": 2907,
+      "socketLevel": 33
+    },
+    {
+      "id": 324,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2916,
+      "totalValue": 2916,
+      "socketLevel": 33
+    },
+    {
+      "id": 325,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2925,
+      "totalValue": 2925,
+      "socketLevel": 33
+    },
+    {
+      "id": 326,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2934,
+      "totalValue": 2934,
+      "socketLevel": 33
+    },
+    {
+      "id": 327,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2943,
+      "totalValue": 2943,
+      "socketLevel": 33
+    },
+    {
+      "id": 328,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2952,
+      "totalValue": 2952,
+      "socketLevel": 33
+    },
+    {
+      "id": 329,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2961,
+      "totalValue": 2961,
+      "socketLevel": 33
+    },
+    {
+      "id": 330,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Rare",
+      "baseValue": 2970,
+      "totalValue": 2970,
+      "socketLevel": 34
+    },
+    {
+      "id": 331,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 2979,
+      "totalValue": 2979,
+      "socketLevel": 34
+    },
+    {
+      "id": 332,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 2988,
+      "totalValue": 2988,
+      "socketLevel": 34
+    },
+    {
+      "id": 333,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 2997,
+      "totalValue": 2997,
+      "socketLevel": 34
+    },
+    {
+      "id": 334,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 3006,
+      "totalValue": 3006,
+      "socketLevel": 34
+    },
+    {
+      "id": 335,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 3015,
+      "totalValue": 3015,
+      "socketLevel": 34
+    },
+    {
+      "id": 336,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 3024,
+      "totalValue": 3024,
+      "socketLevel": 34
+    },
+    {
+      "id": 337,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 3033,
+      "totalValue": 3033,
+      "socketLevel": 34
+    },
+    {
+      "id": 338,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 3042,
+      "totalValue": 3042,
+      "socketLevel": 34
+    },
+    {
+      "id": 339,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 3051,
+      "totalValue": 3051,
+      "socketLevel": 34
+    },
+    {
+      "id": 340,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Epic",
+      "baseValue": 3060,
+      "totalValue": 3060,
+      "socketLevel": 35
+    },
+    {
+      "id": 341,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3069,
+      "totalValue": 3069,
+      "socketLevel": 35
+    },
+    {
+      "id": 342,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3078,
+      "totalValue": 3078,
+      "socketLevel": 35
+    },
+    {
+      "id": 343,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3087,
+      "totalValue": 3087,
+      "socketLevel": 35
+    },
+    {
+      "id": 344,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3096,
+      "totalValue": 3096,
+      "socketLevel": 35
+    },
+    {
+      "id": 345,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3105,
+      "totalValue": 3105,
+      "socketLevel": 35
+    },
+    {
+      "id": 346,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3114,
+      "totalValue": 3114,
+      "socketLevel": 35
+    },
+    {
+      "id": 347,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3123,
+      "totalValue": 3123,
+      "socketLevel": 35
+    },
+    {
+      "id": 348,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3132,
+      "totalValue": 3132,
+      "socketLevel": 35
+    },
+    {
+      "id": 349,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3141,
+      "totalValue": 3141,
+      "socketLevel": 35
+    },
+    {
+      "id": 350,
+      "name": "Holy Gem",
+      "school": "Holy",
+      "rarity": "Legendary",
+      "baseValue": 3150,
+      "totalValue": 3150,
+      "socketLevel": 36
+    },
+    {
+      "id": 351,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3159,
+      "totalValue": 3159,
+      "socketLevel": 36
+    },
+    {
+      "id": 352,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3168,
+      "totalValue": 3168,
+      "socketLevel": 36
+    },
+    {
+      "id": 353,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3177,
+      "totalValue": 3177,
+      "socketLevel": 36
+    },
+    {
+      "id": 354,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3186,
+      "totalValue": 3186,
+      "socketLevel": 36
+    },
+    {
+      "id": 355,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3195,
+      "totalValue": 3195,
+      "socketLevel": 36
+    },
+    {
+      "id": 356,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3204,
+      "totalValue": 3204,
+      "socketLevel": 36
+    },
+    {
+      "id": 357,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3213,
+      "totalValue": 3213,
+      "socketLevel": 36
+    },
+    {
+      "id": 358,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3222,
+      "totalValue": 3222,
+      "socketLevel": 36
+    },
+    {
+      "id": 359,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3231,
+      "totalValue": 3231,
+      "socketLevel": 36
+    },
+    {
+      "id": 360,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Normal",
+      "baseValue": 3240,
+      "totalValue": 3240,
+      "socketLevel": 37
+    },
+    {
+      "id": 361,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3249,
+      "totalValue": 3249,
+      "socketLevel": 37
+    },
+    {
+      "id": 362,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3258,
+      "totalValue": 3258,
+      "socketLevel": 37
+    },
+    {
+      "id": 363,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3267,
+      "totalValue": 3267,
+      "socketLevel": 37
+    },
+    {
+      "id": 364,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3276,
+      "totalValue": 3276,
+      "socketLevel": 37
+    },
+    {
+      "id": 365,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3285,
+      "totalValue": 3285,
+      "socketLevel": 37
+    },
+    {
+      "id": 366,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3294,
+      "totalValue": 3294,
+      "socketLevel": 37
+    },
+    {
+      "id": 367,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3303,
+      "totalValue": 3303,
+      "socketLevel": 37
+    },
+    {
+      "id": 368,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3312,
+      "totalValue": 3312,
+      "socketLevel": 37
+    },
+    {
+      "id": 369,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3321,
+      "totalValue": 3321,
+      "socketLevel": 37
+    },
+    {
+      "id": 370,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Magic",
+      "baseValue": 3330,
+      "totalValue": 3330,
+      "socketLevel": 38
+    },
+    {
+      "id": 371,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3339,
+      "totalValue": 3339,
+      "socketLevel": 38
+    },
+    {
+      "id": 372,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3348,
+      "totalValue": 3348,
+      "socketLevel": 38
+    },
+    {
+      "id": 373,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3357,
+      "totalValue": 3357,
+      "socketLevel": 38
+    },
+    {
+      "id": 374,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3366,
+      "totalValue": 3366,
+      "socketLevel": 38
+    },
+    {
+      "id": 375,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3375,
+      "totalValue": 3375,
+      "socketLevel": 38
+    },
+    {
+      "id": 376,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3384,
+      "totalValue": 3384,
+      "socketLevel": 38
+    },
+    {
+      "id": 377,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3393,
+      "totalValue": 3393,
+      "socketLevel": 38
+    },
+    {
+      "id": 378,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3402,
+      "totalValue": 3402,
+      "socketLevel": 38
+    },
+    {
+      "id": 379,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3411,
+      "totalValue": 3411,
+      "socketLevel": 38
+    },
+    {
+      "id": 380,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Rare",
+      "baseValue": 3420,
+      "totalValue": 3420,
+      "socketLevel": 39
+    },
+    {
+      "id": 381,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3429,
+      "totalValue": 3429,
+      "socketLevel": 39
+    },
+    {
+      "id": 382,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3438,
+      "totalValue": 3438,
+      "socketLevel": 39
+    },
+    {
+      "id": 383,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3447,
+      "totalValue": 3447,
+      "socketLevel": 39
+    },
+    {
+      "id": 384,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3456,
+      "totalValue": 3456,
+      "socketLevel": 39
+    },
+    {
+      "id": 385,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3465,
+      "totalValue": 3465,
+      "socketLevel": 39
+    },
+    {
+      "id": 386,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3474,
+      "totalValue": 3474,
+      "socketLevel": 39
+    },
+    {
+      "id": 387,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3483,
+      "totalValue": 3483,
+      "socketLevel": 39
+    },
+    {
+      "id": 388,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3492,
+      "totalValue": 3492,
+      "socketLevel": 39
+    },
+    {
+      "id": 389,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3501,
+      "totalValue": 3501,
+      "socketLevel": 39
+    },
+    {
+      "id": 390,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Epic",
+      "baseValue": 3510,
+      "totalValue": 3510,
+      "socketLevel": 40
+    },
+    {
+      "id": 391,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3519,
+      "totalValue": 3519,
+      "socketLevel": 40
+    },
+    {
+      "id": 392,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3528,
+      "totalValue": 3528,
+      "socketLevel": 40
+    },
+    {
+      "id": 393,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3537,
+      "totalValue": 3537,
+      "socketLevel": 40
+    },
+    {
+      "id": 394,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3546,
+      "totalValue": 3546,
+      "socketLevel": 40
+    },
+    {
+      "id": 395,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3555,
+      "totalValue": 3555,
+      "socketLevel": 40
+    },
+    {
+      "id": 396,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3564,
+      "totalValue": 3564,
+      "socketLevel": 40
+    },
+    {
+      "id": 397,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3573,
+      "totalValue": 3573,
+      "socketLevel": 40
+    },
+    {
+      "id": 398,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3582,
+      "totalValue": 3582,
+      "socketLevel": 40
+    },
+    {
+      "id": 399,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3591,
+      "totalValue": 3591,
+      "socketLevel": 40
+    },
+    {
+      "id": 400,
+      "name": "Shadow Gem",
+      "school": "Shadow",
+      "rarity": "Legendary",
+      "baseValue": 3600,
+      "totalValue": 3600,
+      "socketLevel": 41
+    }
+  ],
+  "generated_at": "2026-01-29T03:26:03.087Z"
+}

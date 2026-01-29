@@ -9,7 +9,8 @@
     "fetch-rpcs": "tsx fetch_chainlist_rpcs.ts",
     "take-ownership": "tsx take_ownership.ts",
     "generate-cosmic": "tsx generate_cosmic_diamonds.ts",
-    "break-seals": "tsx break_the_seals.ts"
+    "break-seals": "tsx break_the_seals.ts",
+    "generate-gems": "tsx generate_gem_system.ts"
   },
   "dependencies": {
     "@metamask/sdk": "^0.34.0"
