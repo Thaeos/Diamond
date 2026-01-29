@@ -45,12 +45,19 @@ interface DiamondNode {
   tags: string[];
   created: string;
   lastUpdated: string;
+  status?: 'pending' | 'complete'; // Deployment status
+  deployedNetworks?: string[]; // Networks where this Diamond is deployed
+  ipfsHash?: string; // IPFS hash of Obsidian fork
 }
 
 // Generate Obsidian markdown for a Diamond node
 function generateObsidianNode(diamond: DiamondNode): string {
   const colorTag = `#${diamond.rarity.toLowerCase()}`;
   const schoolTag = diamond.school ? `#${diamond.school.toLowerCase()}` : '';
+  
+  const statusBadge = diamond.status === 'complete' 
+    ? '<span class="diamond-complete">✓ Deployed</span>' 
+    : '';
   
   return `---
 id: ${diamond.id}
@@ -62,10 +69,13 @@ usage: ${diamond.usageCount}
 quality: ${diamond.scriptQuality.toFixed(2)}/10
 created: ${diamond.created}
 updated: ${diamond.lastUpdated}
+status: ${diamond.status || 'pending'}
+deployedNetworks: [${(diamond.deployedNetworks || []).join(', ')}]
+ipfsHash: ${diamond.ipfsHash || 'N/A'}
 tags: [${diamond.tags.join(', ')}]
 ---
 
-# ${diamond.name}
+# ${diamond.name} ${statusBadge}
 
 **Rarity:** <span style="color: ${diamond.color}">${diamond.rarity}</span>  
 **Address:** \`${diamond.address}\`  
@@ -91,6 +101,14 @@ ${diamond.gems.length > 0 ? diamond.gems.map((gem, i) => `- Gem ${i + 1}: \`${ge
 - **Usage:** ${diamond.usageCount} times
 - **Quality Score:** ${diamond.scriptQuality.toFixed(2)}/10
 - **Rarity Status:** ${diamond.rarity} (determined by community)
+
+## Deployment Status
+
+${diamond.status === 'complete' 
+  ? `✅ **Deployed** to: ${(diamond.deployedNetworks || []).join(', ') || 'Unknown network'}`
+  : '⏳ **Pending** deployment'}
+
+${diamond.ipfsHash ? `**IPFS:** \`ipfs://${diamond.ipfsHash}\`` : ''}
 
 ## Trading
 

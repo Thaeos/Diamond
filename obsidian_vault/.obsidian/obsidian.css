@@ -1,14 +1,14 @@
 /* Obsidian Custom CSS - rxst theme with custom background */
 /* Background: #1B1430 (Dark Purple) */
-/* Font: Monospace 13px */
+/* Font: Monospace 13px, #FFFFFF, Extra Bold */
 
 :root {
   --background-primary: #1B1430;
   --background-secondary: #2A1F4A;
   --background-tertiary: #3A2F5A;
-  --text-normal: #E0D0FF;
-  --text-muted: #B8A0D0;
-  --text-faint: #8A70B0;
+  --text-normal: #FFFFFF;
+  --text-muted: #FFFFFF;
+  --text-faint: #FFFFFF;
   --accent: #9B59B6;
   --accent-hover: #B873D6;
   --interactive-normal: #4A90E2;
@@ -20,35 +20,71 @@ body {
   background-color: #1B1430 !important;
   font-family: monospace !important;
   font-size: 13px !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important; /* Extra Bold */
 }
 
 .markdown-preview-view,
 .markdown-source-view {
   background-color: #1B1430 !important;
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
   font-family: monospace !important;
   font-size: 13px !important;
+  font-weight: 800 !important; /* Extra Bold */
+}
+
+* {
+  color: #FFFFFF !important;
+  font-weight: 800 !important; /* Extra Bold */
 }
 
 /* Rarity Colors */
 .rarity-common {
   color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 .rarity-magic {
   color: #4A90E2 !important;
+  font-weight: 800 !important;
 }
 
 .rarity-rare {
   color: #FFD700 !important;
+  font-weight: 800 !important;
 }
 
 .rarity-epic {
   color: #9B59B6 !important;
+  font-weight: 800 !important;
 }
 
 .rarity-legendary {
   color: #CD7F32 !important;
+  font-weight: 800 !important;
+}
+
+/* Complete Diamond Highlighting */
+.diamond-complete {
+  background-color: rgba(76, 175, 80, 0.3) !important;
+  border: 2px solid #4CAF50 !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5) !important;
+}
+
+.diamond-complete::before {
+  content: "✓ " !important;
+  color: #4CAF50 !important;
+  font-weight: 900 !important;
+}
+
+/* Graph node highlighting for complete Diamonds */
+.graph-view.color-fill.diamond-complete {
+  fill: #4CAF50 !important;
+  stroke: #FFFFFF !important;
+  stroke-width: 3px !important;
 }
 
 /* Graph View */
@@ -61,16 +97,19 @@ body {
 }
 
 .graph-view.color-text {
-  color: #E0D0FF;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 /* Links */
 .internal-link {
-  color: #4A90E2;
+  color: #4A90E2 !important;
+  font-weight: 800 !important;
 }
 
 .internal-link:hover {
-  color: #6AB0F2;
+  color: #6AB0F2 !important;
+  font-weight: 900 !important;
 }
 
 /* Code blocks */
@@ -78,30 +117,35 @@ code {
   font-family: monospace !important;
   font-size: 13px !important;
   background-color: #2A1F4A !important;
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 pre {
   font-family: monospace !important;
   font-size: 13px !important;
   background-color: #2A1F4A !important;
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 /* Tables */
 table {
   background-color: #2A1F4A !important;
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 th {
   background-color: #3A2F5A !important;
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
 }
 
 td {
   background-color: #2A1F4A !important;
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 /* Sidebar */
@@ -110,20 +154,35 @@ td {
 }
 
 .nav-folder-title {
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 .nav-file-title {
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 /* Status Bar */
 .status-bar {
   background-color: #1B1430 !important;
-  color: #E0D0FF !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }
 
 /* Ribbon */
 .workspace-ribbon {
   background-color: #1B1430 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+}
+
+/* Paragraphs and text */
+p, li, span, div {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
 }

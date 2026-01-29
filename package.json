@@ -11,7 +11,8 @@
     "generate-cosmic": "tsx generate_cosmic_diamonds.ts",
     "break-seals": "tsx break_the_seals.ts",
     "generate-gems": "tsx generate_gem_system.ts",
-    "generate-tree": "tsx generate_obsidian_tree.ts"
+    "generate-tree": "tsx generate_obsidian_tree.ts",
+    "deploy-diamond": "tsx deploy_diamond.ts"
   },
   "dependencies": {
     "@metamask/sdk": "^0.34.0"
