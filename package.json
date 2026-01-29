@@ -12,7 +12,9 @@
     "break-seals": "tsx break_the_seals.ts",
     "generate-gems": "tsx generate_gem_system.ts",
     "generate-tree": "tsx generate_obsidian_tree.ts",
-    "deploy-diamond": "tsx deploy_diamond.ts"
+    "deploy-diamond": "tsx deploy_diamond.ts",
+    "ipfs-status": "tsx ipfs_fuse_system.ts status",
+    "ipfs-complete": "tsx ipfs_fuse_system.ts"
   },
   "dependencies": {
     "@metamask/sdk": "^0.34.0"

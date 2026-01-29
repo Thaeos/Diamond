@@ -316,6 +316,15 @@ async function deployDiamond(
   // Step 4: Merge fork back
   mergeObsidianFork(diamondId);
 
+  // Step 5: Initialize IPFS FUSE system (assigns glyph, mounts, checks completion)
+  console.log(`\n🌐 Initializing IPFS FUSE system...\n`);
+  try {
+    const { initializeIPFSSystem } = await import('./ipfs_fuse_system.js');
+    await initializeIPFSSystem();
+  } catch (error) {
+    console.log(`⚠️  IPFS FUSE system initialization: ${error}`);
+  }
+
   console.log(`\n✅ Deployment Complete!\n`);
   console.log(`   Diamond ID: ${diamondId}`);
   console.log(`   Address: ${address}`);

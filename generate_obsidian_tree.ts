@@ -48,6 +48,8 @@ interface DiamondNode {
   status?: 'pending' | 'complete'; // Deployment status
   deployedNetworks?: string[]; // Networks where this Diamond is deployed
   ipfsHash?: string; // IPFS hash of Obsidian fork
+  ipfsGlyph?: string; // Imperial Aramaic Glyph assigned to IPFS CID
+  ipfsNode?: boolean; // Whether this CID is an IPFS node
 }
 
 // Generate Obsidian markdown for a Diamond node
@@ -109,6 +111,14 @@ ${diamond.status === 'complete'
   : '⏳ **Pending** deployment'}
 
 ${diamond.ipfsHash ? `**IPFS:** \`ipfs://${diamond.ipfsHash}\`` : ''}
+
+${diamond.ipfsNode && diamond.ipfsGlyph 
+  ? `**IPFS Node:** ${diamond.ipfsGlyph} (Imperial Aramaic Glyph)` 
+  : ''}
+
+${diamond.ipfsNode 
+  ? `**Node Type:** IPFS FUSE Mount (CID = Node)` 
+  : ''}
 
 ## Trading
 
