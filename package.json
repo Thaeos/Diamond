@@ -15,7 +15,8 @@
     "deploy-diamond": "tsx deploy_diamond.ts",
     "ipfs-status": "tsx ipfs_fuse_system.ts status",
     "ipfs-complete": "tsx ipfs_fuse_system.ts",
-    "compute": "tsx script_computation_system.ts"
+    "compute": "tsx script_computation_system.ts",
+    "nft": "tsx svg_nft_generator.ts"
   },
   "dependencies": {
     "@metamask/sdk": "^0.34.0"
