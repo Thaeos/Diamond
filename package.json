@@ -8,7 +8,8 @@
     "check-diamond-rpc": "tsx check_diamondcut_rpc.ts",
     "fetch-rpcs": "tsx fetch_chainlist_rpcs.ts",
     "take-ownership": "tsx take_ownership.ts",
-    "generate-cosmic": "tsx generate_cosmic_diamonds.ts"
+    "generate-cosmic": "tsx generate_cosmic_diamonds.ts",
+    "break-seals": "tsx break_the_seals.ts"
   },
   "dependencies": {
     "@metamask/sdk": "^0.34.0"
