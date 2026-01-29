@@ -56,13 +56,30 @@ interface LightCodeEvent {
   }>;
 }
 
-interface CooldownTracker {
-  caller: string;
-  contractAddress: string;
-  lastProcAttempt: number; // Timestamp in milliseconds
-  cooldownSeconds: number; // Cooldown duration (default 2.0)
-  cooldownActive: boolean;
-  nextProcAvailable: number; // Timestamp when next proc can be attempted
+interface GlobalCooldownConfig {
+  enabled: boolean;
+  cooldownSeconds: number; // Global cooldown duration (default 2.0)
+  lastProcAttempt: number; // Global last proc attempt timestamp
+  nextProcAvailable: number; // Global next proc available timestamp
+}
+
+interface ProcRateConfig {
+  baseRates: Record<string, number>; // Rarity -> base proc rate %
+  modifiers: {
+    usageBonus: { enabled: boolean; perActivation: number; max: number };
+    blockBonus: { enabled: boolean; blockInterval: number; bonus: number };
+    formulaBonus: { enabled: boolean; perValue: number; max: number };
+  };
+}
+
+interface RoyaltyConfig {
+  enabled: boolean;
+  totalPercentage: number; // Total royalty percentage
+  distributions: Array<{
+    role: string;
+    percentage: number;
+    address?: string; // To be set by developers when live
+  }>;
 }
 
 interface LightCodeActivation {
@@ -98,124 +115,203 @@ const ROYALTY_PERCENTAGES = {
   community_contributors: 1.0
 };
 
-// Cooldown configuration
-const DEFAULT_COOLDOWN_SECONDS = 2.0; // Default 2.0 second cooldown
-const COOLDOWN_TRACKER_FILE = path.join(process.cwd(), 'light_codes', 'cooldowns.json');
+// Configuration files
+const CONFIG_DIR = path.join(process.cwd(), 'light_codes', 'config');
+const GLOBAL_COOLDOWN_CONFIG_FILE = path.join(CONFIG_DIR, 'global_cooldown.json');
+const PROC_RATE_CONFIG_FILE = path.join(CONFIG_DIR, 'proc_rates.json');
+const ROYALTY_CONFIG_FILE = path.join(CONFIG_DIR, 'royalties.json');
 
-// Check and update cooldown
-function checkCooldown(caller: string, contractAddress: string): {
-  onCooldown: boolean;
-  timeRemaining: number;
-  cooldownTracker: CooldownTracker;
-} {
-  // Load cooldown tracker
-  let cooldowns: Record<string, CooldownTracker> = {};
-  
-  if (fs.existsSync(COOLDOWN_TRACKER_FILE)) {
-    cooldowns = JSON.parse(fs.readFileSync(COOLDOWN_TRACKER_FILE, 'utf-8'));
+// Default configurations (developers can modify when live)
+const DEFAULT_GLOBAL_COOLDOWN: GlobalCooldownConfig = {
+  enabled: true,
+  cooldownSeconds: 2.0, // Default 2.0s - developers can change
+  lastProcAttempt: 0,
+  nextProcAvailable: 0
+};
+
+const DEFAULT_PROC_RATES: ProcRateConfig = {
+  baseRates: {
+    'Common': 5.0,      // To be decided by developers
+    'Magic': 10.0,      // To be decided by developers
+    'Rare': 15.0,       // To be decided by developers
+    'Epic': 25.0,       // To be decided by developers
+    'Legendary': 50.0   // To be decided by developers
+  },
+  modifiers: {
+    usageBonus: { enabled: true, perActivation: 0.1, max: 10 },
+    blockBonus: { enabled: true, blockInterval: 1000, bonus: 5 },
+    formulaBonus: { enabled: true, perValue: 10000, max: 5 }
+  }
+};
+
+const DEFAULT_ROYALTIES: RoyaltyConfig = {
+  enabled: true,
+  totalPercentage: 8.5, // To be decided by developers
+  distributions: [
+    { role: 'tool_creator', percentage: 2.5, address: undefined }, // To be set by developers
+    { role: 'idea_originator', percentage: 2.5, address: undefined },
+    { role: 'developer', percentage: 2.5, address: undefined },
+    { role: 'community_contributor', percentage: 1.0, address: undefined }
+  ]
+};
+
+// Load configuration (with defaults)
+function loadGlobalCooldownConfig(): GlobalCooldownConfig {
+  if (fs.existsSync(GLOBAL_COOLDOWN_CONFIG_FILE)) {
+    return JSON.parse(fs.readFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, 'utf-8'));
   }
   
-  const key = `${caller}_${contractAddress}`;
-  const now = Date.now();
+  // Ensure config directory exists
+  if (!fs.existsSync(CONFIG_DIR)) {
+    fs.mkdirSync(CONFIG_DIR, { recursive: true });
+  }
   
-  let tracker: CooldownTracker;
+  // Save default config
+  fs.writeFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, JSON.stringify(DEFAULT_GLOBAL_COOLDOWN, null, 2));
   
-  if (cooldowns[key]) {
-    tracker = cooldowns[key];
-    const timeSinceLastAttempt = (now - tracker.lastProcAttempt) / 1000; // Convert to seconds
-    
-    if (timeSinceLastAttempt < tracker.cooldownSeconds) {
-      // Still on cooldown
-      tracker.cooldownActive = true;
-      tracker.nextProcAvailable = tracker.lastProcAttempt + (tracker.cooldownSeconds * 1000);
-      return {
-        onCooldown: true,
-        timeRemaining: tracker.cooldownSeconds - timeSinceLastAttempt,
-        cooldownTracker: tracker
-      };
-    } else {
-      // Cooldown expired
-      tracker.cooldownActive = false;
-      tracker.lastProcAttempt = now;
-      tracker.nextProcAvailable = now + (tracker.cooldownSeconds * 1000);
-    }
-  } else {
-    // First attempt - no cooldown
-    tracker = {
-      caller,
-      contractAddress,
-      lastProcAttempt: now,
-      cooldownSeconds: DEFAULT_COOLDOWN_SECONDS,
-      cooldownActive: false,
-      nextProcAvailable: now + (DEFAULT_COOLDOWN_SECONDS * 1000)
+  return DEFAULT_GLOBAL_COOLDOWN;
+}
+
+function loadProcRateConfig(): ProcRateConfig {
+  if (fs.existsSync(PROC_RATE_CONFIG_FILE)) {
+    return JSON.parse(fs.readFileSync(PROC_RATE_CONFIG_FILE, 'utf-8'));
+  }
+  
+  if (!fs.existsSync(CONFIG_DIR)) {
+    fs.mkdirSync(CONFIG_DIR, { recursive: true });
+  }
+  
+  fs.writeFileSync(PROC_RATE_CONFIG_FILE, JSON.stringify(DEFAULT_PROC_RATES, null, 2));
+  
+  return DEFAULT_PROC_RATES;
+}
+
+function loadRoyaltyConfig(): RoyaltyConfig {
+  if (fs.existsSync(ROYALTY_CONFIG_FILE)) {
+    return JSON.parse(fs.readFileSync(ROYALTY_CONFIG_FILE, 'utf-8'));
+  }
+  
+  if (!fs.existsSync(CONFIG_DIR)) {
+    fs.mkdirSync(CONFIG_DIR, { recursive: true });
+  }
+  
+  fs.writeFileSync(ROYALTY_CONFIG_FILE, JSON.stringify(DEFAULT_ROYALTIES, null, 2));
+  
+  return DEFAULT_ROYALTIES;
+}
+
+// Check global cooldown (not per-caller)
+function checkGlobalCooldown(): {
+  onCooldown: boolean;
+  timeRemaining: number;
+  config: GlobalCooldownConfig;
+} {
+  const config = loadGlobalCooldownConfig();
+  
+  if (!config.enabled) {
+    return {
+      onCooldown: false,
+      timeRemaining: 0,
+      config
     };
   }
   
-  // Update tracker
-  cooldowns[key] = tracker;
+  const now = Date.now();
   
-  // Ensure directory exists
-  const cooldownDir = path.dirname(COOLDOWN_TRACKER_FILE);
-  if (!fs.existsSync(cooldownDir)) {
-    fs.mkdirSync(cooldownDir, { recursive: true });
+  if (config.lastProcAttempt === 0) {
+    // First proc ever - no cooldown
+    config.lastProcAttempt = now;
+    config.nextProcAvailable = now + (config.cooldownSeconds * 1000);
+    fs.writeFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, JSON.stringify(config, null, 2));
+    
+    return {
+      onCooldown: false,
+      timeRemaining: 0,
+      config
+    };
   }
   
-  fs.writeFileSync(COOLDOWN_TRACKER_FILE, JSON.stringify(cooldowns, null, 2));
+  const timeSinceLastAttempt = (now - config.lastProcAttempt) / 1000; // Convert to seconds
+  
+  if (timeSinceLastAttempt < config.cooldownSeconds) {
+    // Still on global cooldown
+    config.nextProcAvailable = config.lastProcAttempt + (config.cooldownSeconds * 1000);
+    fs.writeFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, JSON.stringify(config, null, 2));
+    
+    return {
+      onCooldown: true,
+      timeRemaining: config.cooldownSeconds - timeSinceLastAttempt,
+      config
+    };
+  }
+  
+  // Cooldown expired - update and allow proc
+  config.lastProcAttempt = now;
+  config.nextProcAvailable = now + (config.cooldownSeconds * 1000);
+  fs.writeFileSync(GLOBAL_COOLDOWN_CONFIG_FILE, JSON.stringify(config, null, 2));
   
   return {
     onCooldown: false,
     timeRemaining: 0,
-    cooldownTracker: tracker
+    config
   };
 }
 
-// Base proc rates by rarity
-const BASE_PROC_RATES: Record<string, number> = {
-  'Common': 5.0,      // 5% proc rate
-  'Magic': 10.0,      // 10% proc rate
-  'Rare': 15.0,       // 15% proc rate
-  'Epic': 25.0,       // 25% proc rate
-  'Legendary': 50.0   // 50% proc rate
-};
-
-// Calculate proc rate based on NFT properties
+// Calculate proc rate based on NFT properties (using config)
 function calculateProcRate(
   rarity: string,
   totalActivations: number,
   blockNumber: number,
   accumulatedFormulaValue: number
-): ProcRateConfig {
-  // Start with base rate from rarity
-  let baseRate = BASE_PROC_RATES[rarity] || BASE_PROC_RATES['Common'];
+): { baseRate: number; modifiers: Array<{ type: string; value: number }>; finalRate: number } {
+  const procConfig = loadProcRateConfig();
+  
+  // Start with base rate from rarity (from config)
+  const baseRate = procConfig.baseRates[rarity] || procConfig.baseRates['Common'] || 5.0;
   
   const modifiers: Array<{ type: string; value: number }> = [];
+  let finalRate = baseRate;
   
-  // Modifier 1: Usage bonus (more activations = higher proc rate)
-  const usageBonus = Math.min(totalActivations * 0.1, 10); // Max +10%
-  if (usageBonus > 0) {
-    modifiers.push({ type: 'usage', value: usageBonus });
-    baseRate += usageBonus;
+  // Modifier 1: Usage bonus (if enabled in config)
+  if (procConfig.modifiers.usageBonus.enabled) {
+    const usageBonus = Math.min(
+      totalActivations * procConfig.modifiers.usageBonus.perActivation,
+      procConfig.modifiers.usageBonus.max
+    );
+    if (usageBonus > 0) {
+      modifiers.push({ type: 'usage', value: usageBonus });
+      finalRate += usageBonus;
+    }
   }
   
-  // Modifier 2: Block position bonus (certain blocks = bonus)
-  const blockBonus = (blockNumber % 1000 === 0) ? 5 : 0; // Every 1000th block = +5%
-  if (blockBonus > 0) {
-    modifiers.push({ type: 'block', value: blockBonus });
-    baseRate += blockBonus;
+  // Modifier 2: Block position bonus (if enabled in config)
+  if (procConfig.modifiers.blockBonus.enabled) {
+    const blockBonus = (blockNumber % procConfig.modifiers.blockBonus.blockInterval === 0) 
+      ? procConfig.modifiers.blockBonus.bonus 
+      : 0;
+    if (blockBonus > 0) {
+      modifiers.push({ type: 'block', value: blockBonus });
+      finalRate += blockBonus;
+    }
   }
   
-  // Modifier 3: Formula value bonus (higher formula value = bonus)
-  const formulaBonus = Math.min(accumulatedFormulaValue / 10000, 5); // Max +5%
-  if (formulaBonus > 0) {
-    modifiers.push({ type: 'formula', value: formulaBonus });
-    baseRate += formulaBonus;
+  // Modifier 3: Formula value bonus (if enabled in config)
+  if (procConfig.modifiers.formulaBonus.enabled) {
+    const formulaBonus = Math.min(
+      accumulatedFormulaValue / procConfig.modifiers.formulaBonus.perValue,
+      procConfig.modifiers.formulaBonus.max
+    );
+    if (formulaBonus > 0) {
+      modifiers.push({ type: 'formula', value: formulaBonus });
+      finalRate += formulaBonus;
+    }
   }
   
   // Cap at 100%
-  const finalRate = Math.min(baseRate, 100);
+  finalRate = Math.min(finalRate, 100);
   
   return {
-    baseRate: BASE_PROC_RATES[rarity] || BASE_PROC_RATES['Common'],
+    baseRate,
     modifiers,
     finalRate
   };
@@ -245,8 +341,8 @@ function recordLightCodeActivation(
   totalActivations: number = 0,
   accumulatedFormulaValue: number = 0
 ): LightCodeEvent | null {
-  // Check cooldown first
-  const cooldownCheck = checkCooldown(caller, contractAddress);
+  // Check global cooldown first
+  const cooldownCheck = checkGlobalCooldown();
   
   if (cooldownCheck.onCooldown) {
     const event: LightCodeEvent = {
@@ -273,15 +369,16 @@ function recordLightCodeActivation(
       royaltiesDistributed: []
     };
     
-    console.log(`\n⏳ Contract Used (On Cooldown)\n`);
+    console.log(`\n⏳ Contract Used (Global Cooldown Active)\n`);
     console.log(`   Contract: ${contractAddress}`);
     console.log(`   Function: ${functionCalled}`);
     console.log(`   Caller: ${caller}`);
     console.log(`   Block: #${blockNumber}`);
-    console.log(`   ⏱️  Cooldown: ${cooldownCheck.timeRemaining.toFixed(2)}s remaining`);
-    console.log(`   Next Proc Available: ${new Date(cooldownCheck.cooldownTracker.nextProcAvailable).toISOString()}`);
-    console.log(`   Status: ❌ On Cooldown - No Proc Roll\n`);
-    console.log(`   💡 Note: 2.0s cooldown prevents spam/abuse\n`);
+    console.log(`   ⏱️  Global Cooldown: ${cooldownCheck.timeRemaining.toFixed(2)}s remaining`);
+    console.log(`   Cooldown Duration: ${cooldownCheck.config.cooldownSeconds}s`);
+    console.log(`   Next Proc Available: ${new Date(cooldownCheck.config.nextProcAvailable).toISOString()}`);
+    console.log(`   Status: ❌ On Global Cooldown - No Proc Roll\n`);
+    console.log(`   💡 Note: Global cooldown prevents spam/abuse (configurable by developers)\n`);
     
     // Still record the attempt (but no proc roll)
     saveLightCodeEvent(event);
@@ -289,9 +386,8 @@ function recordLightCodeActivation(
     return null; // Return null to indicate cooldown prevented proc
   }
   
-  // Cooldown passed - proceed with proc roll
-  // Update last proc attempt timestamp
-  const cooldownCheck2 = checkCooldown(caller, contractAddress);
+  // Global cooldown passed - proceed with proc roll
+  const cooldownConfig = cooldownCheck.config;
   
   // Calculate proc rate
   const procConfig = calculateProcRate(rarity, totalActivations, blockNumber, accumulatedFormulaValue);
@@ -332,11 +428,11 @@ function recordLightCodeActivation(
     console.log(`   Contract: ${contractAddress}`);
     console.log(`   Function: ${functionCalled}`);
     console.log(`   Block: #${blockNumber}`);
-    console.log(`   ⏱️  Cooldown: ${cooldownCheck2.cooldownTracker.cooldownSeconds}s (active)`);
+    console.log(`   ⏱️  Global Cooldown: ${cooldownConfig.cooldownSeconds}s (active)`);
     console.log(`   Proc Rate: ${procConfig.finalRate.toFixed(2)}%`);
     console.log(`   Roll: ${procRoll.roll.toFixed(2)}% (needed < ${procConfig.finalRate.toFixed(2)}%)`);
     console.log(`   Status: ❌ Proc Failed - No Payment`);
-    console.log(`   Next Proc Available: ${new Date(cooldownCheck2.cooldownTracker.nextProcAvailable).toISOString()}\n`);
+    console.log(`   Next Proc Available: ${new Date(cooldownConfig.nextProcAvailable).toISOString()}\n`);
     
     return event;
   }
@@ -347,37 +443,20 @@ function recordLightCodeActivation(
   const valueAmount = parseFloat(value) || 0;
   const totalValue = parseFloat(gasCost.toString()) + valueAmount;
   
-  // Royalty is percentage of total value
-  const royaltyPercentage = 8.5; // Total from all creators
+  // Royalty is percentage of total value (from config - to be set by developers)
+  const royaltyConfig = loadRoyaltyConfig();
+  const royaltyPercentage = royaltyConfig.enabled ? royaltyConfig.totalPercentage : 0;
   const royaltiesGenerated = totalValue * (royaltyPercentage / 100);
   
-  // Distribute royalties
-  const distributions = [
-    {
-      recipient: 'Tool Creators',
-      role: 'tool_creator',
-      amount: royaltiesGenerated * (ROYALTY_PERCENTAGES.tool_creators / 100),
-      address: '0x0000000000000000000000000000000000000001' // Placeholder
-    },
-    {
-      recipient: 'Idea Originators',
-      role: 'idea_originator',
-      amount: royaltiesGenerated * (ROYALTY_PERCENTAGES.idea_originators / 100),
-      address: '0x0000000000000000000000000000000000000002'
-    },
-    {
-      recipient: 'Developers',
-      role: 'developer',
-      amount: royaltiesGenerated * (ROYALTY_PERCENTAGES.developers / 100),
-      address: '0x0000000000000000000000000000000000000003'
-    },
-    {
-      recipient: 'Community Contributors',
-      role: 'community_contributor',
-      amount: royaltiesGenerated * (ROYALTY_PERCENTAGES.community_contributors / 100),
-      address: '0x0000000000000000000000000000000000000004'
-    }
-  ];
+  // Distribute royalties (using config - to be set by developers)
+  const royaltyConfig = loadRoyaltyConfig();
+  
+  const distributions = royaltyConfig.distributions.map(dist => ({
+    recipient: dist.role.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase()),
+    role: dist.role,
+    amount: royaltiesGenerated * (dist.percentage / royaltyConfig.totalPercentage),
+    address: dist.address || '0x0000000000000000000000000000000000000000' // To be set by developers
+  }));
   
   const event: LightCodeEvent = {
     eventId: createHash('sha256')
@@ -418,9 +497,10 @@ function recordLightCodeActivation(
   console.log(`   Function: ${functionCalled}`);
   console.log(`   Caller: ${caller}`);
   console.log(`   Block: #${blockNumber} ← Ethereum recorded this`);
-  console.log(`   ⏱️  Cooldown: ${cooldownCheck2.cooldownTracker.cooldownSeconds}s (passed)\n`);
+  console.log(`   ⏱️  Global Cooldown: ${cooldownConfig.cooldownSeconds}s (passed)\n`);
   console.log(`   🎲 Proc Rate: ${procConfig.finalRate.toFixed(2)}%`);
   console.log(`      Base Rate: ${procConfig.baseRate.toFixed(2)}% (${rarity})`);
+  console.log(`      💡 Note: Proc rates configurable by developers`);
   if (procConfig.modifiers.length > 0) {
     console.log(`      Modifiers:`);
     procConfig.modifiers.forEach(mod => {
@@ -429,7 +509,7 @@ function recordLightCodeActivation(
   }
   console.log(`   🎯 Roll: ${procRoll.roll.toFixed(2)}% (needed < ${procConfig.finalRate.toFixed(2)}%)`);
   console.log(`   ✅ Proc Success!`);
-  console.log(`   ⏱️  Cooldown Started: ${cooldownCheck2.cooldownTracker.cooldownSeconds}s until next proc\n`);
+  console.log(`   ⏱️  Global Cooldown Started: ${cooldownConfig.cooldownSeconds}s until next proc\n`);
   console.log(`   Value: ${totalValue.toFixed(6)} ETH`);
   console.log(`   Royalties Generated: ${royaltiesGenerated.toFixed(6)} ETH`);
   console.log(`   💰 Payment Distributed Automatically\n`);
@@ -764,20 +844,35 @@ async function main() {
 ✨ Light Codes System ✨
 
 Every time a Diamond/Gem contract is used on Ethereum,
-it checks cooldown, rolls proc rate - if successful, records usage and triggers payment.
+it checks global cooldown, rolls proc rate - if successful, records usage and triggers payment.
 
-⏱️  Cooldown System:
-   - Default 2.0 second cooldown between proc attempts
+⏱️  Global Cooldown System:
+   - Global cooldown for entire source code (not per-caller)
+   - Default 2.0 seconds (configurable by developers)
    - Prevents spam/abuse ("1 button smash spin to win")
-   - Per caller + contract address
    - Cooldown must pass before proc roll
+   - Config file: light_codes/config/global_cooldown.json
 
 🎲 Proc Rate System:
    - Each contract use rolls against proc rate %
-   - Proc rate based on rarity (Common: 5%, Legendary: 50%)
+   - Proc rates configurable by developers (not hardcoded)
+   - Base rates by rarity (to be decided by developers)
    - Modifiers: usage bonus, block bonus, formula bonus
    - If proc succeeds: Light code activates, payment comes
-   - If proc fails: Usage recorded, no payment
+   - Config file: light_codes/config/proc_rates.json
+
+💰 Royalty System:
+   - Royalty percentages configurable by developers
+   - Distribution addresses to be set when live
+   - Total percentage and splits open for developer decision
+   - Config file: light_codes/config/royalties.json
+
+💡 Configuration:
+   All values are configurable - developers decide when live:
+   - Cooldown duration
+   - Proc rates by rarity
+   - Royalty percentages
+   - Distribution addresses
 
 Usage:
   npm run light-codes monitor <contract-address> [rpc-url] [from-block]
@@ -789,23 +884,19 @@ Examples:
   npm run light-codes stats diamond 1
   npm run light-codes report
 
-Cooldown:
-  Default: 2.0 seconds (configurable, may change in future)
-
-Proc Rates by Rarity:
-  Common: 5%
-  Magic: 10%
-  Rare: 15%
-  Epic: 25%
-  Legendary: 50%
+Configuration Files:
+  light_codes/config/global_cooldown.json - Global cooldown settings
+  light_codes/config/proc_rates.json - Proc rate percentages
+  light_codes/config/royalties.json - Royalty distribution
 
 Features:
-  - Cooldown system (prevents spam)
-  - Proc rate system (percentage chance)
+  - Global cooldown system (prevents spam)
+  - Configurable proc rate system
+  - Configurable royalty system
   - Tracks every contract usage/interaction
   - Records on Ethereum blockchain
   - Automatically calculates royalties (on proc success)
-  - Distributes payments to creators
+  - Distributes payments to creators (addresses set by developers)
   - Generates revenue when contracts proc
 `);
 }
