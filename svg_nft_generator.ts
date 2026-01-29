@@ -31,6 +31,8 @@ interface DiamondNFTData {
   rarity: string;
   color: string;
   createdAt: string;
+  blockNumber: number; // Block position where Diamond was deployed
+  txHash: string; // Transaction hash
 }
 
 interface SVGAttributes {
@@ -53,19 +55,63 @@ interface SVGAttributes {
   }>;
 }
 
-// Generate unique color palette from data
+// Accumulated Data Formula: Combines all elements
+function calculateAccumulatedFormula(data: DiamondNFTData): {
+  formula: string;
+  numericValue: number;
+  components: Record<string, number>;
+} {
+  // Extract numeric components
+  const cidNumeric = parseInt(data.cid.substring(2, 10), 16) || 0; // First 8 hex chars of CID
+  const glyphNumeric = data.gematria;
+  const blockNumeric = data.blockNumber;
+  const gematriaNumeric = data.gematria;
+  const greekNumeric = data.greekLetters.length * 100; // Weight Greek letters
+  const mathNumeric = data.mathSymbols.length * 50; // Weight math symbols
+  
+  // Accumulated formula: CID + Glyph + Block + Gematria + Greek + Math
+  const accumulatedValue = 
+    (cidNumeric % 10000) +
+    (glyphNumeric * 10) +
+    (blockNumeric % 100000) +
+    (gematriaNumeric * 5) +
+    greekNumeric +
+    mathNumeric;
+  
+  // Create formula string representation
+  const formula = `(CID:${cidNumeric % 1000} + Glyph:${glyphNumeric} × 10 + Block:${blockNumeric % 10000} + Gematria:${gematriaNumeric} × 5 + Greek:${greekNumeric} + Math:${mathNumeric}) = ${accumulatedValue}`;
+  
+  return {
+    formula,
+    numericValue: accumulatedValue,
+    components: {
+      cid: cidNumeric % 10000,
+      glyph: glyphNumeric,
+      block: blockNumeric % 100000,
+      gematria: gematriaNumeric,
+      greek: greekNumeric,
+      math: mathNumeric
+    }
+  };
+}
+
+// Generate unique color palette from accumulated data formula
 function generateColorPalette(data: DiamondNFTData): {
   primary: string;
   secondary: string;
   accent: string;
   background: string;
+  blockColor: string;
 } {
-  // Use CID hash to generate deterministic colors
+  // Use accumulated formula for deterministic colors
+  const accumulated = calculateAccumulatedFormula(data);
+  
+  // Combine CID + Block + Glyph + Gematria for hash
   const hash = createHash('sha256')
-    .update(data.cid + data.glyph + data.gematria.toString())
+    .update(data.cid + data.blockNumber.toString() + data.glyph + data.gematria.toString())
     .digest('hex');
   
-  // Extract colors from hash
+  // Extract colors from hash (influenced by block position)
   const r1 = parseInt(hash.substring(0, 2), 16);
   const g1 = parseInt(hash.substring(2, 4), 16);
   const b1 = parseInt(hash.substring(4, 6), 16);
@@ -74,8 +120,14 @@ function generateColorPalette(data: DiamondNFTData): {
   const g2 = parseInt(hash.substring(8, 10), 16);
   const b2 = parseInt(hash.substring(10, 12), 16);
   
-  // Dark background (from rarity color)
-  const bgHash = createHash('md5').update(data.rarity).digest('hex');
+  // Block position influences color (modulate by block number)
+  const blockMod = data.blockNumber % 255;
+  const blockR = (r1 + blockMod) % 255;
+  const blockG = (g1 + (blockMod * 2)) % 255;
+  const blockB = (b1 + (blockMod * 3)) % 255;
+  
+  // Dark background (from rarity color + block position)
+  const bgHash = createHash('md5').update(data.rarity + data.blockNumber.toString()).digest('hex');
   const bgR = Math.floor(parseInt(bgHash.substring(0, 2), 16) * 0.1);
   const bgG = Math.floor(parseInt(bgHash.substring(2, 4), 16) * 0.1);
   const bgB = Math.floor(parseInt(bgHash.substring(4, 6), 16) * 0.1);
@@ -84,24 +136,33 @@ function generateColorPalette(data: DiamondNFTData): {
     primary: `rgb(${r1}, ${g1}, ${b1})`,
     secondary: `rgb(${r2}, ${g2}, ${b2})`,
     accent: data.color, // From rarity system
-    background: `rgb(${bgR}, ${bgG}, ${bgB})`
+    background: `rgb(${bgR}, ${bgG}, ${bgB})`,
+    blockColor: `rgb(${blockR}, ${blockG}, ${blockB})` // Block-influenced color
   };
 }
 
-// Generate SVG path from glyph shape
-function generateGlyphPath(glyph: string, gematria: number): string {
-  // Use gematria to determine path complexity
-  const complexity = Math.min(gematria % 20, 10);
+// Generate SVG path from glyph shape (influenced by block position)
+function generateGlyphPath(glyph: string, gematria: number, blockNumber: number): string {
+  // Use accumulated formula: gematria + block position determines complexity
+  const complexity = Math.min((gematria + (blockNumber % 100)) % 20, 10);
   
-  // Generate path based on glyph and gematria
-  const hash = createHash('md5').update(glyph + gematria.toString()).digest('hex');
+  // Generate path based on glyph + gematria + block position
+  const hash = createHash('md5')
+    .update(glyph + gematria.toString() + blockNumber.toString())
+    .digest('hex');
   
-  // Create organic path from hash
-  let path = `M ${50 + (parseInt(hash.substring(0, 2), 16) % 20)} ${50 + (parseInt(hash.substring(2, 4), 16) % 20)}`;
+  // Block position influences starting point
+  const blockOffsetX = (blockNumber % 50) - 25;
+  const blockOffsetY = ((blockNumber * 2) % 50) - 25;
+  
+  // Create organic path from hash (block-influenced)
+  let path = `M ${50 + (parseInt(hash.substring(0, 2), 16) % 20) + blockOffsetX} ${50 + (parseInt(hash.substring(2, 4), 16) % 20) + blockOffsetY}`;
   
   for (let i = 0; i < complexity; i++) {
-    const x = 50 + (parseInt(hash.substring(i * 2, i * 2 + 2), 16) % 100);
-    const y = 50 + (parseInt(hash.substring(i * 2 + 1, i * 2 + 3), 16) % 100);
+    // Block position influences each point
+    const blockMod = (blockNumber + i) % 100;
+    const x = 50 + (parseInt(hash.substring(i * 2, i * 2 + 2), 16) % 100) + (blockMod % 10);
+    const y = 50 + (parseInt(hash.substring(i * 2 + 1, i * 2 + 3), 16) % 100) + ((blockMod * 2) % 10);
     const curve = i % 2 === 0 ? 'Q' : 'L';
     path += ` ${curve} ${x} ${y}`;
   }
@@ -157,12 +218,19 @@ function generateMathPatterns(mathSymbols: string[]): Array<{ id: string; type: 
   });
 }
 
-// Generate complete SVG NFT
+// Generate complete SVG NFT using accumulated data formula
 function generateSVGNFT(data: DiamondNFTData): string {
+  // Calculate accumulated data formula
+  const accumulated = calculateAccumulatedFormula(data);
+  
   const colors = generateColorPalette(data);
-  const glyphPath = generateGlyphPath(data.glyph, data.gematria);
+  const glyphPath = generateGlyphPath(data.glyph, data.gematria, data.blockNumber);
   const greekShapes = generateGreekShapes(data.greekLetters);
   const mathPatterns = generateMathPatterns(data.mathSymbols);
+  
+  // Block position influences visual elements
+  const blockAngle = (data.blockNumber % 360); // Rotation angle from block
+  const blockScale = 1 + ((data.blockNumber % 100) / 1000); // Subtle scale variation
   
   // Calculate dimensions based on data complexity
   const width = 400;
@@ -217,8 +285,8 @@ function generateSVGNFT(data: DiamondNFTData): string {
            fill="url(#${p.id})" opacity="0.1"/>`
   ).join('')}
   
-  <!-- Central glyph shape -->
-  <g transform="translate(${width/2}, ${height/2})">
+  <!-- Central glyph shape (block-influenced rotation) -->
+  <g transform="translate(${width/2}, ${height/2}) rotate(${blockAngle}) scale(${blockScale})">
     <path d="${glyphPath}" 
           fill="url(#primaryGradient)" 
           stroke="${colors.accent}" 
@@ -235,6 +303,21 @@ function generateSVGNFT(data: DiamondNFTData): string {
           dominant-baseline="central"
           opacity="0.8"
           filter="url(#glow)">${data.glyph}</text>
+  </g>
+  
+  <!-- Block position indicator (visual representation) -->
+  <g transform="translate(${width/2}, ${height/2})">
+    <circle cx="0" cy="-120" r="30" 
+            fill="${colors.blockColor}" 
+            opacity="0.6"
+            stroke="${colors.accent}"
+            stroke-width="2"/>
+    <text x="0" y="-115" 
+          font-family="monospace" 
+          font-size="16" 
+          fill="${colors.background}" 
+          text-anchor="middle"
+          font-weight="bold">#${data.blockNumber}</text>
   </g>
   
   <!-- Greek letters orbiting -->
@@ -292,6 +375,38 @@ function generateSVGNFT(data: DiamondNFTData): string {
           fill="${colors.secondary}" 
           opacity="0.5">${formula.substring(0, 20)}...</text>
   `).join('')}
+  
+  <!-- Accumulated Data Formula Display -->
+  <rect x="10" y="${height - 80}" width="${width - 20}" height="70" 
+        fill="${colors.background}" 
+        opacity="0.8" 
+        rx="5"
+        stroke="${colors.blockColor}"
+        stroke-width="1"/>
+  <text x="${width/2}" y="${height - 60}" 
+        font-family="monospace" 
+        font-size="10" 
+        fill="${colors.accent}" 
+        text-anchor="middle"
+        font-weight="bold">Accumulated Formula:</text>
+  <text x="${width/2}" y="${height - 45}" 
+        font-family="monospace" 
+        font-size="9" 
+        fill="${colors.secondary}" 
+        text-anchor="middle"
+        opacity="0.9">${accumulated.formula.substring(0, 60)}...</text>
+  <text x="${width/2}" y="${height - 30}" 
+        font-family="monospace" 
+        font-size="10" 
+        fill="${colors.blockColor}" 
+        text-anchor="middle"
+        font-weight="bold">Value: ${accumulated.numericValue.toLocaleString()}</text>
+  <text x="${width/2}" y="${height - 15}" 
+        font-family="monospace" 
+        font-size="8" 
+        fill="${colors.secondary}" 
+        text-anchor="middle"
+        opacity="0.7">Block: ${data.blockNumber} | CID: ${data.cid.substring(0, 12)}... | Glyph: ${data.glyph} | Gematria: ${data.gematria}</text>
 </svg>`;
 
   return svg;
@@ -340,7 +455,7 @@ function generateNFTFromDiamond(diamondId: string): void {
     formulas.push(`∑(${ipfsNode.glyph}) → σ`);
   }
   
-  // Build NFT data package
+  // Build NFT data package (with block position)
   const nftData: DiamondNFTData = {
     diamondId,
     address: deployment.address,
@@ -353,8 +468,13 @@ function generateNFTFromDiamond(diamondId: string): void {
     formulas,
     rarity: 'Epic', // Default, should come from Obsidian tree
     color: '#9B59B6', // Default purple
-    createdAt: deployment.deployedAt || new Date().toISOString()
+    createdAt: deployment.deployedAt || new Date().toISOString(),
+    blockNumber: deployment.blockNumber || 0, // Block position
+    txHash: deployment.txHash || '' // Transaction hash
   };
+  
+  // Calculate accumulated formula
+  const accumulated = calculateAccumulatedFormula(nftData);
   
   // Generate SVG
   const svg = generateSVGNFT(nftData);
@@ -368,29 +488,42 @@ function generateNFTFromDiamond(diamondId: string): void {
   const svgPath = path.join(outputDir, `diamond_${diamondId}_nft.svg`);
   fs.writeFileSync(svgPath, svg);
   
-  // Generate metadata JSON
+  // Generate metadata JSON (with accumulated formula)
   const metadata = {
     name: `Diamond ${diamondId} NFT`,
-    description: `NFT generated from Diamond ${diamondId} data package: CID + Glyph + Greek + Math + Gematria`,
+    description: `NFT generated from Diamond ${diamondId} accumulated data formula: CID + Glyph + Block Position + Greek + Math + Gematria`,
     image: `ipfs://${deployment.ipfsHash}`,
     attributes: [
       { trait_type: 'Diamond ID', value: diamondId },
       { trait_type: 'Glyph', value: nftData.glyph },
       { trait_type: 'Gematria', value: nftData.gematria },
+      { trait_type: 'Block Number', value: nftData.blockNumber },
+      { trait_type: 'Block Position', value: `Block #${nftData.blockNumber}` },
       { trait_type: 'Network', value: nftData.network },
       { trait_type: 'Rarity', value: nftData.rarity },
       { trait_type: 'CID', value: nftData.cid },
+      { trait_type: 'Transaction Hash', value: nftData.txHash },
       { trait_type: 'Greek Letters', value: nftData.greekLetters.join(', ') },
       { trait_type: 'Math Symbols', value: nftData.mathSymbols.join(', ') },
-      { trait_type: 'Formulas', value: nftData.formulas.join(' | ') }
+      { trait_type: 'Formulas', value: nftData.formulas.join(' | ') },
+      { trait_type: 'Accumulated Formula Value', value: accumulated.numericValue },
+      { trait_type: 'Accumulated Formula', value: accumulated.formula }
     ],
     data_package: {
       cid: nftData.cid,
       glyph: nftData.glyph,
       gematria: nftData.gematria,
+      block_number: nftData.blockNumber,
+      block_position: `Block #${nftData.blockNumber}`,
+      tx_hash: nftData.txHash,
       greek_letters: nftData.greekLetters,
       math_symbols: nftData.mathSymbols,
-      formulas: nftData.formulas
+      formulas: nftData.formulas,
+      accumulated_formula: {
+        formula: accumulated.formula,
+        value: accumulated.numericValue,
+        components: accumulated.components
+      }
     }
   };
   
@@ -401,13 +534,17 @@ function generateNFTFromDiamond(diamondId: string): void {
   console.log(`   Diamond: ${diamondId}`);
   console.log(`   SVG: ${svgPath}`);
   console.log(`   Metadata: ${metadataPath}`);
-  console.log(`\n   Data Package:`);
+  console.log(`\n   Accumulated Data Package:`);
   console.log(`   - CID: ${nftData.cid.substring(0, 20)}...`);
   console.log(`   - Glyph: ${nftData.glyph}`);
   console.log(`   - Gematria: ${nftData.gematria}`);
+  console.log(`   - Block Position: #${nftData.blockNumber}`);
   console.log(`   - Greek: ${nftData.greekLetters.join(', ')}`);
   console.log(`   - Math: ${nftData.mathSymbols.join(', ')}`);
-  console.log(`   - Formulas: ${nftData.formulas.length}\n`);
+  console.log(`   - Formulas: ${nftData.formulas.length}`);
+  console.log(`\n   Accumulated Formula:`);
+  console.log(`   ${accumulated.formula}`);
+  console.log(`   Value: ${accumulated.numericValue.toLocaleString()}\n`);
 }
 
 // CLI interface
