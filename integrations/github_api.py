@@ -61,6 +61,10 @@ class GitHubAPI:
         """Initialize GitHub API with token from env.txt"""
         self.token = ENV.get('GITHUB_TOKEN', '')
         self.base_url = "https://api.github.com"
+        
+        # Default ENS and email
+        self.default_ens = ENV.get('ENS_NAME', 'theosmagic.uni.eth')
+        self.default_email = ENV.get('DIGITAL_PERSONA_EMAIL', 'theosmagic.uni.eth@ethermail.io')
 
         if not self.token:
             raise ValueError("GitHub token not found in env.txt")

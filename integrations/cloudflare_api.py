@@ -59,7 +59,9 @@ class CloudflareAPI:
         self.zone_id = ENV.get('CLOUDFLARE_ZONE_ID', ENV.get('ZONE_ID', ''))
         self.api_token = ENV.get('CLOUDFLARE_API_TOKEN', ENV.get('API_TOKEN', ''))
         self.api_key = ENV.get('CLOUDFLARE_GLOBAL_API', ENV.get('API_KEY', ''))
-        self.email = ENV.get('PERSONAL_EMAIL', ENV.get('CLOUDFLARE_EMAIL', ''))
+        # Default to ENS email, fallback to personal email
+        self.email = ENV.get('DIGITAL_PERSONA_EMAIL', ENV.get('PERSONAL_EMAIL', ENV.get('CLOUDFLARE_EMAIL', 'theosmagic.uni.eth@ethermail.io')))
+        self.ens = ENV.get('ENS_NAME', 'theosmagic.uni.eth')
         self.account_id = ENV.get('CLOUDFLARE_ACCOUNT_ID', ENV.get('ACCOUNT_ID', ''))
 
         self.base_url = "https://api.cloudflare.com/client/v4"

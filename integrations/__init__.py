@@ -8,6 +8,7 @@ from .github_api import GitHubAPI
 from .lavague_api import LaVagueAgent, LaVagueTaskRunner, run_objective, create_agent
 from .blockscout_api import BlockscoutAPI
 from .chainlink_api import ChainlinkIntegration, ChainlinkPriceFeeds, ChainlinkAutomation, ChainlinkCCIP, ChainlinkFunctions
+from .config import get_default_ens, get_default_email, get_defaults
 
 # Alpha integration systems - REAL implementations
 try:
@@ -82,4 +83,11 @@ __all__ = [
     'MOON_AVAILABLE',
     'MOO_AVAILABLE',
     'ROSSETTA_AVAILABLE',
+    'get_default_ens',
+    'get_default_email',
+    'get_defaults',
 ]
+
+# Default ENS and Email
+DEFAULT_ENS = "theosmagic.uni.eth"
+DEFAULT_EMAIL = "theosmagic.uni.eth@ethermail.io"

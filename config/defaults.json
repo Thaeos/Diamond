@@ -1,0 +1,54 @@
+{
+  "ens": {
+    "domain": "theosmagic.uni.eth",
+    "email": "theosmagic.uni.eth@ethermail.io",
+    "description": "Default ENS domain and email"
+  },
+  "diamond": {
+    "default_address": "0x0000000000000000000000000000000000000000",
+    "description": "Default Diamond Contract address (to be set on deployment)"
+  },
+  "networks": {
+    "ethereum": {
+      "chain_id": 1,
+      "name": "Ethereum Mainnet"
+    },
+    "arbitrum": {
+      "chain_id": 42161,
+      "name": "Arbitrum One",
+      "primary": true
+    },
+    "polygon": {
+      "chain_id": 137,
+      "name": "Polygon"
+    },
+    "base": {
+      "chain_id": 8453,
+      "name": "Base"
+    }
+  },
+  "tokens": {
+    "MAGIC": {
+      "address": "0x539bdE0d7Dbd336b79148AA742883198BBF60342",
+      "chain": "arbitrum"
+    },
+    "SAND": {
+      "address": "",
+      "chain": "ethereum"
+    },
+    "MANA": {
+      "address": "",
+      "chain": "ethereum"
+    }
+  },
+  "marketplaces": {
+    "opensea": {
+      "name": "OpenSea",
+      "chains": ["ethereum", "arbitrum", "polygon", "base"]
+    },
+    "magic_eden": {
+      "name": "Magic Eden",
+      "chains": ["ethereum", "polygon"]
+    }
+  }
+}
