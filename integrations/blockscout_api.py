@@ -77,10 +77,12 @@ class BlockscoutAPI:
             self.base_url = custom_url.rstrip('/')
             self.api_type = "blockscout"
         else:
-            # Use chain-specific APIs
+            # Official Blockscout/Etherscan API endpoints
+            # Blockscout: https://docs.blockscout.com/api-reference
+            # Etherscan-compatible APIs for chains without Blockscout
             self.api_configs = {
                 1: {
-                    "url": "https://eth.blockscout.com/api",
+                    "url": "https://eth.blockscout.com/api/v2",
                     "type": "blockscout",
                     "api_key_name": "BLOCKSCOUT_API_KEY"
                 },
@@ -132,8 +134,8 @@ class BlockscoutAPI:
         # Use appropriate endpoint based on chain
         if self.chain_id == 42161:  # Arbitrum (Etherscan API)
             params = self._get_params(module="proxy", action="eth_getTransactionByHash", txhash=tx_hash)
-        else:  # Blockscout API
-            url = f"{self.base_url}/v2/transactions/{tx_hash}"
+        else:  # Blockscout API v2
+            url = f"{self.base_url}/transactions/{tx_hash}"
             params = {}
         
         async with httpx.AsyncClient(timeout=30.0) as client:
@@ -151,8 +153,8 @@ class BlockscoutAPI:
         
         if self.chain_id == 42161:  # Arbitrum (Etherscan API)
             params = self._get_params(module="proxy", action="trace_transaction", txhash=tx_hash)
-        else:  # Blockscout API
-            url = f"{self.base_url}/v2/transactions/{tx_hash}/internal-transactions"
+        else:  # Blockscout API v2
+            url = f"{self.base_url}/transactions/{tx_hash}/internal-transactions"
             params = {}
         
         async with httpx.AsyncClient(timeout=30.0) as client:
@@ -190,8 +192,8 @@ class BlockscoutAPI:
             )
             url = self.base_url
         else:
-            # Use Blockscout API
-            url = f"{self.base_url}/v2/addresses/{contract_address}/transactions"
+            # Use Blockscout API v2
+            url = f"{self.base_url}/addresses/{contract_address}/transactions"
             params = {"page": page, "limit": limit}
         
         async with httpx.AsyncClient(timeout=30.0) as client:
@@ -222,7 +224,7 @@ class BlockscoutAPI:
         
         Track MAGIC, SAND, MANA movements
         """
-        url = f"{self.base_url}/v2/tokens/{token_address}/transfers"
+        url = f"{self.base_url}/tokens/{token_address}/transfers"
         params = {"page": page, "limit": limit}
         
         async with httpx.AsyncClient(timeout=30.0) as client:
@@ -241,7 +243,7 @@ class BlockscoutAPI:
         
         Analyze market sentiment
         """
-        url = f"{self.base_url}/v2/tokens/{token_address}/holders"
+        url = f"{self.base_url}/tokens/{token_address}/holders"
         params = {"page": page, "limit": limit}
         
         async with httpx.AsyncClient(timeout=30.0) as client:
@@ -251,7 +253,7 @@ class BlockscoutAPI:
     
     async def get_address_balance(self, address: str) -> Dict[str, Any]:
         """Get address balance and token holdings"""
-        url = f"{self.base_url}/v2/addresses/{address}"
+        url = f"{self.base_url}/addresses/{address}"
         
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.get(url, headers=self._get_headers())
@@ -265,7 +267,7 @@ class BlockscoutAPI:
         limit: int = 100
     ) -> Dict[str, Any]:
         """Search transactions"""
-        url = f"{self.base_url}/v2/transactions"
+        url = f"{self.base_url}/transactions"
         params = {"q": query, "page": page, "limit": limit}
         
         async with httpx.AsyncClient(timeout=30.0) as client:

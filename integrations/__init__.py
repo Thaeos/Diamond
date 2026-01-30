@@ -10,6 +10,16 @@ from .blockscout_api import BlockscoutAPI
 from .chainlink_api import ChainlinkIntegration, ChainlinkPriceFeeds, ChainlinkAutomation, ChainlinkCCIP, ChainlinkFunctions
 from .config import get_default_ens, get_default_email, get_defaults
 
+# Safe{Wallet} integration
+try:
+    from .safe_wallet import SafeWalletIntegration, UnifiedWalletInterface, get_unified_wallet_config
+    SAFE_WALLET_AVAILABLE = True
+except ImportError:
+    SAFE_WALLET_AVAILABLE = False
+    SafeWalletIntegration = None
+    UnifiedWalletInterface = None
+    get_unified_wallet_config = None
+
 # Alpha integration systems - REAL implementations
 try:
     from .lucy_integration import LucyIntegration, get_lucy, review_with_lucy
@@ -86,6 +96,10 @@ __all__ = [
     'get_default_ens',
     'get_default_email',
     'get_defaults',
+    'SafeWalletIntegration',
+    'UnifiedWalletInterface',
+    'get_unified_wallet_config',
+    'SAFE_WALLET_AVAILABLE',
 ]
 
 # Default ENS and Email
