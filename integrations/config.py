@@ -120,6 +120,13 @@ def get_defaults():
         "tenderly_api": {
             "key": TENDERLY_API_KEY,
             "description": "Tenderly API key for contract monitoring and simulation",
+            "project": {
+                "username": "Ua_0357",
+                "project_name": "testnet",
+                "project_id": "9a44e073-c1cc-41bf-8737-c4070d277bf2",
+                "project_slug": "Ua_0357/testnet",
+                "dashboard_url": "https://dashboard.tenderly.co/Ua_0357/project/testnet/9a44e073-c1cc-41bf-8737-c4070d277bf2/rpc-builder"
+            },
             "rpc_endpoints": {
                 "http": [
                     os.getenv("TENDERLY_RPC_HTTP_1", "https://virtual.mainnet.us-east.rpc.tenderly.co/ba0e32f8-b5f3-4ca6-a2cc-3ab4fa250000"),
