@@ -9,10 +9,11 @@ import sys
 import json
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "integrations"))
+# Add parent directory to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from wallet_manager import PrimaryWalletManager, get_primary_wallet_manager
-from config import get_defaults
+from integrations.wallet_manager import PrimaryWalletManager, get_primary_wallet_manager
+from integrations.config import get_defaults
 
 
 def setup_primary_wallet():
