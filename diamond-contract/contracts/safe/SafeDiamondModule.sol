@@ -14,6 +14,7 @@ import "./SignatureVerifier.sol";
  * - Trading operations via Safe
  * - Multi-chain operations
  * - Gasless transactions
+ * - Signature verification for authentication
  * 
  * Based on Safe Global module patterns:
  * https://github.com/safe-fndn/safe-modules
@@ -21,6 +22,9 @@ import "./SignatureVerifier.sol";
 contract SafeDiamondModule is Module {
     // Diamond Contract address
     address public immutable diamondAddress;
+    
+    // Signature Verifier contract
+    SignatureVerifier public immutable signatureVerifier;
     
     // Events
     event DiamondCutExecuted(
@@ -36,13 +40,29 @@ contract SafeDiamondModule is Module {
         address indexed executor
     );
     
+    event SignatureVerified(address indexed signer, bool isValid);
+    
     /**
-     * @notice Initialize module with Diamond Contract address
+     * @notice Initialize module with Diamond Contract address and SignatureVerifier
      * @param _diamondAddress Diamond Contract address
+     * @param _signatureVerifier SignatureVerifier contract address
      */
-    constructor(address _diamondAddress) {
+    constructor(address _diamondAddress, address _signatureVerifier) {
         require(_diamondAddress != address(0), "Invalid diamond address");
+        require(_signatureVerifier != address(0), "Invalid signature verifier address");
         diamondAddress = _diamondAddress;
+        signatureVerifier = SignatureVerifier(_signatureVerifier);
+    }
+    
+    /**
+     * @notice Verify signature before executing Diamond Cut
+     * @param signature The signature to verify (optional, can be empty for primary signature check)
+     */
+    function verifySignature(bytes memory signature) public view returns (bool isValid, address signer) {
+        (isValid, signer) = signatureVerifier.verifyPrimarySignature();
+        if (isValid) {
+            require(signatureVerifier.isPrimaryWallet(signer), "Signer must be primary wallet");
+        }
     }
     
     /**
@@ -58,6 +78,12 @@ contract SafeDiamondModule is Module {
     ) external {
         // Only Safe{Wallet} can call
         require(msg.sender == address(safe), "Only Safe can execute");
+        
+        // Verify primary wallet signature
+        (bool isValid, address signer) = verifySignature("");
+        if (isValid) {
+            emit SignatureVerified(signer, true);
+        }
         
         // Execute diamond cut
         IDiamondCut(diamondAddress).diamondCut(_diamondCut, _init, _calldata);
@@ -80,6 +106,12 @@ contract SafeDiamondModule is Module {
     function executeDiamondOperation(bytes memory _data) external {
         // Only Safe{Wallet} can call
         require(msg.sender == address(safe), "Only Safe can execute");
+        
+        // Verify primary wallet signature
+        (bool isValid, address signer) = verifySignature("");
+        if (isValid) {
+            emit SignatureVerified(signer, true);
+        }
         
         // Get selector
         bytes4 selector;
