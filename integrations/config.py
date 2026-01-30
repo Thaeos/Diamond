@@ -119,7 +119,17 @@ def get_defaults():
         },
         "tenderly_api": {
             "key": TENDERLY_API_KEY,
-            "description": "Tenderly API key for contract monitoring and simulation"
+            "description": "Tenderly API key for contract monitoring and simulation",
+            "rpc_endpoints": {
+                "http": [
+                    os.getenv("TENDERLY_RPC_HTTP_1", "https://virtual.mainnet.us-east.rpc.tenderly.co/ba0e32f8-b5f3-4ca6-a2cc-3ab4fa250000"),
+                    os.getenv("TENDERLY_RPC_HTTP_2", "https://virtual.mainnet.us-east.rpc.tenderly.co/776c4f4c-e39b-4465-b87e-88101f9cabdd")
+                ],
+                "websocket": [
+                    os.getenv("TENDERLY_RPC_WS_1", "wss://virtual.mainnet.us-east.rpc.tenderly.co/73a5b144-1e5e-4706-ab25-9b3085afd5f4"),
+                    os.getenv("TENDERLY_RPC_WS_2", "wss://virtual.mainnet.us-east.rpc.tenderly.co/cd99bef4-16d5-426e-ad02-c51d14f42885")
+                ]
+            }
         },
         **DEFAULTS
     }

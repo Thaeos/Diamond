@@ -15,11 +15,16 @@ from .ens_resolver import ENSResolver, get_ens_resolver, resolve_ens_name, rever
 # Tenderly integration
 try:
     from .tenderly_monitoring import TenderlyIntegration, get_tenderly_integration
+    from .tenderly_rpc import TenderlyRPC, get_tenderly_rpc, get_tenderly_http_endpoint, get_tenderly_websocket_endpoint
     TENDERLY_AVAILABLE = True
 except ImportError:
     TENDERLY_AVAILABLE = False
     TenderlyIntegration = None
     get_tenderly_integration = None
+    TenderlyRPC = None
+    get_tenderly_rpc = None
+    get_tenderly_http_endpoint = None
+    get_tenderly_websocket_endpoint = None
 
 # Safe{Wallet} integration
 try:
@@ -117,6 +122,10 @@ __all__ = [
     'reverse_resolve_address',
     'TenderlyIntegration',
     'get_tenderly_integration',
+    'TenderlyRPC',
+    'get_tenderly_rpc',
+    'get_tenderly_http_endpoint',
+    'get_tenderly_websocket_endpoint',
     'TENDERLY_AVAILABLE',
     'SafeWalletIntegration',
     'UnifiedWalletInterface',

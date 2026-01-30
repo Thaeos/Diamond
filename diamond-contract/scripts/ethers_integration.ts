@@ -22,6 +22,17 @@ const ARBITRUM_RPC_URL = process.env.ARBITRUM_RPC_URL || "";
 const POLYGON_RPC_URL = process.env.POLYGON_RPC_URL || "";
 const BASE_RPC_URL = process.env.BASE_RPC_URL || "";
 
+// Tenderly RPC endpoints
+const TENDERLY_RPC_HTTP = [
+  process.env.TENDERLY_RPC_HTTP_1 || "https://virtual.mainnet.us-east.rpc.tenderly.co/ba0e32f8-b5f3-4ca6-a2cc-3ab4fa250000",
+  process.env.TENDERLY_RPC_HTTP_2 || "https://virtual.mainnet.us-east.rpc.tenderly.co/776c4f4c-e39b-4465-b87e-88101f9cabdd"
+];
+
+const TENDERLY_RPC_WS = [
+  process.env.TENDERLY_RPC_WS_1 || "wss://virtual.mainnet.us-east.rpc.tenderly.co/73a5b144-1e5e-4706-ab25-9b3085afd5f4",
+  process.env.TENDERLY_RPC_WS_2 || "wss://virtual.mainnet.us-east.rpc.tenderly.co/cd99bef4-16d5-426e-ad02-c51d14f42885"
+];
+
 /**
  * Get provider for a specific chain
  */
@@ -50,6 +61,22 @@ export function getProvider(chainId: number): ethers.Provider {
   }
   
   return new ethers.JsonRpcProvider(rpcUrl);
+}
+
+/**
+ * Get Tenderly HTTP provider
+ */
+export function getTenderlyProvider(index: number = 0): ethers.JsonRpcProvider {
+  const rpcUrl = TENDERLY_RPC_HTTP[index] || TENDERLY_RPC_HTTP[0];
+  return new ethers.JsonRpcProvider(rpcUrl);
+}
+
+/**
+ * Get Tenderly WebSocket provider
+ */
+export function getTenderlyWebSocketProvider(index: number = 0): ethers.WebSocketProvider {
+  const rpcUrl = TENDERLY_RPC_WS[index] || TENDERLY_RPC_WS[0];
+  return new ethers.WebSocketProvider(rpcUrl);
 }
 
 /**
@@ -258,6 +285,8 @@ export { ethers };
 // Default exports
 export default {
   getProvider,
+  getTenderlyProvider,
+  getTenderlyWebSocketProvider,
   getBrowserProvider,
   createWallet,
   createWalletFromMnemonic,
