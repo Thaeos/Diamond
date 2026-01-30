@@ -1,0 +1,32 @@
+account_id: ""
+actions:
+  Ua_0357/testnet:
+    runtime: v2
+    sources: "actions"
+    specs:
+      diamondContractMonitoring:
+        description: Monitor Diamond Contract events and Safe{Wallet} transactions
+        function: onboarding:onboarding
+        trigger:
+          type: transaction
+          transaction:
+            filters:
+            - eventEmitted:
+                contract:
+                  invocation: any
+                name: DiamondCut
+              network: 73571  # Tenderly Virtual TestNet
+            - eventEmitted:
+                contract:
+                  invocation: any
+                name: ExecutionSuccess
+              network: 73571
+            - eventEmitted:
+                contract:
+                  invocation: any
+                name: ExecutionFailure
+              network: 73571
+            status:
+            - mined
+        execution_type: ""
+project_slug: "Ua_0357/testnet"

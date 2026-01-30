@@ -43,7 +43,7 @@ const PRIMARY_WALLET_MESSAGE = "There is nothing new under the sun. That which w
  * - Perform automated responses
  */
 export const onboarding: ActionFn = async (context: Context, event: Event) => {
-  console.log("Tenderly Web3 Action triggered");
+  console.log("🔷 Autonomous Agent Wallet - Tenderly Web3 Action triggered");
   console.log("Event:", JSON.stringify(event, null, 2));
   
   // Handle transaction events

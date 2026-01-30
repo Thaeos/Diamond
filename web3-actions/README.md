@@ -1,6 +1,6 @@
-# Tenderly Web3 Actions
+# Tenderly Web3 Actions - Autonomous Agent Wallet
 
-Tenderly Web3 Actions for Diamond Contract monitoring and automation.
+Tenderly Web3 Actions for monitoring Diamond Contract and Safe{Wallet} operations.
 
 ## Project Information
 
@@ -19,24 +19,44 @@ npm install
 npm run build
 
 # Deploy actions
-npm run deploy
-# or
 tenderly actions deploy
 ```
 
 ## Actions
 
-### onboarding.ts
-Monitors Diamond Contract events and performs automated actions:
-- Diamond Cut event monitoring
-- Primary wallet transaction tracking
-- Automated alerts
+### onboarding.ts (diamondContractMonitoring)
+Monitors:
+- ✅ Diamond Cut events
+- ✅ Safe{Wallet} execution events (success/failure)
+- ✅ Primary wallet transactions
+- ✅ Automated alerts
 
 ## Configuration
 
-Configuration is in `.tenderly/config.yaml`:
+Configuration is in `tenderly.yaml`:
 - Project slug: `Ua_0357/testnet`
-- Access key: Configured via environment variable
+- Sources directory: `actions`
+- Network: `73571` (Tenderly Virtual TestNet)
+
+## Troubleshooting
+
+### Contract Not Found Error
+If you see "Contract not found in project", make sure:
+1. The contract is deployed to Tenderly Virtual TestNet (chain ID 73571)
+2. The contract address is added to your Tenderly project
+3. The network ID matches in `tenderly.yaml`
+
+### Deployment Issues
+```bash
+# Check Tenderly login
+tenderly whoami
+
+# Verify project configuration
+cat tenderly.yaml
+
+# Check actions directory
+ls -la actions/
+```
 
 ## Documentation
 
