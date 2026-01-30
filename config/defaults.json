@@ -22,6 +22,12 @@
   "tenderly_api": {
     "key": "LZAQjWhTiJJUskQJQXUzAw2ZE0EJpNni",
     "description": "Tenderly API key for contract monitoring and simulation",
+    "project": {
+      "username": "Ua_0357",
+      "project_name": "testnet",
+      "project_id": "9a44e073-c1cc-41bf-8737-c4070d277bf2",
+      "dashboard_url": "https://dashboard.tenderly.co/Ua_0357/project/testnet/9a44e073-c1cc-41bf-8737-c4070d277bf2/rpc-builder"
+    },
     "rpc_endpoints": {
       "http": [
         "https://virtual.mainnet.us-east.rpc.tenderly.co/ba0e32f8-b5f3-4ca6-a2cc-3ab4fa250000",

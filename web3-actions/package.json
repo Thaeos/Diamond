@@ -1,0 +1,19 @@
+{
+  "name": "tenderly-web3-actions",
+  "version": "1.0.0",
+  "description": "Tenderly Web3 Actions for Diamond Contract monitoring",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "tenderly actions deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tenderly/actions": "^1.0.0",
+    "ethers": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}

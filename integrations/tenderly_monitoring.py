@@ -135,21 +135,28 @@ class TenderlyIntegration:
         """
         return self._run_command(["version"])
     
-    def init_actions(self, template: str = "onboarding", directory: str = "web3-actions") -> Dict[str, Any]:
+    def init_actions(
+        self, 
+        template: str = "onboarding", 
+        directory: str = "web3-actions",
+        project_slug: Optional[str] = None
+    ) -> Dict[str, Any]:
         """
         Initialize Tenderly Web3 Actions
         
         Args:
             template: Template to use (default: onboarding)
             directory: Directory to initialize in
-            
+            project_slug: Project slug (format: username/project-name)
+        
         Returns:
             Initialization result
         """
-        return self._run_command(
-            ["actions", "init", "--template", template],
-            cwd=directory
-        )
+        cmd = ["actions", "init", "--template", template]
+        if project_slug:
+            cmd.extend(["--project-slug", project_slug])
+        
+        return self._run_command(cmd, cwd=directory)
     
     def deploy_actions(self, directory: str = "web3-actions") -> Dict[str, Any]:
         """
