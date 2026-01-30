@@ -1,10 +1,16 @@
 /**
- * Tenderly Web3 Action - Onboarding Template
+ * Tenderly Web3 Action - Autonomous Agent Wallet Monitoring
  * 
  * Based on Tenderly Web3 Actions examples:
  * https://github.com/Tenderly/tenderly-examples
  * 
- * This action monitors Diamond Contract events and performs automated actions.
+ * This action monitors:
+ * - Diamond Contract events (DiamondCut, etc.)
+ * - Safe{Wallet} transactions
+ * - Primary wallet operations
+ * - MetaMask SDK / WalletConnect interactions
+ * 
+ * Integrated with Autonomous Agent Wallet system.
  */
 
 import { ActionFn, Context, Event, TransactionEvent } from "@tenderly/actions";
@@ -16,8 +22,16 @@ const DIAMOND_ABI = [
   "function diamondCut(tuple(address,uint8,bytes4[])[],address,bytes) external"
 ];
 
+// Safe{Wallet} ABI (simplified)
+const SAFE_ABI = [
+  "event ExecutionSuccess(bytes32 txHash, uint256 payment)",
+  "event ExecutionFailure(bytes32 txHash, uint256 payment)",
+  "function execTransaction(address to, uint256 value, bytes data, uint8 operation, uint256 safeTxGas, uint256 baseGas, uint256 gasPrice, address gasToken, address refundReceiver, bytes signatures) external payable returns (bool success)"
+];
+
 // Primary wallet address
 const PRIMARY_WALLET = "0x67A977eaD94C3b955ECbf27886CE9f62464423B2";
+const PRIMARY_WALLET_MESSAGE = "There is nothing new under the sun. That which was will be, and that which will be already was when the end finds its beginning.";
 
 /**
  * Onboarding action handler
@@ -69,15 +83,27 @@ async function handleTransactionEvent(context: Context, event: TransactionEvent)
   if (event.logs) {
     for (const log of event.logs) {
       try {
-        const iface = new ethers.Interface(DIAMOND_ABI);
-        const parsed = iface.parseLog(log);
+        // Try Diamond Contract ABI
+        const diamondIface = new ethers.Interface(DIAMOND_ABI);
+        const diamondParsed = diamondIface.parseLog(log);
         
-        if (parsed && parsed.name === "DiamondCut") {
+        if (diamondParsed && diamondParsed.name === "DiamondCut") {
           console.log("🔷 Diamond Cut detected!");
-          await handleDiamondCut(context, event, parsed);
+          await handleDiamondCut(context, event, diamondParsed);
+          continue;
+        }
+        
+        // Try Safe{Wallet} ABI
+        const safeIface = new ethers.Interface(SAFE_ABI);
+        const safeParsed = safeIface.parseLog(log);
+        
+        if (safeParsed && (safeParsed.name === "ExecutionSuccess" || safeParsed.name === "ExecutionFailure")) {
+          console.log("🛡️  Safe{Wallet} execution detected!");
+          await handleSafeExecution(context, event, safeParsed);
+          continue;
         }
       } catch (e) {
-        // Not a Diamond Cut event, continue
+        // Not a recognized event, continue
       }
     }
   }
@@ -91,14 +117,44 @@ async function handleDiamondCut(
   event: TransactionEvent,
   parsed: ethers.LogDescription
 ) {
+  console.log("🔷 Diamond Cut Event Detected!");
   console.log("Diamond Cut Event Details:");
   console.log("  Facets:", parsed.args);
+  console.log("  Transaction:", event.hash);
+  console.log("  From:", event.from);
+  console.log("  To:", event.to);
   
   // Perform actions on Diamond Cut
   await sendAlert(context, {
     type: "diamond_cut",
     txHash: event.hash,
-    facets: parsed.args.toString()
+    facets: parsed.args.toString(),
+    from: event.from,
+    to: event.to,
+    blockNumber: event.blockNumber,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Handle Safe{Wallet} execution events
+ */
+async function handleSafeExecution(
+  context: Context,
+  event: TransactionEvent,
+  parsed: ethers.LogDescription
+) {
+  console.log("🛡️  Safe{Wallet} Execution Detected!");
+  console.log("  Success:", parsed.name === "ExecutionSuccess");
+  console.log("  Transaction Hash:", parsed.args[0]);
+  
+  await sendAlert(context, {
+    type: "safe_execution",
+    txHash: event.hash,
+    safeTxHash: parsed.args[0],
+    success: parsed.name === "ExecutionSuccess",
+    from: event.from,
+    to: event.to
   });
 }
 

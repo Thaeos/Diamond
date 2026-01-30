@@ -45,6 +45,15 @@ except ImportError:
     UnifiedWalletInterface = None
     get_unified_wallet_config = None
 
+# Autonomous Agent Wallet integration
+try:
+    from .autonomous_agent_wallet import AutonomousAgentWallet, get_autonomous_agent_wallet
+    AUTONOMOUS_WALLET_AVAILABLE = True
+except ImportError:
+    AUTONOMOUS_WALLET_AVAILABLE = False
+    AutonomousAgentWallet = None
+    get_autonomous_agent_wallet = None
+
 # Alpha integration systems - REAL implementations
 try:
     from .lucy_integration import LucyIntegration, get_lucy, review_with_lucy
@@ -143,6 +152,9 @@ __all__ = [
     'UnifiedWalletInterface',
     'get_unified_wallet_config',
     'SAFE_WALLET_AVAILABLE',
+    'AutonomousAgentWallet',
+    'get_autonomous_agent_wallet',
+    'AUTONOMOUS_WALLET_AVAILABLE',
 ]
 
 # Default ENS and Email
