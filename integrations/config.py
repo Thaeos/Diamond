@@ -52,6 +52,9 @@ DEFAULT_ENS = os.getenv("ENS_NAME", DEFAULT_ENS)
 # Brave Browser API Key
 BRAVE_BROWSER_API_KEY = os.getenv("BRAVE_BROWSER_API", os.getenv("BRAVE_API_KEY", ""))
 
+# Tenderly API Key
+TENDERLY_API_KEY = os.getenv("TENDERLY_API", "")
+
 # Load wallet config if exists
 WALLET_CONFIG = {}
 if WALLET_FILE.exists():
@@ -93,6 +96,10 @@ def get_brave_api_key():
     """Get Brave Browser API key"""
     return BRAVE_BROWSER_API_KEY
 
+def get_tenderly_api_key():
+    """Get Tenderly API key"""
+    return TENDERLY_API_KEY
+
 def get_defaults():
     """Get all defaults"""
     return {
@@ -109,6 +116,10 @@ def get_defaults():
         "brave_browser_api": {
             "key": BRAVE_BROWSER_API_KEY,
             "description": "Brave Browser API key for search functionality"
+        },
+        "tenderly_api": {
+            "key": TENDERLY_API_KEY,
+            "description": "Tenderly API key for contract monitoring and simulation"
         },
         **DEFAULTS
     }

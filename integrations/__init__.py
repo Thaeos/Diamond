@@ -9,7 +9,7 @@ from .lavague_api import LaVagueAgent, LaVagueTaskRunner, run_objective, create_
 from .blockscout_api import BlockscoutAPI
 from .chainlist_api import ChainlistAPI
 from .chainlink_api import ChainlinkIntegration, ChainlinkPriceFeeds, ChainlinkAutomation, ChainlinkCCIP, ChainlinkFunctions
-from .config import get_default_ens, get_default_email, get_default_wallet_address, get_primary_wallet, get_brave_api_key, get_defaults
+from .config import get_default_ens, get_default_email, get_default_wallet_address, get_primary_wallet, get_brave_api_key, get_tenderly_api_key, get_defaults
 from .ens_resolver import ENSResolver, get_ens_resolver, resolve_ens_name, reverse_resolve_address
 
 # Tenderly integration
@@ -109,6 +109,7 @@ __all__ = [
     'get_default_wallet_address',
     'get_primary_wallet',
     'get_brave_api_key',
+    'get_tenderly_api_key',
     'get_defaults',
     'ENSResolver',
     'get_ens_resolver',

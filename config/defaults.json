@@ -19,6 +19,10 @@
     "key": "BSAEwLe_77A0TDYC2yxYKIQk8T3IsQO",
     "description": "Brave Browser API key for search functionality"
   },
+  "tenderly_api": {
+    "key": "LZAQjWhTiJJUskQJQXUzAw2ZE0EJpNni",
+    "description": "Tenderly API key for contract monitoring and simulation"
+  },
   "networks": {
     "ethereum": {
       "chain_id": 1,

@@ -15,6 +15,7 @@ import os
 import subprocess
 from typing import Optional, Dict, Any, List
 from pathlib import Path
+from integrations.config import get_tenderly_api_key
 
 
 class TenderlyIntegration:
@@ -24,13 +25,19 @@ class TenderlyIntegration:
     Provides Python interface for Tenderly CLI operations.
     """
     
-    def __init__(self, tenderly_path: Optional[str] = None):
+    def __init__(self, tenderly_path: Optional[str] = None, api_key: Optional[str] = None):
         """
         Initialize Tenderly Integration
         
         Args:
             tenderly_path: Path to tenderly CLI binary (defaults to bin/tenderly)
+            api_key: Tenderly API key (defaults to TENDERLY_API environment variable)
         """
+        # Get API key from parameter, environment, or config
+        self.api_key = api_key or os.getenv("TENDERLY_API") or get_tenderly_api_key()
+        
+        if self.api_key:
+            os.environ["TENDERLY_API"] = self.api_key
         if tenderly_path:
             self.tenderly_path = tenderly_path
         else:
@@ -96,14 +103,22 @@ class TenderlyIntegration:
                 "stderr": ""
             }
     
-    def login(self) -> Dict[str, Any]:
+    def login(self, use_api_key: bool = True) -> Dict[str, Any]:
         """
         Login to Tenderly
+        
+        Args:
+            use_api_key: If True and API key is set, use access key login
         
         Returns:
             Login result
         """
-        return self._run_command(["login"])
+        if use_api_key and self.api_key:
+            # Use access key for non-interactive login
+            return self._run_command(["login", "--access-key", self.api_key])
+        else:
+            # Interactive login
+            return self._run_command(["login"])
     
     def version(self) -> Dict[str, Any]:
         """
