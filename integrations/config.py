@@ -49,6 +49,9 @@ DEFAULT_WALLET_ADDRESS = os.getenv("PUBLIC_ADDRESS", DEFAULT_WALLET_ADDRESS)
 DEFAULT_EMAIL = os.getenv("DIGITAL_PERSONA_EMAIL", os.getenv("EMAIL", DEFAULT_EMAIL))
 DEFAULT_ENS = os.getenv("ENS_NAME", DEFAULT_ENS)
 
+# Brave Browser API Key
+BRAVE_BROWSER_API_KEY = os.getenv("BRAVE_BROWSER_API", os.getenv("BRAVE_API_KEY", ""))
+
 # Load wallet config if exists
 WALLET_CONFIG = {}
 if WALLET_FILE.exists():
@@ -86,6 +89,10 @@ def get_primary_wallet() -> Dict[str, Any]:
     }
 
 
+def get_brave_api_key():
+    """Get Brave Browser API key"""
+    return BRAVE_BROWSER_API_KEY
+
 def get_defaults():
     """Get all defaults"""
     return {
@@ -98,6 +105,10 @@ def get_defaults():
             "email": DEFAULT_EMAIL,
             "ens": DEFAULT_ENS,
             "is_primary": True
+        },
+        "brave_browser_api": {
+            "key": BRAVE_BROWSER_API_KEY,
+            "description": "Brave Browser API key for search functionality"
         },
         **DEFAULTS
     }

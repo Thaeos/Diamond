@@ -9,7 +9,7 @@ from .lavague_api import LaVagueAgent, LaVagueTaskRunner, run_objective, create_
 from .blockscout_api import BlockscoutAPI
 from .chainlist_api import ChainlistAPI
 from .chainlink_api import ChainlinkIntegration, ChainlinkPriceFeeds, ChainlinkAutomation, ChainlinkCCIP, ChainlinkFunctions
-from .config import get_default_ens, get_default_email, get_default_wallet_address, get_primary_wallet, get_defaults
+from .config import get_default_ens, get_default_email, get_default_wallet_address, get_primary_wallet, get_brave_api_key, get_defaults
 
 # Safe{Wallet} integration
 try:
@@ -98,6 +98,7 @@ __all__ = [
     'get_default_email',
     'get_default_wallet_address',
     'get_primary_wallet',
+    'get_brave_api_key',
     'get_defaults',
     'SafeWalletIntegration',
     'UnifiedWalletInterface',
