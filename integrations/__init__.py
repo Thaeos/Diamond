@@ -12,6 +12,15 @@ from .chainlink_api import ChainlinkIntegration, ChainlinkPriceFeeds, ChainlinkA
 from .config import get_default_ens, get_default_email, get_default_wallet_address, get_primary_wallet, get_brave_api_key, get_defaults
 from .ens_resolver import ENSResolver, get_ens_resolver, resolve_ens_name, reverse_resolve_address
 
+# Tenderly integration
+try:
+    from .tenderly_monitoring import TenderlyIntegration, get_tenderly_integration
+    TENDERLY_AVAILABLE = True
+except ImportError:
+    TENDERLY_AVAILABLE = False
+    TenderlyIntegration = None
+    get_tenderly_integration = None
+
 # Safe{Wallet} integration
 try:
     from .safe_wallet import SafeWalletIntegration, UnifiedWalletInterface, get_unified_wallet_config
@@ -105,6 +114,9 @@ __all__ = [
     'get_ens_resolver',
     'resolve_ens_name',
     'reverse_resolve_address',
+    'TenderlyIntegration',
+    'get_tenderly_integration',
+    'TENDERLY_AVAILABLE',
     'SafeWalletIntegration',
     'UnifiedWalletInterface',
     'get_unified_wallet_config',
