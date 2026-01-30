@@ -283,6 +283,11 @@ class UnifiedWalletInterface:
         self.walletconnect_config = self.safe.get_walletconnect_config()
         self.safe_config = self.safe.get_safe_config()
         self.diamond_safe_config = self.safe.get_diamond_safe_integration()
+        
+        # Signature verifier
+        from integrations.signature_verification import get_signature_verifier
+        self.signature_verifier = get_signature_verifier()
+        self.signature_data = self.signature_verifier.get_signature_data()
     
     def get_unified_config(self) -> Dict[str, Any]:
         """
