@@ -26,18 +26,26 @@ class ChainlistAPI:
         """Initialize Chainlist API"""
         self.cache: Optional[Dict[str, Any]] = None
     
-    async def fetch_all_chains(self) -> Dict[str, Any]:
+    async def fetch_all_chains(self) -> List[Dict[str, Any]]:
         """
         Fetch all chains from Chainlist
         
         Returns complete chain registry with RPC endpoints
+        Note: Chainlist API returns a list of chain objects
         """
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.get(self.CHAINLIST_API_URL)
             response.raise_for_status()
             data = response.json()
-            self.cache = data
-            return data
+            # Chainlist returns a list of chain objects
+            if isinstance(data, list):
+                self.cache = data
+            elif isinstance(data, dict):
+                # If it's a dict, convert to list
+                self.cache = list(data.values()) if data else []
+            else:
+                self.cache = []
+            return self.cache
     
     async def get_chain_by_id(self, chain_id: int) -> Optional[Dict[str, Any]]:
         """
@@ -55,14 +63,42 @@ class ChainlistAPI:
         if not self.cache:
             return None
         
-        # Search for chain by chainId
-        for chain_name, chain_data in self.cache.items():
-            if isinstance(chain_data, dict):
-                if chain_data.get('chainId') == chain_id:
+        # Chainlist returns a list of chain objects
+        if isinstance(self.cache, list):
+            for chain_data in self.cache:
+                if isinstance(chain_data, dict) and chain_data.get('chainId') == chain_id:
+                    # Extract RPC URLs (can be strings or objects with 'url' property)
+                    rpc_list = []
+                    for rpc in chain_data.get('rpc', []):
+                        if isinstance(rpc, str):
+                            rpc_list.append(rpc)
+                        elif isinstance(rpc, dict) and 'url' in rpc:
+                            rpc_list.append(rpc['url'])
+                    
                     return {
-                        'name': chain_name,
+                        'name': chain_data.get('name', 'Unknown'),
                         'chainId': chain_id,
-                        'rpc': chain_data.get('rpc', []),
+                        'rpc': rpc_list,
+                        'nativeCurrency': chain_data.get('nativeCurrency'),
+                        'explorers': chain_data.get('explorers', []),
+                        'infoURL': chain_data.get('infoURL'),
+                        'shortName': chain_data.get('shortName')
+                    }
+        elif isinstance(self.cache, dict):
+            # Fallback for dict format
+            for chain_name, chain_data in self.cache.items():
+                if isinstance(chain_data, dict) and chain_data.get('chainId') == chain_id:
+                    rpc_list = []
+                    for rpc in chain_data.get('rpc', []):
+                        if isinstance(rpc, str):
+                            rpc_list.append(rpc)
+                        elif isinstance(rpc, dict) and 'url' in rpc:
+                            rpc_list.append(rpc['url'])
+                    
+                    return {
+                        'name': chain_data.get('name', chain_name),
+                        'chainId': chain_id,
+                        'rpc': rpc_list,
                         'nativeCurrency': chain_data.get('nativeCurrency'),
                         'explorers': chain_data.get('explorers', []),
                         'infoURL': chain_data.get('infoURL'),
@@ -145,19 +181,48 @@ class ChainlistAPI:
         except ValueError:
             pass
         
-        # Search by name
-        for chain_name, chain_data in self.cache.items():
-            if isinstance(chain_data, dict):
-                if query_lower in chain_name.lower():
-                    results.append({
-                        'name': chain_name,
-                        'chainId': chain_data.get('chainId'),
-                        'rpc': chain_data.get('rpc', []),
-                        'nativeCurrency': chain_data.get('nativeCurrency'),
-                        'explorers': chain_data.get('explorers', []),
-                        'infoURL': chain_data.get('infoURL'),
-                        'shortName': chain_data.get('shortName')
-                    })
+        # Search by name (handle both list and dict formats)
+        if isinstance(self.cache, list):
+            for chain_data in self.cache:
+                if isinstance(chain_data, dict):
+                    chain_name = chain_data.get('name', '')
+                    if query_lower in chain_name.lower():
+                        rpc_list = []
+                        for rpc in chain_data.get('rpc', []):
+                            if isinstance(rpc, str):
+                                rpc_list.append(rpc)
+                            elif isinstance(rpc, dict) and 'url' in rpc:
+                                rpc_list.append(rpc['url'])
+                        
+                        results.append({
+                            'name': chain_name,
+                            'chainId': chain_data.get('chainId'),
+                            'rpc': rpc_list,
+                            'nativeCurrency': chain_data.get('nativeCurrency'),
+                            'explorers': chain_data.get('explorers', []),
+                            'infoURL': chain_data.get('infoURL'),
+                            'shortName': chain_data.get('shortName')
+                        })
+        elif isinstance(self.cache, dict):
+            for chain_name, chain_data in self.cache.items():
+                if isinstance(chain_data, dict):
+                    if query_lower in chain_name.lower():
+                        rpc_list = []
+                        for rpc in chain_data.get('rpc', []):
+                            if isinstance(rpc, str):
+                                rpc_list.append(rpc)
+                            elif isinstance(rpc, dict) and 'url' in rpc:
+                                rpc_list.append(rpc['url'])
+                        
+                        results.append({
+                            'name': chain_data.get('name', chain_name),
+                            'chainId': chain_data.get('chainId'),
+                            'rpc': rpc_list,
+                            'nativeCurrency': chain_data.get('nativeCurrency'),
+                            'explorers': chain_data.get('explorers', []),
+                            'infoURL': chain_data.get('infoURL'),
+                            'shortName': chain_data.get('shortName')
+                        })
         
         return results
     
@@ -175,11 +240,20 @@ class ChainlistAPI:
             return []
         
         chain_ids = []
-        for chain_name, chain_data in self.cache.items():
-            if isinstance(chain_data, dict):
-                chain_id = chain_data.get('chainId')
-                if chain_id:
-                    chain_ids.append(chain_id)
+        
+        # Handle both list and dict formats
+        if isinstance(self.cache, list):
+            for chain_data in self.cache:
+                if isinstance(chain_data, dict):
+                    chain_id = chain_data.get('chainId')
+                    if chain_id:
+                        chain_ids.append(chain_id)
+        elif isinstance(self.cache, dict):
+            for chain_name, chain_data in self.cache.items():
+                if isinstance(chain_data, dict):
+                    chain_id = chain_data.get('chainId')
+                    if chain_id:
+                        chain_ids.append(chain_id)
         
         return sorted(set(chain_ids))
 
