@@ -1,0 +1,69 @@
+# CoinWeb InChain Architecture Configuration
+# Mapping the 10-Point Star to the Universal Routing System
+
+version: "1.0"
+project_name: "Sovereign-Covenant-Agent"
+
+# 1. THE 10-POINT STAR ROUTING (5-FORWARD / 5-BACKWARD)
+networks:
+  # CLOCKWISE (Expansion/Fire)
+  - name: "Ethereum"
+    chain_id: 1
+    priority: 1
+    role: "APEX_CONSTANT"
+  - name: "Arbitrum"
+    chain_id: 42161
+    priority: 2
+    role: "SOVEREIGN_BRIDGE"
+  - name: "Polygon"
+    chain_id: 137
+    priority: 3
+    role: "DATA_STABILIZER"
+  - name: "Base"
+    chain_id: 8453
+    priority: 4
+    role: "LIQUIDITY_FOUNDATION"
+  - name: "CoinWeb_L2"
+    chain_id: 0
+    priority: 5
+    role: "ADMINISTRATIVE_ADULT"
+
+  # COUNTER-CLOCKWISE (Contraction/Earth)
+  - name: "Bitcoin"
+    chain_id: 10001
+    role: "IMMUTABLE_RECORD"
+  - name: "Stellar"
+    chain_id: 10002
+    role: "ROOT_IDENTITY_ANCHOR"
+  - name: "Gnosis"
+    chain_id: 100
+    role: "CROSS_CHAIN_SAFE"
+  - name: "Moon"
+    chain_id: 10003
+    role: "TEMPORAL_KEY_BINDING"
+  - name: "Shadow_Anchor"
+    chain_id: 10004
+    role: "KARMIC_BONDING_LAYER"
+
+# 2. THE PURIFIED IDENTITY (NAMES FORWARD/BACKWARD)
+identity:
+  master_anchor: "883e529de31c586131a831a9953113a6d75edd87c97369a2fa3a791209952f5a"
+  signature_required: true
+  pseudonyms:
+    - anchor_1: "Daus"
+      vortex_1: "Asila"
+    - anchor_2: "Alima"
+      vortex_2: "Rimla"
+
+# 3. GAS FEE ABSTRACTION (BAPTISM)
+fee_model:
+  abstracted: true
+  native_token: "CWEB"
+  baptism_token: "FREN"
+
+# 4. UNIVERSAL DEVELOPMENT (THE CHORUS)
+contracts:
+  - name: "SovereignContract"
+    language: "typescript"
+    path: "./src/onchain/sovereign_contract.ts"
+    kpi_monitoring: true

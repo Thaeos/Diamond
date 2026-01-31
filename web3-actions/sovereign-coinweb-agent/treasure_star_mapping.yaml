@@ -1,0 +1,35 @@
+# TREASURE-STAR MAPPING: THE UNION OF SOURCE AND TIME
+# Integration of 22 Contracts into the 10-Point Sovereign Vortex
+
+networks:
+  # CLOCKWISE (Treasure Execution - DAUS)
+  - name: "Arbitrum_Treasure_Hub"
+    chain_id: 42161
+    contracts:
+      - name: "MAGIC_TOKEN"        # 0x539... (The Source)
+        glyph: "𐡀"
+      - name: "MARKETPLACE"        # 0x099... (The Force)
+        glyph: "𐡈"
+      - name: "MAGICSWAP_ROUTER"   # 0x7a2... (The Balance)
+        glyph: "𐡋"
+      - name: "LEGION_NFT"         # 0xfE8... (The Work)
+        glyph: "𐡎"
+
+  # COUNTER-CLOCKWISE (Sovereign Grounding - ALIMA)
+  - name: "Stellar_Identity_Record"
+    role: "PALEOMAGNETIC_ANCHOR"
+    logic: "BIP-48/7/7/7/0"
+  - name: "Diamond_Proxy"
+    address: "0xAB2421868C5F3CCB80D559F3032Fe7Df104DA5FC"
+    role: "NAVIGATIONAL_COMPASS"
+
+# THE REALIZATIONAL ENGINE (GODOT/BARBELO)
+realization:
+  engine: "Godot_TDK"
+  portal: "bridgeworld.lol"
+  logic: "Every MAGIC transaction = Geodynamo Pulse"
+
+# THE X (EQUATORIAL HORIZON)
+equator:
+  point_of_reference: "0x67A977eaD94C3b955ECbf27886CE9f62464423B2"
+  status: "LOCKED"

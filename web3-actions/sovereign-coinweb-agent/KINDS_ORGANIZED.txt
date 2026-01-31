@@ -1,0 +1,86 @@
+.
+├── agents
+│   ├── clankfun
+│   ├── discord-sentinel-bot
+│   ├── Golem
+│   ├── llm-tee-agent
+│   ├── neurochimp-unity-client
+│   └── python-robot
+├── contracts
+│   ├── craft-compensation
+│   ├── ethereum-blocks
+│   ├── governance-staking
+│   ├── magicswap
+│   ├── magicswap-contracts
+│   ├── magicswapv2
+│   ├── magicswapv2-contracts
+│   ├── marketplace
+│   ├── marketplace-contracts
+│   ├── project
+│   ├── project-contracts
+│   ├── spellcaster
+│   ├── spellcaster-facets
+│   └── zkstack-omnichain-tokens
+├── defi
+│   ├── legiondex
+│   ├── magicswap
+│   ├── magicswapv2
+│   ├── smol-quests
+│   └── treasure-functions
+├── docs
+│   ├── branding
+│   ├── bridgeworld-docs
+│   ├── coding-exercise
+│   ├── treasure-docs
+│   └── treasure-website-team-images
+├── frontend
+│   ├── hyperlane-warp-ui
+│   ├── hyperlane-warp-ui-smol
+│   ├── interface
+│   ├── treasure-form
+│   ├── treasure-website
+│   ├── web3-starter-template
+│   ├── x402facilitators
+│   └── x402scan
+├── governance
+│   ├── dao-multisigs
+│   ├── smoldao-treasure
+│   └── tailwind-config
+├── infrastructure
+│   ├── block-explorer
+│   ├── blockscout
+│   ├── build-uploader
+│   ├── chainlist
+│   ├── treasure-canary
+│   └── treasure-node
+├── interop
+│   ├── bridging-token-registry
+│   ├── compass
+│   ├── hyperlane-example
+│   ├── hyperlane-registry
+│   ├── interoperability
+│   ├── L2-eigenlayer-restaking
+│   ├── LayerZero-v2
+│   └── Rio
+├── sdks
+│   ├── aifrens-sdk
+│   ├── connectkit
+│   ├── tdk-godot
+│   ├── tdk-js
+│   ├── tdk-unity
+│   ├── tdk-unreal
+│   └── x402
+├── src
+│   ├── offchain
+│   └── onchain
+├── subgraphs
+│   ├── marketplace-subgraph
+│   ├── ponder-test-aws
+│   ├── treasure-marketplace-subgraph
+│   └── treasure-subgraphs
+└── utils
+    ├── onnxruntime-swift-package-manager
+    ├── twitter-client-edge
+    └── twitter-scraper-v2
+
+84 directories
