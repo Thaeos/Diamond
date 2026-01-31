@@ -1,0 +1,12 @@
+[
+  {
+    "name": "TreasureDAO Floor Monitor - Arbitrum",
+    "contractAddress": "0xYourUpkeepContractAddress",
+    "chainId": 42161,
+    "alertBelowEth": 0.5,
+    "alertAboveEth": 2,
+    "collectionAddress": "0xfe8c1ac365ba6780aec5a985d989b327c27670a1",
+    "checkInterval": 300,
+    "linkBalance": "5"
+  }
+]

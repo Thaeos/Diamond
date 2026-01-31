@@ -1,0 +1,639 @@
+[
+  {
+    "chainId": 747474,
+    "name": "katana",
+    "chain": "katana",
+    "shortName": "katana",
+    "score": 0.9,
+    "tvl": 802569298.7863121,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.katana.network"
+        }
+      ]
+    },
+    "rpcCount": 4
+  },
+  {
+    "chainId": 534352,
+    "name": "Scroll",
+    "chain": "ETH",
+    "shortName": "scr",
+    "score": 0.9,
+    "tvl": 569156929.0917873,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://scroll.io/bridge"
+        }
+      ]
+    },
+    "rpcCount": 16
+  },
+  {
+    "chainId": 59144,
+    "name": "Linea",
+    "chain": "ETH",
+    "shortName": "linea",
+    "score": 0.9,
+    "tvl": 232278918.84018713,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.linea.build"
+        }
+      ]
+    },
+    "rpcCount": 10
+  },
+  {
+    "chainId": 60808,
+    "name": "BOB",
+    "chain": "ETH",
+    "shortName": "bob",
+    "score": 0.9,
+    "tvl": 82876979.53722976,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://app.gobob.xyz"
+        }
+      ]
+    },
+    "rpcCount": 4
+  },
+  {
+    "chainId": 81457,
+    "name": "Blast",
+    "chain": "ETH",
+    "shortName": "blastmainnet",
+    "score": 0.9,
+    "tvl": 54930831.07160004,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1"
+    },
+    "rpcCount": 16
+  },
+  {
+    "chainId": 42161,
+    "name": "Arbitrum One",
+    "chain": "ETH",
+    "shortName": "arb1",
+    "score": 0.85,
+    "tvl": 4877284271.079891,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.arbitrum.io"
+        }
+      ]
+    },
+    "rpcCount": 27
+  },
+  {
+    "chainId": 5000,
+    "name": "Mantle",
+    "chain": "ETH",
+    "shortName": "mantle",
+    "score": 0.85,
+    "tvl": 512614691.88246477,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.mantle.xyz"
+        }
+      ]
+    },
+    "rpcCount": 13
+  },
+  {
+    "chainId": 43111,
+    "name": "Hemi",
+    "chain": "ETH",
+    "shortName": "hemi",
+    "score": 0.85,
+    "tvl": 75296419.3101956,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1"
+    },
+    "rpcCount": 2
+  },
+  {
+    "chainId": 42220,
+    "name": "Celo Mainnet",
+    "chain": "CELO",
+    "shortName": "celo",
+    "score": 0.85,
+    "tvl": 40127721.044772625,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://superbridge.app/celo"
+        }
+      ]
+    },
+    "rpcCount": 8
+  },
+  {
+    "chainId": 324,
+    "name": "zkSync Mainnet",
+    "chain": "ETH",
+    "shortName": "zksync",
+    "score": 0.85,
+    "tvl": 30982447.303571977,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.zksync.io/"
+        }
+      ]
+    },
+    "rpcCount": 12
+  },
+  {
+    "chainId": 2741,
+    "name": "Abstract",
+    "chain": "Abstract",
+    "shortName": "abstract",
+    "score": 0.85,
+    "tvl": 26029151.148042142,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://portal.mainnet.abs.xyz/bridge"
+        }
+      ]
+    },
+    "rpcCount": 4
+  },
+  {
+    "chainId": 1868,
+    "name": "Soneium",
+    "chain": "ETH",
+    "shortName": "soneium",
+    "score": 0.85,
+    "tvl": 24574856.416255187,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://superbridge.app/soneium"
+        }
+      ]
+    },
+    "rpcCount": 2
+  },
+  {
+    "chainId": 1088,
+    "name": "Metis Andromeda Mainnet",
+    "chain": "ETH",
+    "shortName": "metis-andromeda",
+    "score": 0.85,
+    "tvl": 15200707.633415014,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.metis.io"
+        }
+      ]
+    },
+    "rpcCount": 10
+  },
+  {
+    "chainId": 1625,
+    "name": "Gravity Alpha Mainnet",
+    "chain": "Gravity",
+    "shortName": "gravity",
+    "score": 0.85,
+    "tvl": 4039235.16533227,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.gravity.xyz"
+        }
+      ]
+    },
+    "rpcCount": 2
+  },
+  {
+    "chainId": 10088,
+    "name": "Gate Layer",
+    "chain": "GT",
+    "shortName": "GateLayer",
+    "score": 0.85,
+    "tvl": 3161270.473569534,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "ethereum",
+      "bridges": [
+        {
+          "url": "https://www.gate.com/"
+        }
+      ]
+    },
+    "rpcCount": 1
+  },
+  {
+    "chainId": 288,
+    "name": "Boba Network",
+    "chain": "ETH",
+    "shortName": "Boba",
+    "score": 0.85,
+    "tvl": 2844247.1045016525,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://gateway.boba.network"
+        }
+      ]
+    },
+    "rpcCount": 8
+  },
+  {
+    "chainId": 1101,
+    "name": "Polygon zkEVM",
+    "chain": "Polygon",
+    "shortName": "zkevm",
+    "score": 0.85,
+    "tvl": 1953141.3265915627,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.zkevm-rpc.com"
+        }
+      ]
+    },
+    "rpcCount": 9
+  },
+  {
+    "chainId": 478,
+    "name": "Form Network",
+    "chain": "form",
+    "shortName": "formnetwork",
+    "score": 0.85,
+    "tvl": 5936.929392705905,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.form.network"
+        },
+        {
+          "url": "https://op-bridge.form.network"
+        }
+      ]
+    },
+    "rpcCount": 1
+  },
+  {
+    "chainId": 57073,
+    "name": "Ink",
+    "chain": "ETH",
+    "shortName": "ink",
+    "score": 0.8,
+    "tvl": 501457002.92264265,
+    "isTestnet": false,
+    "rpcCount": 5
+  },
+  {
+    "chainId": 369,
+    "name": "PulseChain",
+    "chain": "PLS",
+    "shortName": "pls",
+    "score": 0.8,
+    "tvl": 144580925.70761162,
+    "isTestnet": false,
+    "rpcCount": 9
+  },
+  {
+    "chainId": 50104,
+    "name": "Sophon",
+    "chain": "Sophon",
+    "shortName": "sophon",
+    "score": 0.8,
+    "tvl": 10761045.117643382,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://portal.sophon.xyz/bridge"
+        }
+      ]
+    },
+    "rpcCount": 2
+  },
+  {
+    "chainId": 2818,
+    "name": "Morph",
+    "chain": "ETH",
+    "shortName": "morph",
+    "score": 0.8,
+    "tvl": 6705089.849376015,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.morphl2.io/"
+        }
+      ]
+    },
+    "rpcCount": 2
+  },
+  {
+    "chainId": 9999999,
+    "name": "Fluence",
+    "chain": "Fluence",
+    "shortName": "fluence",
+    "score": 0.8,
+    "tvl": 1001513.4998437592,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1"
+    },
+    "rpcCount": 1
+  },
+  {
+    "chainId": 42170,
+    "name": "Arbitrum Nova",
+    "chain": "ETH",
+    "shortName": "arb-nova",
+    "score": 0.8,
+    "tvl": 557849.2826882023,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.arbitrum.io"
+        }
+      ]
+    },
+    "rpcCount": 9
+  },
+  {
+    "chainId": 232,
+    "name": "Lens",
+    "chain": "Lens",
+    "shortName": "lens",
+    "score": 0.8,
+    "tvl": 208825.00786177258,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://app.across.to/bridge?destinationChainId=232"
+        }
+      ]
+    },
+    "rpcCount": 5
+  },
+  {
+    "chainId": 21000000,
+    "name": "Corn",
+    "chain": "BTCN",
+    "shortName": "corn",
+    "score": 0.8,
+    "tvl": 113825.72500974254,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1"
+    },
+    "rpcCount": 3
+  },
+  {
+    "chainId": 5551,
+    "name": "Nahmii 2 Mainnet",
+    "chain": "Nahmii",
+    "shortName": "Nahmii",
+    "score": 0.8,
+    "tvl": 64705.002478245704,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://n2.bridge.nahmii.io"
+        }
+      ]
+    },
+    "rpcCount": 1
+  },
+  {
+    "chainId": 97477,
+    "name": "Doma",
+    "chain": "ETH",
+    "shortName": "doma",
+    "score": 0.8,
+    "tvl": 20349.815329492725,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-11155111"
+    },
+    "rpcCount": 2
+  },
+  {
+    "chainId": 2355,
+    "name": "Silicon zkEVM",
+    "chain": "Silicon",
+    "shortName": "silicon-zk",
+    "score": 0.8,
+    "tvl": 7210.009400601895,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.silicon.network"
+        },
+        {
+          "url": "https://bridge.orbitchain.io"
+        }
+      ]
+    },
+    "rpcCount": 2
+  },
+  {
+    "chainId": 253,
+    "name": "Glide L2 Protocol XP",
+    "chain": "GLXP",
+    "shortName": "glidexp",
+    "score": 0.8,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-251"
+    },
+    "rpcCount": 1
+  },
+  {
+    "chainId": 273,
+    "name": "XR One",
+    "chain": "ETH",
+    "shortName": "xr1",
+    "score": 0.8,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-42161",
+      "bridges": [
+        {
+          "url": "https://xr1.bridge.caldera.xyz"
+        }
+      ]
+    },
+    "rpcCount": 1
+  },
+  {
+    "chainId": 5050,
+    "name": "Skate Mainnet",
+    "chain": "ETH",
+    "shortName": "skate",
+    "score": 0.8,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": ""
+        }
+      ]
+    },
+    "rpcCount": 3
+  },
+  {
+    "chainId": 98866,
+    "name": "Plume Mainnet",
+    "chain": "PLUME",
+    "shortName": "plume-mainnet",
+    "score": 0.8,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-1",
+      "bridges": [
+        {
+          "url": "https://bridge.plume.org"
+        }
+      ]
+    },
+    "rpcCount": 3
+  },
+  {
+    "chainId": 6985385,
+    "name": "Humanity Protocol",
+    "chain": "Humanity",
+    "shortName": "hp",
+    "score": 0.8,
+    "isTestnet": false,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-42161",
+      "bridges": [
+        {
+          "url": "https://bridge.arbitrum.io"
+        }
+      ]
+    },
+    "rpcCount": 1
+  },
+  {
+    "chainId": 534351,
+    "name": "Scroll Sepolia Testnet",
+    "chain": "ETH",
+    "shortName": "scr-sepolia",
+    "score": 0.8,
+    "tvl": 569156929.0917873,
+    "isTestnet": true,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-11155111",
+      "bridges": [
+        {
+          "url": "https://sepolia.scroll.io/bridge"
+        }
+      ]
+    },
+    "rpcCount": 12
+  },
+  {
+    "chainId": 59141,
+    "name": "Linea Sepolia",
+    "chain": "ETH",
+    "shortName": "linea-sepolia",
+    "score": 0.8,
+    "tvl": 232278918.84018713,
+    "isTestnet": true,
+    "parent": {
+      "type": "L2",
+      "chain": "eip155-11155111",
+      "bridges": [
+        {
+          "url": "https://bridge.linea.build/"
+        }
+      ]
+    },
+    "rpcCount": 5
+  }
+]

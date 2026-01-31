@@ -10,11 +10,44 @@
 import { createConfig, http } from 'wagmi';
 import { mainnet, sepolia, arbitrum } from 'wagmi/chains';
 import { metaMask } from 'wagmi/connectors';
+import { defineChain } from 'viem';
+
+// Integrated networks: peaq, Fuse, Katana, Moonriver (Diamond framework)
+const peaq = defineChain({
+  id: 3338,
+  name: 'peaq',
+  nativeCurrency: { name: 'peaq', symbol: 'PEAQ', decimals: 18 },
+  rpcUrls: { default: { http: ['https://quicknode1.peaq.xyz'] } },
+  blockExplorers: { default: { name: 'Subscan', url: 'https://peaq.subscan.io' } },
+});
+const fuse = defineChain({
+  id: 122,
+  name: 'Fuse Mainnet',
+  nativeCurrency: { name: 'Fuse', symbol: 'FUSE', decimals: 18 },
+  rpcUrls: { default: { http: ['https://rpc.fuse.io'] } },
+  blockExplorers: { default: { name: 'Explorer', url: 'https://explorer.fuse.io' } },
+});
+const katana = defineChain({
+  id: 747474,
+  name: 'Katana',
+  nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  rpcUrls: { default: { http: ['https://rpc.katana.network'] } },
+  blockExplorers: { default: { name: 'Katanascan', url: 'https://katanascan.com' } },
+});
+const moonriver = defineChain({
+  id: 1285,
+  name: 'Moonriver',
+  nativeCurrency: { name: 'Moonriver', symbol: 'MOVR', decimals: 18 },
+  rpcUrls: { default: { http: ['https://rpc.api.moonriver.moonbeam.network'] } },
+  blockExplorers: { default: { name: 'Moonscan', url: 'https://moonriver.moonscan.io' } },
+});
+
+const diamondChains = [mainnet, sepolia, arbitrum, peaq, fuse, katana, moonriver];
 
 // Configuration for Treasure.lol
 export const treasureConfig = createConfig({
   multiInjectedProviderDiscovery: false,
-  chains: [mainnet, sepolia, arbitrum], // Arbitrum for Treasure ecosystem
+  chains: diamondChains,
   connectors: [
     metaMask({
       dappMetadata: {
@@ -25,17 +58,13 @@ export const treasureConfig = createConfig({
       infuraAPIKey: process.env.NEXT_PUBLIC_INFURA_API_KEY!,
     }),
   ],
-  transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-    [arbitrum.id]: http(),
-  },
+  transports: Object.fromEntries(diamondChains.map((c) => [c.id, http()])),
 });
 
 // Configuration for Bridgeworld.lol
 export const bridgeworldConfig = createConfig({
   multiInjectedProviderDiscovery: false,
-  chains: [mainnet, sepolia, arbitrum], // Arbitrum for Bridgeworld
+  chains: diamondChains,
   connectors: [
     metaMask({
       dappMetadata: {
@@ -46,17 +75,13 @@ export const bridgeworldConfig = createConfig({
       infuraAPIKey: process.env.NEXT_PUBLIC_INFURA_API_KEY!,
     }),
   ],
-  transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-    [arbitrum.id]: http(),
-  },
+  transports: Object.fromEntries(diamondChains.map((c) => [c.id, http()])),
 });
 
 // Combined configuration (if you want to support both)
 export const combinedConfig = createConfig({
   multiInjectedProviderDiscovery: false,
-  chains: [mainnet, sepolia, arbitrum],
+  chains: diamondChains,
   connectors: [
     metaMask({
       dappMetadata: {
@@ -71,11 +96,7 @@ export const combinedConfig = createConfig({
       infuraAPIKey: process.env.NEXT_PUBLIC_INFURA_API_KEY!,
     }),
   ],
-  transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-    [arbitrum.id]: http(),
-  },
+  transports: Object.fromEntries(diamondChains.map((c) => [c.id, http()])),
 });
 
 declare module 'wagmi' {

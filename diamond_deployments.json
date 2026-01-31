@@ -1,0 +1,15 @@
+{
+  "description": "Diamond contract deployments across 65 Treasure repos. Add your deployed Diamond addresses here.",
+  "deployments": [
+    {
+      "repoName": "example-repo",
+      "repoUrl": "https://github.com/TreasureProject/example-repo",
+      "diamondAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "chainId": 137,
+      "network": "polygon",
+      "deployedAt": "2024-01-01T00:00:00Z",
+      "facets": [],
+      "verified": false
+    }
+  ]
+}

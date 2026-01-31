@@ -22,15 +22,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { createHash } from 'crypto';
 
-interface ProcRateConfig {
-  baseRate: number; // Base proc rate percentage (0-100)
-  modifiers: Array<{
-    type: 'rarity' | 'usage' | 'block' | 'formula';
-    value: number; // Modifier percentage
-  }>;
-  finalRate: number; // Calculated final proc rate
-}
-
 interface LightCodeEvent {
   eventId: string;
   diamondId?: string;
@@ -458,8 +449,6 @@ function recordLightCodeActivation(
   const royaltiesGenerated = totalValue * (royaltyPercentage / 100);
   
   // Distribute royalties (using config - to be set by developers)
-  const royaltyConfig = loadRoyaltyConfig();
-  
   const distributions = royaltyConfig.distributions.map(dist => ({
     recipient: dist.role.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase()),
     role: dist.role,
@@ -636,7 +625,7 @@ async function monitorContractUsage(
   contractAddress: string,
   rpcUrl: string,
   fromBlock: number,
-  toBlock: number = 'latest'
+  toBlock: number | 'latest' = 'latest'
 ): Promise<LightCodeEvent[]> {
   console.log(`\n🔍 Monitoring contract usage: ${contractAddress}\n`);
   console.log(`   From block: ${fromBlock}`);
@@ -656,7 +645,7 @@ async function monitorContractUsage(
         params: [{
           address: contractAddress,
           fromBlock: typeof fromBlock === 'number' ? `0x${fromBlock.toString(16)}` : fromBlock,
-          toBlock: typeof toBlock === 'number' ? `0x${toBlock.toString(16)}` : toBlock
+          toBlock: toBlock === 'latest' || toBlock === undefined ? 'latest' : `0x${toBlock.toString(16)}`
         }]
       })
     });
@@ -730,7 +719,9 @@ async function monitorContractUsage(
             accumulatedFormulaValue
           );
           
-          events.push(event);
+          if (event !== null) {
+            events.push(event);
+          }
         }
       }
     }

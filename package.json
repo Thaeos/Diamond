@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --max-warnings 999 \"*.ts\"",
+    "test:systems": "tsx test_all_systems.ts",
+    "together": "tsx together.ts",
+    "proceed": "tsx proceed_preflight.ts",
     "fetch": "tsx fetch_contract_safe.ts",
     "check-diamond": "tsx check_diamondcut.ts",
     "check-diamond-rpc": "tsx check_diamondcut_rpc.ts",
@@ -12,6 +17,7 @@
     "break-seals": "tsx break_the_seals.ts",
     "generate-gems": "tsx generate_gem_system.ts",
     "generate-tree": "tsx generate_obsidian_tree.ts",
+    "generate-manifest": "tsx generate_manifest.ts",
     "deploy-diamond": "tsx deploy_diamond.ts",
     "ipfs-status": "tsx ipfs_fuse_system.ts status",
     "ipfs-complete": "tsx ipfs_fuse_system.ts",
@@ -19,13 +25,36 @@
     "nft": "tsx svg_nft_generator.ts",
     "opensea": "tsx opensea_marketplace.ts",
     "light-codes": "tsx light_codes_system.ts",
-    "registry": "tsx script_registry_system.ts"
+    "registry": "tsx script_registry_system.ts",
+    "treasure-floor": "tsx chainlink_treasure_floor_monitor.ts",
+    "treasure-repos-check": "tsx treasure_repos_check.ts",
+    "tenderly-treasure": "tsx tenderly_treasure.ts",
+    "test-diamond": "tsx test_diamond_functions.ts",
+    "blockscout-monitor": "tsx blockscout_repo_monitor.ts",
+    "chainlink-upkeep": "tsx chainlink_upkeep_setup.ts",
+    "tenderly-diamond": "tsx tenderly_diamond.ts",
+    "tenderly-diamond-repos": "tsx tenderly_diamond_repos.ts",
+    "setup": "./setup_monitoring.sh",
+    "monitor": "./start_monitoring.sh",
+    "stop-monitor": "./stop_monitoring.sh",
+    "metamask-safe": "tsx metamask_safe_integration.ts",
+    "treasure-dao-monitor": "tsx treasure_dao_monitor.ts",
+    "walletconnect": "tsx walletconnect_kit_integration.ts",
+    "agent": "tsx agent_run.ts"
   },
   "dependencies": {
-    "@metamask/sdk": "^0.34.0"
+    "@metamask/sdk": "^0.34.0",
+    "@reown/appkit": "^1.0.0",
+    "@reown/appkit-adapter-wagmi": "^1.0.0",
+    "wagmi": "^2.0.0",
+    "viem": "^2.0.0"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
-    "@types/node": "^20.0.0"
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0"
   }
 }

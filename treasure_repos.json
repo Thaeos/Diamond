@@ -1,0 +1,398 @@
+{
+  "description": "65 repos that use this contract as foundation. Align with https://github.com/treasureproject (or your org). Fill repo URLs below.",
+  "foundationRepo": "https://github.com/Thaeos/Diamond",
+  "orgUrl": "https://github.com/treasureproject",
+  "targetCount": 65,
+  "repos": [
+    {
+      "url": "https://github.com/TreasureProject/.github",
+      "name": ".github",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/aifrens-sdk",
+      "name": "aifrens-sdk",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/block-explorer",
+      "name": "block-explorer",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/blockscout",
+      "name": "blockscout",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/branding",
+      "name": "branding",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/bridgeworld-docs",
+      "name": "bridgeworld-docs",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/bridging-token-registry",
+      "name": "bridging-token-registry",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/build-uploader",
+      "name": "build-uploader",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/chainlist",
+      "name": "chainlist",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/clankfun",
+      "name": "clankfun",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/coding-exercise",
+      "name": "coding-exercise",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/compass",
+      "name": "compass",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/connectkit",
+      "name": "connectkit",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/craft-compensation",
+      "name": "craft-compensation",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/dao-multisigs",
+      "name": "dao-multisigs",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/discord-sentinel-bot",
+      "name": "discord-sentinel-bot",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/ethereum-blocks",
+      "name": "ethereum-blocks",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/Golem",
+      "name": "Golem",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/hyperlane-example",
+      "name": "hyperlane-example",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/hyperlane-registry",
+      "name": "hyperlane-registry",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/hyperlane-warp-ui",
+      "name": "hyperlane-warp-ui",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/hyperlane-warp-ui-smol",
+      "name": "hyperlane-warp-ui-smol",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/interface",
+      "name": "interface",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/interoperability",
+      "name": "interoperability",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/L2-eigenlayer-restaking",
+      "name": "L2-eigenlayer-restaking",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/LayerZero-v2",
+      "name": "LayerZero-v2",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/legiondex",
+      "name": "legiondex",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/llm-tee-agent",
+      "name": "llm-tee-agent",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/magicswap",
+      "name": "magicswap",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/magicswap-contracts",
+      "name": "magicswap-contracts",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/magicswapv2",
+      "name": "magicswapv2",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/magicswapv2-contracts",
+      "name": "magicswapv2-contracts",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/neurochimp-unity-client",
+      "name": "neurochimp-unity-client",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/onnxruntime-swift-package-manager",
+      "name": "onnxruntime-swift-package-manager",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/ponder-test-aws",
+      "name": "ponder-test-aws",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/python-robot",
+      "name": "python-robot",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/Rio",
+      "name": "Rio",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/smol-quests",
+      "name": "smol-quests",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/smoldao-treasure",
+      "name": "smoldao-treasure",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/spellcaster-facets",
+      "name": "spellcaster-facets",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/tailwind-config",
+      "name": "tailwind-config",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/tdk-godot",
+      "name": "tdk-godot",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/tdk-js",
+      "name": "tdk-js",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/tdk-unity",
+      "name": "tdk-unity",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/tdk-unreal",
+      "name": "tdk-unreal",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-canary",
+      "name": "treasure-canary",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-chain-examples",
+      "name": "treasure-chain-examples",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-docs",
+      "name": "treasure-docs",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-form",
+      "name": "treasure-form",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-functions",
+      "name": "treasure-functions",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-governance-staking",
+      "name": "treasure-governance-staking",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-marketplace-contracts",
+      "name": "treasure-marketplace-contracts",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-marketplace-subgraph",
+      "name": "treasure-marketplace-subgraph",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-node",
+      "name": "treasure-node",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-project-contracts",
+      "name": "treasure-project-contracts",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-subgraphs",
+      "name": "treasure-subgraphs",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-website",
+      "name": "treasure-website",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/treasure-website-team-images",
+      "name": "treasure-website-team-images",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/twitter-client-edge",
+      "name": "twitter-client-edge",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/twitter-scraper-v2",
+      "name": "twitter-scraper-v2",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/web3-starter-template",
+      "name": "web3-starter-template",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/x402",
+      "name": "x402",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/x402facilitators",
+      "name": "x402facilitators",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/x402scan",
+      "name": "x402scan",
+      "hasContracts": null,
+      "hasHardhat": null
+    },
+    {
+      "url": "https://github.com/TreasureProject/zkstack-omnichain-tokens",
+      "name": "zkstack-omnichain-tokens",
+      "hasContracts": null,
+      "hasHardhat": null
+    }
+  ]
+}

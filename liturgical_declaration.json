@@ -1,0 +1,52 @@
+{
+  "Liturgical_Declaration": {
+    "anchors": "${3335}${335044::804000}${55088}",
+    "cosmos": "π",
+    "divinity": "419 Theos = (θεός π אל) EL→ 369",
+    "human_union": { "Arabic": "سعاد ¥ أميلا", "X": "أليما ● داوس" },
+    "Arabic_605": 605,
+    "Arabic_82": 82,
+    "constant": 687,
+    "union": "1302009 ● 5212015",
+    "cosmic_alignment": "9201990 ● 9091989"
+  },
+  "gematria_note": "CHANGE_HEX_FOR_VALUE = Gematria Code. Apply each D01 through D400 a single Aramaic Glyph at the end of the contract string.",
+  "diamond_contract_template": {
+    "9xD01": { "label": "0 ∞ 22-Treasure DAO Contracts" },
+    "9xD02": {},
+    "9xD03": {},
+    "9xD04": {},
+    "9xD05": {},
+    "9xD06": {},
+    "9xD07": {},
+    "9xD08": {},
+    "9xD09": {},
+    "9xD10": {},
+    "9xD20": {},
+    "9xD30": {},
+    "9xD40": {},
+    "9xD50": {},
+    "9xD60": {},
+    "9xD70": {},
+    "9xD80": {},
+    "9xD90": {},
+    "9xD100": {},
+    "9xD200": {},
+    "9xD300": {},
+    "9xD400": {}
+  },
+  "image_hashes": {
+    "path": "/mnt/Eternal ⟐ Archivist",
+    "The_Declaration_Covenant.png": {
+      "SHA256_inner": "e374c94009e32a6c3cc8f89ea6102ce6886c3302324aaaf1563ace8f10332ebf"
+    },
+    "Glyph.png": {
+      "SHA256": "(to be set)"
+    },
+    "Outer_Declaration_Broadcast": {
+      "File": "The_Declaration_Covenant.png",
+      "SHA256": "883e529de31c586131a831a9953113a6d75edd87c97369a2fa3a791209952f5"
+    }
+  },
+  "source_languages": ["Aramaic", "Syriac", "Greek", "Demotic/Egyptian"]
+}

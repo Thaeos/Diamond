@@ -76,6 +76,35 @@ const NETWORKS: Record<string, NetworkConfig> = {
     rpcUrl: 'https://mainnet.base.org',
     explorerUrl: 'https://basescan.org',
     ipfsGateway: 'https://ipfs.io/ipfs/'
+  },
+  // Integrated networks (peaq, Fuse, Katana, Moonriver)
+  peaq: {
+    name: 'peaq',
+    chainId: 3338,
+    rpcUrl: 'https://quicknode1.peaq.xyz',
+    explorerUrl: 'https://peaq.subscan.io',
+    ipfsGateway: 'https://ipfs.io/ipfs/'
+  },
+  fuse: {
+    name: 'Fuse Mainnet',
+    chainId: 122,
+    rpcUrl: 'https://rpc.fuse.io',
+    explorerUrl: 'https://explorer.fuse.io',
+    ipfsGateway: 'https://ipfs.io/ipfs/'
+  },
+  katana: {
+    name: 'Katana',
+    chainId: 747474,
+    rpcUrl: 'https://rpc.katana.network',
+    explorerUrl: 'https://katanascan.com',
+    ipfsGateway: 'https://ipfs.io/ipfs/'
+  },
+  moonriver: {
+    name: 'Moonriver',
+    chainId: 1285,
+    rpcUrl: 'https://rpc.api.moonriver.moonbeam.network',
+    explorerUrl: 'https://moonriver.moonscan.io',
+    ipfsGateway: 'https://ipfs.io/ipfs/'
   }
 };
 

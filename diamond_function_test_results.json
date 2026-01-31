@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-01-30T03:45:48.731Z",
+  "rpcUrl": "https://polygon-rpc.com",
+  "reposTested": 10,
+  "passed": 0,
+  "failed": 10,
+  "results": [
+    {
+      "repoName": ".github",
+      "repoUrl": "https://github.com/TreasureProject/.github",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": true,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "aifrens-sdk",
+      "repoUrl": "https://github.com/TreasureProject/aifrens-sdk",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": true,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "block-explorer",
+      "repoUrl": "https://github.com/TreasureProject/block-explorer",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "blockscout",
+      "repoUrl": "https://github.com/TreasureProject/blockscout",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "branding",
+      "repoUrl": "https://github.com/TreasureProject/branding",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "bridgeworld-docs",
+      "repoUrl": "https://github.com/TreasureProject/bridgeworld-docs",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "bridging-token-registry",
+      "repoUrl": "https://github.com/TreasureProject/bridging-token-registry",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "build-uploader",
+      "repoUrl": "https://github.com/TreasureProject/build-uploader",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "chainlist",
+      "repoUrl": "https://github.com/TreasureProject/chainlist",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    },
+    {
+      "repoName": "clankfun",
+      "repoUrl": "https://github.com/TreasureProject/clankfun",
+      "contractAddress": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "functions": {
+        "diamondCut": false,
+        "facets": false,
+        "facetAddresses": false,
+        "supportsInterface": false
+      }
+    }
+  ]
+}

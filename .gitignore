@@ -28,6 +28,12 @@ contract_bytecode*.hex
 # MetaMask SDK (if cloned)
 metamask-sdk/
 
+# LaVague - excluded for mobile compatibility (prevents signal 9 crashes)
+LaVague/
+lavague/
+**/LaVague/
+**/lavague/
+
 # Personal config files
 .bash_history
 .zsh_history

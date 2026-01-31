@@ -1,0 +1,179 @@
+{
+  "description": "Treasure DAO contracts - 22+ core contracts across the ecosystem",
+  "network": "arbitrum",
+  "chainId": 42161,
+  "contracts": [
+    {
+      "name": "Bridgeworld Legions",
+      "address": "0xfe8c1ac365ba6780aec5a985d989b327c27670a1",
+      "type": "ERC721",
+      "category": "NFT",
+      "description": "Legions NFT collection"
+    },
+    {
+      "name": "Treasure Marketplace",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Marketplace",
+      "category": "Exchange",
+      "description": "NFT marketplace contract"
+    },
+    {
+      "name": "MAGIC Token",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "ERC20",
+      "category": "Token",
+      "description": "MAGIC governance token"
+    },
+    {
+      "name": "Treasure DAO Treasury",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Treasury",
+      "category": "DAO",
+      "description": "DAO treasury multisig"
+    },
+    {
+      "name": "Legion Metadata",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Metadata",
+      "category": "NFT",
+      "description": "Legion metadata contract"
+    },
+    {
+      "name": "Crafting",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Crafting",
+      "category": "Game",
+      "description": "Crafting system contract"
+    },
+    {
+      "name": "Quests",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Quests",
+      "category": "Game",
+      "description": "Quest system contract"
+    },
+    {
+      "name": "Summoning",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Summoning",
+      "category": "Game",
+      "description": "Summoning system contract"
+    },
+    {
+      "name": "Treasures",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "ERC1155",
+      "category": "NFT",
+      "description": "Treasures NFT collection"
+    },
+    {
+      "name": "Consumables",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "ERC1155",
+      "category": "NFT",
+      "description": "Consumables NFT collection"
+    },
+    {
+      "name": "Staking",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Staking",
+      "category": "DeFi",
+      "description": "Staking contract"
+    },
+    {
+      "name": "Rewards",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Rewards",
+      "category": "DeFi",
+      "description": "Rewards distribution"
+    },
+    {
+      "name": "Governance",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Governance",
+      "category": "DAO",
+      "description": "Governance contract"
+    },
+    {
+      "name": "Voting",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Voting",
+      "category": "DAO",
+      "description": "Voting contract"
+    },
+    {
+      "name": "Proposals",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Proposals",
+      "category": "DAO",
+      "description": "Proposal management"
+    },
+    {
+      "name": "Timelock",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Timelock",
+      "category": "DAO",
+      "description": "Timelock for proposals"
+    },
+    {
+      "name": "Bridge",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Bridge",
+      "category": "Bridge",
+      "description": "Cross-chain bridge"
+    },
+    {
+      "name": "Router",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Router",
+      "category": "Exchange",
+      "description": "Swap router"
+    },
+    {
+      "name": "Liquidity Pool",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Liquidity",
+      "category": "DeFi",
+      "description": "Liquidity pool"
+    },
+    {
+      "name": "Fee Collector",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "FeeCollector",
+      "category": "DAO",
+      "description": "Fee collection"
+    },
+    {
+      "name": "Revenue Share",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "RevenueShare",
+      "category": "DAO",
+      "description": "Revenue distribution"
+    },
+    {
+      "name": "Oracle",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Oracle",
+      "category": "Infrastructure",
+      "description": "Price oracle"
+    }
+  ],
+  "safeWallets": [
+    {
+      "name": "Treasure DAO Treasury",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Safe",
+      "threshold": 3,
+      "owners": [],
+      "description": "Main DAO treasury Safe wallet"
+    },
+    {
+      "name": "Operations Multisig",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Safe",
+      "threshold": 2,
+      "owners": [],
+      "description": "Operations multisig"
+    }
+  ]
+}

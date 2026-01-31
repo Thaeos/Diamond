@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-01-31T00:07:49.978Z",
+  "chains": [
+    {
+      "chainId": 137,
+      "name": "Polygon Mainnet",
+      "rpcUrls": [
+        "https://rpc.ankr.com/polygon",
+        "https://polygon-rpc.com",
+        "https://rpc-mainnet.matic.quiknode.pro",
+        "https://polygon-public.nodies.app",
+        "https://polygon-mainnet.public.blastapi.io",
+        "https://1rpc.io/matic",
+        "https://polygon-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+        "https://polygon-bor-rpc.publicnode.com"
+      ],
+      "nativeSymbol": "POL"
+    }
+  ],
+  "deployments": [
+    {
+      "address": "0xf7993A8df974AD022647E63402d6315137c58ABf",
+      "repoName": "example-repo",
+      "chainId": 137,
+      "network": "polygon"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "timestamp": "2026-01-30T04:21:07.317Z",
+  "chainId": 42161,
+  "contractsChecked": 22,
+  "exists": 1,
+  "alerts": 21,
+  "results": [
+    {
+      "name": "Bridgeworld Legions",
+      "address": "0xfe8c1ac365ba6780aec5a985d989b327c27670a1",
+      "type": "ERC721",
+      "category": "NFT",
+      "exists": true,
+      "balance": "0x0",
+      "alert": false
+    },
+    {
+      "name": "Treasure Marketplace",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Marketplace",
+      "category": "Exchange",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "MAGIC Token",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "ERC20",
+      "category": "Token",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Treasure DAO Treasury",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Treasury",
+      "category": "DAO",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Legion Metadata",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Metadata",
+      "category": "NFT",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Crafting",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Crafting",
+      "category": "Game",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Quests",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Quests",
+      "category": "Game",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Summoning",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Summoning",
+      "category": "Game",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Treasures",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "ERC1155",
+      "category": "NFT",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Consumables",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "ERC1155",
+      "category": "NFT",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Staking",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Staking",
+      "category": "DeFi",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Rewards",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Rewards",
+      "category": "DeFi",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Governance",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Governance",
+      "category": "DAO",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Voting",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Voting",
+      "category": "DAO",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Proposals",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Proposals",
+      "category": "DAO",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Timelock",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Timelock",
+      "category": "DAO",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Bridge",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Bridge",
+      "category": "Bridge",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Router",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Router",
+      "category": "Exchange",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Liquidity Pool",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Liquidity",
+      "category": "DeFi",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Fee Collector",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "FeeCollector",
+      "category": "DAO",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Revenue Share",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "RevenueShare",
+      "category": "DAO",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    },
+    {
+      "name": "Oracle",
+      "address": "0x0000000000000000000000000000000000000000",
+      "type": "Oracle",
+      "category": "Infrastructure",
+      "exists": false,
+      "alert": true,
+      "alertReason": "Contract not found at address"
+    }
+  ]
+}

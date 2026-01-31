@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "commonjs",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": ["ES2020"],
     "outDir": "./dist",
     "rootDir": "./",
@@ -10,8 +11,26 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "noEmit": true,
+    "types": ["node"]
   },
-  "include": ["fetch_contract.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["*.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.d.ts",
+    "wagmi-treasure-bridgeworld-config.ts",
+    "fetch_contract.ts",
+    "fetch_contract_safe.ts",
+    "script_computation_system.ts",
+    "deploy_diamond.ts",
+    "take_ownership.ts",
+    "svg_nft_generator.ts",
+    "light_codes_system.ts",
+    "ipfs_fuse_system.ts",
+    "check_diamondcut_rpc.ts",
+    "check_diamondcut.ts",
+    "**/LaVague/**",
+    "**/lavague/**"
+  ]
 }

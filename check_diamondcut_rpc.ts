@@ -8,6 +8,9 @@
  */
 
 import * as fs from 'fs';
+import * as path from 'path';
+
+const CWD = process.cwd();
 
 // Default contract address (can be overridden via command line)
 const DEFAULT_DIAMOND_ADDRESS = process.argv[2] || '0xf7993A8df974AD022647E63402d6315137c58ABf';
@@ -17,7 +20,7 @@ const CHAIN_ID = 137; // Polygon
 let RPC_ENDPOINTS: string[] = ['https://polygon-rpc.com']; // Fallback
 
 try {
-  const chainlistData = JSON.parse(fs.readFileSync('/home/theos/chainlist_rpcs.json', 'utf-8'));
+  const chainlistData = JSON.parse(fs.readFileSync(path.join(CWD, 'chainlist_rpcs.json'), 'utf-8'));
   if (chainlistData[CHAIN_ID.toString()]?.rpc) {
     RPC_ENDPOINTS = chainlistData[CHAIN_ID.toString()].rpc;
     console.log(`📡 Loaded ${RPC_ENDPOINTS.length} RPC endpoints from chainlist\n`);
@@ -800,7 +803,7 @@ async function checkDiamondCut() {
       timestamp: new Date().toISOString(),
     };
     
-    const outputPath = '/home/theos/diamond_cut_check_results.json';
+    const outputPath = path.join(CWD, 'diamond_cut_check_results.json');
     fs.writeFileSync(outputPath, JSON.stringify(results, null, 2));
     console.log(`✅ Results saved to: ${outputPath}`);
     console.log('');
